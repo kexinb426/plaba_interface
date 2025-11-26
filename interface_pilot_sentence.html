@@ -123,8 +123,8 @@
         .checkbox-option { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; cursor: pointer; }
         .checkbox-option input { transform: scale(1.2); }
         
-        #vocab-input-container { margin-left: 25px; display: none; margin-bottom: 10px; }
-        #vocab-input { width: 90%; padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+        #vocab-input-container, #other-input-container { margin-left: 25px; display: none; margin-bottom: 10px; }
+        #vocab-input, #other-input { width: 90%; padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
 
         /* Navigation Buttons */
         .nav-bar { display: flex; gap: 10px; margin-top: 20px; }
@@ -206,7 +206,7 @@
                 <div class="likert-scale">
                     <div class="likert-btn" data-val="1">1<span class="likert-label">Easy</span></div>
                     <div class="likert-btn" data-val="2">2<span class="likert-label"></span></div>
-                    <div class="likert-btn" data-val="3">3<span class="likert-label">Mod</span></div>
+                    <div class="likert-btn" data-val="3">3<span class="likert-label">Medium</span></div>
                     <div class="likert-btn" data-val="4">4<span class="likert-label"></span></div>
                     <div class="likert-btn" data-val="5">5<span class="likert-label">Hard</span></div>
                 </div>
@@ -220,21 +220,29 @@
                         <span>Vocabulary / Jargon</span>
                     </label>
                     <div id="vocab-input-container">
-                        <input type="text" id="vocab-input" placeholder="Which word?">
+                        <input type="text" id="vocab-input" placeholder="Which words or phrases?">
                     </div>
 
                     <label class="checkbox-option">
                         <input type="checkbox" name="issue" value="Syntax">
-                        <span>Sentence too long/complex</span>
+                        <span>Sentence too long or complex</span>
                     </label>
                     <label class="checkbox-option">
                         <input type="checkbox" name="issue" value="Logic">
-                        <span>Unclear logic / Connection</span>
+                        <span>Unclear logic / connection to previous ideas</span>
                     </label>
                     <label class="checkbox-option">
-                        <input type="checkbox" name="issue" value="Context">
-                        <span>Missing context</span>
+                        <input type="checkbox" name="issue" value="Background">
+                        <span>Assumes I know facts not stated</span>
                     </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="issue" value="Other" id="chk-other">
+                        <span>Other</span>
+                    </label>
+                    <div id="other-input-container">
+                        <input type="text" id="other-input" placeholder="Please specify...">
+                    </div>
                 </div>
 
                 <div class="nav-bar">
@@ -468,9 +476,15 @@
         const btnNext = document.getElementById('btn-next');
         const likertBtns = document.querySelectorAll('.likert-btn');
         const diagnosisSection = document.getElementById('diagnosis-section');
+        
+        // Inputs
         const chkVocab = document.getElementById('chk-vocab');
         const vocabInputContainer = document.getElementById('vocab-input-container');
         const vocabInput = document.getElementById('vocab-input');
+        
+        const chkOther = document.getElementById('chk-other');
+        const otherInputContainer = document.getElementById('other-input-container');
+        const otherInput = document.getElementById('other-input');
 
         document.addEventListener('DOMContentLoaded', () => {
             // Modal Logic
@@ -522,6 +536,12 @@
             chkVocab.addEventListener('change', (e) => {
                 vocabInputContainer.style.display = e.target.checked ? 'block' : 'none';
                 if(e.target.checked) vocabInput.focus();
+            });
+
+            // Other Checkbox
+            chkOther.addEventListener('change', (e) => {
+                otherInputContainer.style.display = e.target.checked ? 'block' : 'none';
+                if(e.target.checked) otherInput.focus();
             });
 
             // Navigation
@@ -589,6 +609,10 @@
                         vocabInputContainer.style.display = 'block';
                         vocabInput.value = data.vocabWord || '';
                     }
+                    if (data.issues.includes('Other')) {
+                        otherInputContainer.style.display = 'block';
+                        otherInput.value = data.otherText || '';
+                    }
                 }
                 btnNext.classList.add('active'); // Allow next since data exists
             }
@@ -609,6 +633,7 @@
                 if(clearDiagnosis) {
                     document.querySelectorAll('input[name="issue"]').forEach(c => c.checked = false);
                     vocabInputContainer.style.display = 'none';
+                    otherInputContainer.style.display = 'none';
                 }
             }
             btnNext.classList.add('active');
@@ -625,7 +650,8 @@
                 text: sentences[currentIndex],
                 rating: parseInt(selectedBtn.dataset.val),
                 issues: issues,
-                vocabWord: (issues.includes('Vocabulary')) ? vocabInput.value : ''
+                vocabWord: (issues.includes('Vocabulary')) ? vocabInput.value : '',
+                otherText: (issues.includes('Other')) ? otherInput.value : ''
             };
         }
 
@@ -633,8 +659,13 @@
             likertBtns.forEach(b => b.classList.remove('selected'));
             diagnosisSection.style.display = 'none';
             document.querySelectorAll('input[name="issue"]').forEach(c => c.checked = false);
+            
             vocabInputContainer.style.display = 'none';
             vocabInput.value = '';
+            
+            otherInputContainer.style.display = 'none';
+            otherInput.value = '';
+            
             btnNext.classList.remove('active');
         }
 
