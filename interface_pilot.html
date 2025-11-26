@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Difficulty Annotator (Pilot)</title>
+    <style>
+        /* Basic Setup */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .top-bar, .bottom-bar {
+            background: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .bottom-bar {
+            border-top: 1px solid #ddd;
+            border-bottom: none;
+            text-align: right;
+        }
+
+        .layout {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+            min-height: 70vh; /* Give it some space */
+        }
+
+        .text-panel {
+            flex: 2; /* Takes up most space */
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .sidebar-right {
+            flex: 1; /* Smaller than text, larger than left */
+            min-width: 300px;
+        }
+
+        /* Text Panel Specifics */
+        .text-panel p {
+            font-size: 1.1rem;
+            color: #222;
+        }
+        .text-panel p::selection {
+            background-color: #fdd835; /* Yellow highlight */
+        }
+
+        /* --- Sentence Selection --- */
+        .sentence-container {
+            display: inline;
+            position: relative;
+        }
+        
+        .select-sentence-btn {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-color: #e0e0e0;
+            color: #555;
+            border: none;
+            border-radius: 50%;
+            padding: 0;
+            margin: 0 5px 0 0;
+            cursor: pointer;
+            font-size: 10px;
+            line-height: 18px;
+            text-align: center;
+            font-weight: bold;
+            opacity: 0.3;
+            transition: all 0.2s;
+        }
+        
+        .text-panel p:hover .select-sentence-btn {
+            opacity: 0.6;
+        }
+        
+        .select-sentence-btn:hover {
+            opacity: 1;
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .sentence.is-selected {
+            background-color: #fdd835;
+        }
+
+
+        /* Right Sidebar Components */
+        #current-selection, #difficulty-list {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Hide the selection form by default */
+        #current-selection {
+            display: none;
+        }
+        #current-selection.is-active {
+            display: block;
+        }
+
+        #current-selection h3, #difficulty-list h3 {
+            margin-top: 0;
+        }
+        #current-selection p strong {
+            font-style: italic;
+            background: #fdf5d5;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #5d4037;
+        }
+        
+        /* Form Elements */
+        label.question-label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        textarea {
+            width: 95%;
+            min-height: 100px; /* Taller for free text */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            font-family: inherit;
+        }
+        .form-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .form-option label {
+            font-weight: normal;
+            margin: 0;
+            cursor: pointer;
+        }
+        .form-option input[type="radio"] {
+            margin: 0;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        #button-container {
+            margin-top: 20px;
+        }
+
+        /* Difficulty List Items */
+        .difficulty-item {
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fafafa;
+        }
+        .difficulty-item blockquote {
+            margin: 5px 0 10px 0;
+            padding-left: 10px;
+            border-left: 3px solid #fdd835;
+            font-style: italic;
+        }
+        .difficulty-item p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Buttons */
+        button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button.secondary {
+            background-color: #6c757d;
+        }
+        button.secondary:hover {
+            background-color: #5a6268;
+        }
+        #current-selection > button#btn-clear {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* Final Feedback Form */
+        #final-feedback {
+            display: none; 
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        #final-feedback.is-active {
+            display: block;
+        }
+        #final-feedback h3 {
+            margin-top: 0;
+        }
+        #final-feedback > #btn-go-back {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+      <h2>Mark parts of the text you found difficult</h2>
+      <p>Mark any words, phrases, or sentences that caused confusion or slowed down your understanding.</p>
+    </div>
+    
+    <div class="layout">
+    
+      <div class="text-panel" id="text-panel">
+        <!-- Text will be injected here via JS -->
+      </div>
+    
+      <div class="sidebar-right">
+        <div id="current-selection">
+          <h3>Current difficulty</h3>
+          <p>Selected text: <strong id="selected-text-display"></strong></p>
+          
+          <button type="button" class="secondary" id="btn-clear">Clear selection</button>
+
+          <form id="difficulty-form">
+            <!-- PILOT MODE: Free Text Only -->
+            <div>
+              <label class="question-label" for="difficulty-description">Why was this difficult?</label>
+              <p style="font-size: 0.9em; color: #666; margin-top: 0; margin-bottom: 10px;">
+                  Please describe your confusion, question, or what made this specific part hard to understand.
+              </p>
+              <textarea id="difficulty-description" name="difficulty-description" placeholder="Type here..."></textarea>
+      
+              <div id="button-container">
+                <button type="button" id="btn-save">Save difficulty</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Overall Feedback Form (Unchanged) -->
+        <div id="final-feedback">
+          <h3>Overall Feedback</h3>
+
+          <button type="button" class="secondary" id="btn-go-back">Go Back to Annotating</button>
+
+          <form id="final-form">
+            <label class="question-label">Q1. How familiar were you with this topic before reading?</label>
+            <div class="form-option">
+              <input type="radio" id="fam-none" name="familiarity" value="Not at all">
+              <label for="fam-none">Not at all familiar</label>
+            </div>
+            <div class="form-option">
+              <input type="radio" id="fam-some" name="familiarity" value="Somewhat">
+              <label for="fam-some">Somewhat familiar</label>
+            </div>
+            <div class="form-option">
+              <input type="radio" id="fam-very" name="familiarity" value="Very">
+              <label for="fam-very">Very familiar</label>
+            </div>
+
+            <label class="question-label" style="margin-top: 20px;">Q2. Overall, how difficult was this text to read?</label>
+            <div class="form-option">
+              <input type="radio" id="diff-easy" name="difficulty" value="Easy">
+              <label for="diff-easy">Easy</label>
+            </div>
+            <div class="form-option">
+              <input type="radio" id="diff-mod" name="difficulty" value="Moderate">
+              <label for="diff-mod">Moderate</label>
+            </div>
+            <div class="form-option">
+              <input type="radio" id="diff-hard" name="difficulty" value="Difficult">
+              <label for="diff-hard">Difficult</label>
+            </div>
+
+            <label class="question-label" for="final-comments" style="margin-top: 20px;">Q3. (Optional) Any other comments about this text?</label>
+            <textarea id="final-comments" name="final-comments" style="min-height: 60px;"></textarea>
+
+            <button type="button" id="btn-submit-final" style="margin-top: 20px;">Submit Final Feedback</button>
+          </form>
+        </div>
+        <!-- END: Overall Feedback Form -->
+    
+        <div id="difficulty-list">
+          <h3>Your marked difficulties</h3>
+          <div id="list-container">
+            <!-- Saved items will go here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bottom-bar">
+      <button id="btn-show-final-feedback">Next / Done with this text</button>
+    </div>
+
+    <script>
+        // --- CONFIGURATION ---
+        const googleScriptURL = "https://script.google.com/macros/s/AKfycbySWqdeYU2yP8MPHP5VLcxHaRoOcLnFL8yGVN1GOKX4Ss3lhu2T9L0m3xkksELvAOLmSA/exec";
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const completionCode = urlParams.get('cc'); 
+        
+        const fallbackCode = "TEST_CODE"; 
+        const finalCompletionCode = completionCode || fallbackCode;
+        const prolificCompletionURL = "https://app.prolific.com/submissions/complete?cc=" + finalCompletionCode;
+        // ---------------------
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 0. YOUR LIBRARY OF TEXTS ---
+            const studyTexts = {
+                "text_01": "This chapter covers antidepressants that fall into the class of serotonin (5-HT) and norepinephrine (NE) reuptake inhibitors. That is, they bind to the 5-HT and NE transporters with varying levels of potency and binding affinity ratios. Duloxetine is a more potent 5-HT and NE reuptake inhibitor with a more balanced profile of binding at about 10:1 for 5HT and NE transporter binding. It is also a moderate inhibitor of CYP2D6, so that modest dose reductions and careful monitoring will be needed when prescribing duloxetine in combination with drugs that are preferentially metabolized by CYP2D6. The most common side effects identified in clinical trials are nausea, dry mouth, dizziness, constipation, insomnia, asthenia, and hypertension, consistent with its mechanisms of action. Clinical trials to date have demonstrated rates of response and remission in patients with major depression that are comparable to other marketed antidepressants reviewed in this book. In addition to approval for MDD, duloxetine is approved for diabetic peripheral neuropathic pain, fibromyalgia, and musculoskeletal pain. All medications in the class can cause serotonin syndrome when combined with MAOIs.",
+                
+                "text_02": "Asthma is the most common chronic disease of childhood and, in the latter part of the 20th century, reached epidemic proportions. Asthma is generally believed to result from gene-environment interactions. There is consensus that a 'window of opportunity' exists during pregnancy and early in life when environmental factors may influence its development. We review multiple environmental, biologic and sociologic factors that may be important in the development of asthma. Meta-analyses of studies have demonstrated that multifaceted interventions are required in order to develop asthma prevention. Multifaceted allergen reduction studies have shown clinical benefits. Asthma represents a dysfunctional interaction with our genes and the environment to which they are exposed, especially in fetal and early infant life. The increasing prevalence of asthma also may be an indication of increased population risk for the development of other chronic non-communicable autoimmune diseases. This review will focus on the factors which may be important in the primary prevention of asthma. Better understanding of the complex gene-environment interactions involved in the development of asthma will provide insight into personalized interventions for asthma prevention.",
+                
+                "text_03": "In patients with advanced-stage chronic kidney disease (CKD), progressive kidney function decline leads to increased risk for hyperkalemia (serum potassium > 5.0 or >5.5 mEq\/L). Medications such as renin-angiotensin-aldosterone system inhibitors pose an additional hyperkalemia risk, especially in patients with CKD. When hyperkalemia develops, clinicians often recommend a diet that is lower in potassium content. This review discusses the barriers to adherence to a low-potassium diet and the impact of dietary restrictions on adverse clinical outcomes. Accumulating evidence indicates that a diet that incorporates potassium-rich foods has multiple health benefits, which may also be attributable to the other vitamin, mineral, and fiber content of potassium-rich foods. These benefits include blood pressure reductions and reduced risks for cardiovascular disease and stroke. High-potassium foods may also prevent CKD progression and reduce mortality risk in patients with CKD. Adjunctive treatment with the newer potassium-binding agents, patiromer and sodium zirconium cyclosilicate, may allow for optimal renin-angiotensin-aldosterone system inhibitor therapy in patients with CKD and hyperkalemia, potentially making it possible for patients with CKD and hyperkalemia to liberalize their diet. This may allow them the health benefits of a high-potassium diet without the increased risk for hyperkalemia, although further studies are needed.",
+
+                "text_04": "As COVID-19 continues to spread rapidly worldwide and variants continue to emerge, the development and deployment of safe and effective vaccines are urgently needed. Here, we developed an mRNA vaccine based on the trimeric receptor-binding domain (RBD) of the SARS-CoV-2 spike (S) protein fused to ferritin-formed nanoparticles (TF-RBD). Compared to the trimeric form of the RBD mRNA vaccine (T-RBD), TF-RBD delivered intramuscularly elicited robust and durable humoral immunity as well as a Th1-biased cellular response. After further challenge with live SARS-CoV-2, immunization with a two-shot low-dose regimen of TF-RBD provided adequate protection in hACE2-transduced mice. In addition, the mRNA template of TF-RBD was easily and quickly engineered into a variant vaccine to address SARS-CoV-2 mutations. The TF-RBD multivalent vaccine produced broad-spectrum neutralizing antibodies against Alpha (B.1.1.7) and Beta (B.1.351) variants. This mRNA vaccine based on the encoded self-assembled nanoparticle-based trimer RBD provides a reference for the design of mRNA vaccines targeting SARS-CoV-2.",
+
+                "text_05": "The comparative absorption of zinc after oral administration of three different complexed forms was studied in 15 healthy human volunteers in a double-blind four-period crossover trial. The individuals were randomly divided into four groups. Each group rotated for four week periods through a random sequence of oral supplementation including: zinc picolinate, zinc citrate, and zinc gluconate (equivalent to 50 mg elemental zinc per day) and placebo. Zinc was measured in hair, urine, erythrocyte and serum before and after each period. At the end of four weeks hair, urine and erythrocyte zinc levels rose significantly (p less than 0.005, p less than 0.001, and p less than 0.001) during zinc picolinate administration. There was no significant change in any of these parameters from zinc gluconate, zinc citrate or placebo administration. There was a small, insignificant rise in serum zinc during zinc picolinate, zinc citrate and placebo supplementation. The results of this study suggest that zinc absorption in humans can be improved by complexing zinc with picolinic acid."
+            };
+            
+            const defaultText = "Error: Text not found. Please contact the researcher.";
+            
+            // 1. DATA STORAGE
+            let savedAnnotations = []; 
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const workerID = urlParams.get('PROLIFIC_PID') || "TEST_USER";
+            const stimulusID = urlParams.get('stimulus') || "default_text";
+
+            const textPanel = document.getElementById('text-panel');
+            const currentSelectionPanel = document.getElementById('current-selection');
+            const selectedTextDisplay = document.getElementById('selected-text-display');
+            const difficultyForm = document.getElementById('difficulty-form');
+            const difficultyDescription = document.getElementById('difficulty-description'); // NEW
+            const saveButton = document.getElementById('btn-save');
+            const clearButton = document.getElementById('btn-clear');
+            const listContainer = document.getElementById('list-container');
+            
+            const finalFeedbackPanel = document.getElementById('final-feedback');
+            const showFinalFeedbackButton = document.getElementById('btn-show-final-feedback');
+            const submitFinalButton = document.getElementById('btn-submit-final');
+            const goBackButton = document.getElementById('btn-go-back');
+
+            let activeSelectedText = ""; 
+            let activeSentenceSpan = null; 
+
+            const prepareText = () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const requestedID = urlParams.get('stimulus') || 'text_01'; 
+                const rawText = studyTexts[requestedID] || defaultText;
+                textPanel.innerHTML = `<p>${rawText}</p>`;
+
+                const paragraphs = textPanel.querySelectorAll('p');
+                const sentenceRegex = /[^.!?]+[.!?]+/g;
+
+                paragraphs.forEach(p => {
+                    const originalText = p.textContent;
+                    const sentences = originalText.match(sentenceRegex);
+                    
+                    if (sentences) {
+                        p.innerHTML = ''; 
+                        sentences.forEach(sentenceText => {
+                            const container = document.createElement('span');
+                            container.className = 'sentence-container';
+                            
+                            const button = document.createElement('button');
+                            button.className = 'select-sentence-btn';
+                            button.title = 'Select this sentence';
+                            button.textContent = 'S'; 
+                            
+                            const sentenceSpan = document.createElement('span');
+                            sentenceSpan.className = 'sentence';
+                            sentenceSpan.textContent = sentenceText;
+                            
+                            button.addEventListener('click', () => {
+                                clearSelection(true); 
+                                sentenceSpan.classList.add('is-selected');
+                                activeSentenceSpan = sentenceSpan;
+                                showSelectionForm(sentenceText.trim());
+                            });
+                            
+                            container.appendChild(button);
+                            container.appendChild(sentenceSpan);
+                            p.appendChild(container);
+                            p.appendChild(document.createTextNode(' ')); 
+                        });
+                    }
+                });
+            };
+
+            const showSelectionForm = (selectedText) => {
+                if (selectedText.length > 0) {
+                    activeSelectedText = selectedText;
+                    selectedTextDisplay.textContent = `“${selectedText}”`;
+                    currentSelectionPanel.classList.add('is-active');
+                    
+                    // Focus on the text box so they can start typing immediately
+                    setTimeout(() => {
+                        difficultyDescription.focus();
+                    }, 100);
+                }
+            };
+
+            textPanel.addEventListener('mouseup', () => {
+                if (finalFeedbackPanel.classList.contains('is-active')) {
+                    return;
+                }
+                const selection = document.getSelection();
+                const selectedText = selection.toString().trim();
+
+                if (selectedText.length > 0) {
+                    if (activeSentenceSpan) {
+                        activeSentenceSpan.classList.remove('is-selected');
+                        activeSentenceSpan = null;
+                    }
+                    showSelectionForm(selectedText);
+                }
+            });
+
+            const clearSelection = (keepForm = false) => {
+                document.getSelection().removeAllRanges(); 
+                if (activeSentenceSpan) {
+                    activeSentenceSpan.classList.remove('is-selected');
+                    activeSentenceSpan = null;
+                }
+                
+                if (!keepForm) {
+                    currentSelectionPanel.classList.remove('is-active'); 
+                    difficultyForm.reset(); 
+                    activeSelectedText = "";
+                    selectedTextDisplay.textContent = "";
+                }
+            };
+            clearButton.addEventListener('click', () => clearSelection(false));
+
+            // --- PILOT MODE SAVE LOGIC ---
+            saveButton.addEventListener('click', () => {
+                if (!activeSelectedText) return; 
+
+                // Get free text
+                const description = difficultyDescription.value.trim();
+                
+                if (!description) {
+                    alert("Please write a brief description of the difficulty.");
+                    return;
+                }
+
+                // 1. SAVE DATA TO ARRAY
+                // We store the description in 'reasons' and mark others as N/A
+                const annotationEntry = {
+                    text: activeSelectedText,
+                    reasons: description,
+                    clarification_needed: "Free Text Pilot",
+                    comments: "N/A"
+                };
+                savedAnnotations.push(annotationEntry);
+
+                // 2. UPDATE VISUAL LIST
+                const newItem = document.createElement('div');
+                newItem.className = 'difficulty-item';
+                newItem.innerHTML = `
+                    <blockquote>${activeSelectedText}</blockquote>
+                    <p><strong>Feedback:</strong> ${description}</p>
+                `;
+                listContainer.appendChild(newItem);
+
+                clearSelection(false);
+            });
+            
+            prepareText();
+
+            showFinalFeedbackButton.addEventListener('click', () => {
+                clearSelection(false); 
+                currentSelectionPanel.style.display = 'none'; 
+                finalFeedbackPanel.classList.add('is-active');
+                showFinalFeedbackButton.style.display = 'none';
+                
+                textPanel.querySelectorAll('.select-sentence-btn').forEach(btn => {
+                    btn.disabled = true;
+                    btn.style.opacity = '0.1';
+                    btn.style.cursor = 'default';
+                });
+            });
+
+            submitFinalButton.addEventListener('click', () => {
+                const finalForm = document.getElementById('final-form');
+                const formData = new FormData(finalForm);
+                
+                // 1. GATHER FINAL DATA
+                const payload = {
+                    worker_id: workerID,
+                    stimulus_id: stimulusID,
+                    familiarity: formData.get('familiarity') || 'N/A',
+                    overall_difficulty: formData.get('difficulty') || 'N/A',
+                    final_comments: formData.get('final-comments').trim() || 'N/A',
+                    annotations: savedAnnotations 
+                };
+                
+                submitFinalButton.disabled = true;
+                submitFinalButton.textContent = "Submitting...";
+
+                fetch(googleScriptURL, {
+                    method: "POST",
+                    body: JSON.stringify(payload)
+                })
+                .then(response => {
+                    finalFeedbackPanel.innerHTML = '<h3>Thank you!</h3><p>Redirecting you to Prolific...</p>';
+                    setTimeout(() => {
+                        window.location.href = prolificCompletionURL;
+                    }, 1500);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("There was an error saving your data. Please check your internet connection and try again.");
+                    submitFinalButton.disabled = false;
+                    submitFinalButton.textContent = "Submit Final Feedback";
+                });
+            });
+
+            goBackButton.addEventListener('click', () => {
+                finalFeedbackPanel.classList.remove('is-active');
+                currentSelectionPanel.style.display = ''; 
+                showFinalFeedbackButton.style.display = 'inline-block';
+                textPanel.querySelectorAll('.select-sentence-btn').forEach(btn => {
+                    btn.disabled = false;
+                    btn.style.opacity = '';
+                    btn.style.cursor = 'pointer';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
