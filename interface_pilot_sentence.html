@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Difficulty Annotator (Spotlight)</title>
+    <style>
+        /* Basic Setup */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            overflow-y: hidden; /* Prevent body scroll, handle in layout */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- MODAL STYLES --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex; justify-content: center; align-items: center; z-index: 1000;
+        }
+        .modal-content {
+            background: white; padding: 30px; border-radius: 8px;
+            max-width: 600px; width: 90%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .modal-content h2 { margin-top: 0; color: #007bff; }
+        .example-box {
+            background: #f1f3f5; padding: 15px; border-radius: 5px;
+            margin: 15px 0; border-left: 4px solid #007bff;
+        }
+        .good-ex { color: #2e7d32; font-weight: bold; }
+        .bad-ex { color: #c62828; font-weight: bold; }
+        .btn-start {
+            background-color: #007bff; color: white; padding: 12px 24px;
+            font-size: 1.1rem; width: 100%; margin-top: 10px; cursor: pointer; border:none; border-radius:4px;
+        }
+
+        /* Layout */
+        .top-bar {
+            background: #fff; padding: 10px 20px;
+            border-bottom: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .layout {
+            display: flex;
+            flex: 1; /* Fill remaining height */
+            padding: 20px;
+            gap: 20px;
+            overflow: hidden; /* Contain scrolls */
+        }
+
+        .text-panel {
+            flex: 2;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            font-size: 1.25rem;
+            line-height: 2;
+            color: #222;
+        }
+        
+        .sidebar-right {
+            flex: 1;
+            min-width: 350px;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        /* --- SPOTLIGHT STYLES (NEW) --- */
+        .sentence {
+            transition: all 0.3s ease;
+            padding: 2px 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .sentence.dimmed {
+            opacity: 0.3;
+            filter: blur(0px); /* Optional blur */
+        }
+        .sentence.active {
+            opacity: 1;
+            background-color: #fff9c4; /* Soft yellow highlight */
+            box-shadow: 0 0 0 3px #fbc02d; /* Solid border/glow */
+            font-weight: 500;
+        }
+
+        /* --- CONTROLS --- */
+        .control-card {
+            background: #fff; padding: 20px;
+            border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .control-card h3 { margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
+        /* Likert Scale */
+        .likert-scale { display: flex; gap: 5px; margin-bottom: 20px; }
+        .likert-btn {
+            flex: 1; padding: 10px 5px; text-align: center;
+            border: 1px solid #ddd; border-radius: 4px;
+            cursor: pointer; background: #fff; transition: all 0.2s;
+            font-weight: bold; color: #555;
+        }
+        .likert-btn:hover { background: #f8f9fa; border-color: #bbb; }
+        .likert-btn.selected {
+            background-color: #007bff; color: white; border-color: #007bff;
+            transform: translateY(-2px); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .likert-label { display: block; font-size: 0.75rem; font-weight: normal; margin-top: 4px; }
+
+        /* Diagnosis Form */
+        #diagnosis-section { display: none; margin-top: 15px; border-top: 1px dashed #ddd; padding-top: 15px; }
+        .checkbox-option { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; cursor: pointer; }
+        .checkbox-option input { transform: scale(1.2); }
+        
+        #vocab-input-container { margin-left: 25px; display: none; margin-bottom: 10px; }
+        #vocab-input { width: 90%; padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+
+        /* Navigation Buttons */
+        .nav-bar { display: flex; gap: 10px; margin-top: 20px; }
+        .btn-nav {
+            flex: 1; padding: 12px; border: none; border-radius: 5px;
+            font-weight: bold; cursor: pointer; font-size: 1rem;
+        }
+        .btn-prev { background-color: #e2e6ea; color: #333; }
+        .btn-next { background-color: #007bff; color: white; opacity: 0.5; pointer-events: none; }
+        .btn-next.active { opacity: 1; pointer-events: auto; }
+        .btn-next:hover { background-color: #0056b3; }
+
+        /* Quiz Panel */
+        #final-feedback { display: none; }
+        #final-feedback.active { display: block; }
+        .quiz-block { background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 15px; border: 1px solid #eee; }
+        .question-label { font-weight: bold; display: block; margin-bottom: 10px; }
+        .form-option { margin-bottom: 5px; }
+        .quiz-meta-q {
+            margin-top: 10px; padding-top: 10px;
+            border-top: 1px dashed #ccc; font-size: 0.9em; color: #555;
+        }
+
+        /* Improvements Checkboxes */
+        .checkbox-group {
+            display: flex; flex-direction: column; gap: 12px; margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Instructions Modal -->
+    <div id="instruction-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Help Us Improve Medical Information</h2>
+            <p><strong>Task:</strong> Imagine you are reading this text to find important medical information for yourself or a family member. </p>
+            <p>We will show you the text <strong>one sentence at a time</strong>.</p>
+            <ul>
+                <li>Rate how difficult each sentence is to understand.</li>
+                <li>If it's difficult, tell us why (Vocabulary, Grammar, Logic, etc.).</li>
+            </ul>
+            <div style="background-color: #e8f6f3; padding: 10px; border-left: 4px solid #1abc9c; margin: 15px 0; font-size: 0.9em;">
+                <strong><span style="font-size:1.2em">📝</span> Note:</strong> 
+                There will be <strong>2 brief questions</strong> about the text content at the end. 
+                Please read carefully enough to answer them!
+            </div>
+            <button class="btn-start" id="btn-close-modal">I understand, Start Task</button>
+        </div>
+    </div>
+
+    <!-- Top Header -->
+    <div class="top-bar">
+        <h2 style="margin:0; font-size: 1.2rem;">🏥 Medical Clarity Study</h2>
+    </div>
+    
+    <!-- Main Layout -->
+    <div class="layout">
+    
+        <!-- Text Panel (Left) -->
+        <div class="text-panel" id="text-panel">
+            <!-- Sentences injected here -->
+        </div>
+    
+        <!-- Sidebar (Right) -->
+        <div class="sidebar-right">
+            
+            <!-- --- SPOTLIGHT CONTROLS --- -->
+            <div class="control-card" id="spotlight-controls">
+                <h3>
+                    Sentence Analysis
+                    <span style="font-size:0.8rem; float:right; color:#777; margin-top:4px;">
+                        <span id="progress-indicator">1</span> / <span id="total-sentences">0</span>
+                    </span>
+                </h3>
+
+                <p style="font-size:0.9rem; color:#555; margin-bottom:10px;">How difficult is the highlighted sentence?</p>
+                
+                <div class="likert-scale">
+                    <div class="likert-btn" data-val="1">1<span class="likert-label">Easy</span></div>
+                    <div class="likert-btn" data-val="2">2<span class="likert-label"></span></div>
+                    <div class="likert-btn" data-val="3">3<span class="likert-label">Mod</span></div>
+                    <div class="likert-btn" data-val="4">4<span class="likert-label"></span></div>
+                    <div class="likert-btn" data-val="5">5<span class="likert-label">Hard</span></div>
+                </div>
+
+                <!-- Conditional Diagnosis -->
+                <div id="diagnosis-section">
+                    <p style="font-size:0.9rem; font-weight:bold; margin-bottom:10px;">Why is it difficult? Select all that apply:</p>
+                    
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="issue" value="Vocabulary" id="chk-vocab">
+                        <span>Vocabulary / Jargon</span>
+                    </label>
+                    <div id="vocab-input-container">
+                        <input type="text" id="vocab-input" placeholder="Which word?">
+                    </div>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="issue" value="Syntax">
+                        <span>Sentence too long/complex</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="issue" value="Logic">
+                        <span>Unclear logic / Connection</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="issue" value="Context">
+                        <span>Missing context</span>
+                    </label>
+                </div>
+
+                <div class="nav-bar">
+                    <button class="btn-nav btn-prev" id="btn-prev">Previous</button>
+                    <button class="btn-nav btn-next" id="btn-next">Next</button>
+                </div>
+            </div>
+
+            <!-- --- QUIZ PANEL (Initially Hidden) --- -->
+            <div class="control-card" id="final-feedback">
+                <h3>Comprehension Check</h3>
+                
+                <form id="final-form">
+                    <div id="quiz-container"></div>
+                    
+                    <hr style="margin: 25px 0; border: 0; border-top: 2px solid #eee;">
+
+                    <h3>Overall Feedback</h3>
+            
+                    <label class="question-label">Q1. How familiar were you with this topic before reading?</label>
+                    <div class="form-option"><input type="radio" id="fam-1" name="familiarity" value="1"><label for="fam-1">1 - Not at all familiar</label></div>
+                    <div class="form-option"><input type="radio" id="fam-2" name="familiarity" value="2"><label for="fam-2">2 - Slightly familiar</label></div>
+                    <div class="form-option"><input type="radio" id="fam-3" name="familiarity" value="3"><label for="fam-3">3 - Somewhat familiar</label></div>
+                    <div class="form-option"><input type="radio" id="fam-4" name="familiarity" value="4"><label for="fam-4">4 - Very familiar</label></div>
+                    <div class="form-option"><input type="radio" id="fam-5" name="familiarity" value="5"><label for="fam-5">5 - Extremely familiar</label></div>
+
+                    <label class="question-label" style="margin-top: 20px;">Q2. Overall, how difficult was this text to read?</label>
+                    <div class="form-option"><input type="radio" id="diff-1" name="difficulty" value="1"><label for="diff-1">1 - Very Easy</label></div>
+                    <div class="form-option"><input type="radio" id="diff-2" name="difficulty" value="2"><label for="diff-2">2 - Easy</label></div>
+                    <div class="form-option"><input type="radio" id="diff-3" name="difficulty" value="3"><label for="diff-3">3 - Moderate</label></div>
+                    <div class="form-option"><input type="radio" id="diff-4" name="difficulty" value="4"><label for="diff-4">4 - Difficult</label></div>
+                    <div class="form-option"><input type="radio" id="diff-5" name="difficulty" value="5"><label for="diff-5">5 - Very Difficult</label></div>
+
+                    <label class="question-label" style="margin-top: 20px;">Q3. How confident are you that you understood the main points of the text?</label>
+                    <div class="form-option"><input type="radio" id="conf-1" name="confidence" value="1"><label for="conf-1">1 - Not confident at all</label></div>
+                    <div class="form-option"><input type="radio" id="conf-2" name="confidence" value="2"><label for="conf-2">2 - Slightly unconfident</label></div>
+                    <div class="form-option"><input type="radio" id="conf-3" name="confidence" value="3"><label for="conf-3">3 - Somewhat confident</label></div>
+                    <div class="form-option"><input type="radio" id="conf-4" name="confidence" value="4"><label for="conf-4">4 - Confident</label></div>
+                    <div class="form-option"><input type="radio" id="conf-5" name="confidence" value="5"><label for="conf-5">5 - Very Confident</label></div>
+
+                    <div class="final-comments">
+                        <label class="question-label" style="margin-top: 20px;">
+                            Q4. If you could improve this text, what are the <strong>TOP 3</strong> changes that would help the most?
+                        </label>
+                        
+                        <div class="checkbox-group" id="wishlist-group">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="improvement" value="simpler_vocab">
+                                <span><strong>Use everyday words</strong> (Swap hard words for simple ones)</span>
+                            </label>
+
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="improvement" value="definitions">
+                                <span><strong>Define the terms</strong> (Keep the terms, but explain what they mean)</span>
+                            </label>
+
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="improvement" value="shorter_sentences">
+                                <span><strong>Shorten sentences</strong> (Break long sentences into chunks)</span>
+                            </label>
+
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="improvement" value="better_flow">
+                                <span><strong>Connect the ideas</strong> (Make it clearer how one point leads to the next)</span>
+                            </label>
+
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="improvement" value="reorder">
+                                <span><strong>Group related info</strong> (The order of information is confusing)</span>
+                            </label>
+
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="improvement" value="significance">
+                                <span><strong>Explain the impact</strong> (Tell me if this is good/bad news)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-start" id="btn-submit-final" style="margin-top:20px;">Submit All Data</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIG ---
+        const googleScriptURL = "https://script.google.com/macros/s/AKfycbwefYLFqc-MUxps38IuE6pQAxOIQtg3x-ytywkMhfbISoQLBwmQRBbMPCKZSFWd7YhrOQ/exec";
+
+        // --- DATA ---
+        const studyTexts = {
+            "text_01": "This chapter covers antidepressants that fall into the class of serotonin (5-HT) and norepinephrine (NE) reuptake inhibitors. That is, they bind to the 5-HT and NE transporters with varying levels of potency and binding affinity ratios. Duloxetine is a more potent 5-HT and NE reuptake inhibitor with a more balanced profile of binding at about 10:1 for 5HT and NE transporter binding. It is also a moderate inhibitor of CYP2D6, so that modest dose reductions and careful monitoring will be needed when prescribing duloxetine in combination with drugs that are preferentially metabolized by CYP2D6. The most common side effects identified in clinical trials are nausea, dry mouth, dizziness, constipation, insomnia, asthenia, and hypertension, consistent with its mechanisms of action. Clinical trials to date have demonstrated rates of response and remission in patients with major depression that are comparable to other marketed antidepressants reviewed in this book. In addition to approval for MDD, duloxetine is approved for diabetic peripheral neuropathic pain, fibromyalgia, and musculoskeletal pain. All medications in the class can cause serotonin syndrome when combined with MAOIs.",
+            
+            "text_02": "Asthma is the most common chronic disease of childhood and, in the latter part of the 20th century, reached epidemic proportions. Asthma is generally believed to result from gene-environment interactions. There is consensus that a 'window of opportunity' exists during pregnancy and early in life when environmental factors may influence its development. We review multiple environmental, biologic and sociologic factors that may be important in the development of asthma. Meta-analyses of studies have demonstrated that multifaceted interventions are required in order to develop asthma prevention. Multifaceted allergen reduction studies have shown clinical benefits. Asthma represents a dysfunctional interaction with our genes and the environment to which they are exposed, especially in fetal and early infant life. The increasing prevalence of asthma also may be an indication of increased population risk for the development of other chronic non-communicable autoimmune diseases. This review will focus on the factors which may be important in the primary prevention of asthma. Better understanding of the complex gene-environment interactions involved in the development of asthma will provide insight into personalized interventions for asthma prevention.",
+            
+            "text_03": "In patients with advanced-stage chronic kidney disease (CKD), progressive kidney function decline leads to increased risk for hyperkalemia (serum potassium > 5.0 or >5.5 mEq\/L). Medications such as renin-angiotensin-aldosterone system inhibitors pose an additional hyperkalemia risk, especially in patients with CKD. When hyperkalemia develops, clinicians often recommend a diet that is lower in potassium content. This review discusses the barriers to adherence to a low-potassium diet and the impact of dietary restrictions on adverse clinical outcomes. Accumulating evidence indicates that a diet that incorporates potassium-rich foods has multiple health benefits, which may also be attributable to the other vitamin, mineral, and fiber content of potassium-rich foods. These benefits include blood pressure reductions and reduced risks for cardiovascular disease and stroke. High-potassium foods may also prevent CKD progression and reduce mortality risk in patients with CKD. Adjunctive treatment with the newer potassium-binding agents, patiromer and sodium zirconium cyclosilicate, may allow for optimal renin-angiotensin-aldosterone system inhibitor therapy in patients with CKD and hyperkalemia, potentially making it possible for patients with CKD and hyperkalemia to liberalize their diet. This may allow them the health benefits of a high-potassium diet without the increased risk for hyperkalemia, although further studies are needed.",
+
+            "text_04": "As COVID-19 continues to spread rapidly worldwide and variants continue to emerge, the development and deployment of safe and effective vaccines are urgently needed. Here, we developed an mRNA vaccine based on the trimeric receptor-binding domain (RBD) of the SARS-CoV-2 spike (S) protein fused to ferritin-formed nanoparticles (TF-RBD). Compared to the trimeric form of the RBD mRNA vaccine (T-RBD), TF-RBD delivered intramuscularly elicited robust and durable humoral immunity as well as a Th1-biased cellular response. After further challenge with live SARS-CoV-2, immunization with a two-shot low-dose regimen of TF-RBD provided adequate protection in hACE2-transduced mice. In addition, the mRNA template of TF-RBD was easily and quickly engineered into a variant vaccine to address SARS-CoV-2 mutations. The TF-RBD multivalent vaccine produced broad-spectrum neutralizing antibodies against Alpha (B.1.1.7) and Beta (B.1.351) variants. This mRNA vaccine based on the encoded self-assembled nanoparticle-based trimer RBD provides a reference for the design of mRNA vaccines targeting SARS-CoV-2.",
+
+            "text_05": "The comparative absorption of zinc after oral administration of three different complexed forms was studied in 15 healthy human volunteers in a double-blind four-period crossover trial. The individuals were randomly divided into four groups. Each group rotated for four week periods through a random sequence of oral supplementation including: zinc picolinate, zinc citrate, and zinc gluconate (equivalent to 50 mg elemental zinc per day) and placebo. Zinc was measured in hair, urine, erythrocyte and serum before and after each period. At the end of four weeks hair, urine and erythrocyte zinc levels rose significantly (p less than 0.005, p less than 0.001, and p less than 0.001) during zinc picolinate administration. There was no significant change in any of these parameters from zinc gluconate, zinc citrate or placebo administration. There was a small, insignificant rise in serum zinc during zinc picolinate, zinc citrate and placebo supplementation. The results of this study suggest that zinc absorption in humans can be improved by complexing zinc with picolinic acid."
+        };
+
+        // --- QUIZ DATA ---
+        const studyQuizzes = {
+            "text_01": [
+                {
+                    "id": "t1_q1",
+                    "question": "Why is extra caution needed when combining duloxetine with certain other medications?",
+                    "options": [
+                        "Because duloxetine makes other drugs work faster than usual",
+                        "Because duloxetine can slow the breakdown of certain drugs, causing their levels to rise",
+                        "Because duloxetine causes immediate allergic reactions when taken with most medications",
+                        "Because duloxetine blocks all drug absorption in the stomach"
+                    ]
+                }, // Correct answer: B
+                {
+                    "id": "t1_q2",
+                    "question": "Which of the following best summarizes why duloxetine is widely used or approved?",
+                    "options": [
+                        "It treats multiple conditions and works about as well as other antidepressants",
+                        "It has no side effects and works better than all antidepressants",
+                        "It is only approved for major depression but is less effective than most alternatives",
+                        "It treats only pain conditions and is not used for depression"
+                    ]
+                } // Correct answer: A
+            ],
+            "text_02": [
+                {
+                    "id": "t2_q1",
+                    "question": "According to the passage, what might the increasing prevalence of asthma suggest?",
+                    "options": [
+                        "That asthma directly causes autoimmune diseases",
+                        "That more people are at risk for developing other chronic non-communicable autoimmune diseases",
+                        "That autoimmune diseases are decreasing in the population",
+                        "That asthma is unrelated to broader population health trends"
+                    ]
+                }, // Correct answer: B
+                {
+                    "id": "t2_q2",
+                    "question": "Which statement best summarizes the overall message of the passage?",
+                    "options": [
+                        "Asthma is caused solely by genetics and cannot be prevented",
+                        "Asthma rates are decreasing, and single-factor interventions are usually enough for prevention",
+                        "Asthma develops from complex gene-environment interactions, and effective prevention requires multifaceted approaches",
+                        "Asthma is fully understood, and personalized prevention strategies are already widely available"
+                    ]
+                } // Correct answer: C
+            ],
+            "text_03": [
+                {
+                    "id": "t3_q1",
+                    "question": "Why does potassium intake create a challenge for patients with advanced chronic kidney disease (CKD)?",
+                    "options": [
+                        "Many potassium-rich foods have important health benefits, but their kidneys cannot remove excess potassium effectively.",
+                        "Potassium-rich foods are more expensive than low-potassium foods",
+                        "CKD patients need extremely high potassium intake for their heart to function",
+                        "Potassium has no effect on CKD, so it is not medically relevant"
+                    ]
+                },  // Correct answer: A
+                {
+                    "id": "t3_q2",
+                    "question": "What is a key practical takeaway for patients with CKD who struggle to follow a low-potassium diet?",
+                    "options": [
+                        "They must permanently avoid all high-potassium foods to stay healthy",
+                        "New potassium-binding medications may allow some patients to safely include more potassium-rich foods in their diet, but medical supervision is still needed",
+                        "High-potassium foods are harmless for all CKD patients",
+                        "Diet has no meaningful effect on potassium levels in CKD patients"
+                    ]
+                } // Correct answer: B
+            ],
+            "text_04": [
+                {
+                    "id": "t4_q1",
+                    "question": "According to the passage, what was one key advantage of the TF-RBD mRNA vaccine compared to the trimeric RBD mRNA vaccine (T-RBD)?",
+                    "options": [
+                        "TF-RBD produced weaker immune responses to reduce side effects",
+                        "TF-RBD elicited stronger and longer-lasting immune responses, including a Th1-biased cellular response",
+                        "TF-RBD required more doses to achieve protection",
+                        "TF-RBD could only protect against the original SARS-CoV-2 strain"
+                    ]
+                }, // Correct answer: B
+                {
+                    "id": "t4_q2",
+                    "question": "What is a practical implication of developing the TF-RBD mRNA vaccine platform?",
+                    "options": [
+                        "It shows that vaccines no longer need to be updated when new variants appear",
+                        "It demonstrates that mRNA vaccine designs can be quickly adapted to target new SARS-CoV-2 variants",
+                        "It replaces all existing COVID-19 vaccines currently in use",
+                        "It proves that nanoparticle-based vaccines cannot induce protective immunity"
+                    ]
+                } // Correct answer: B
+            ],
+            "text_05": [
+                {
+                    "id": "t5_q1",
+                    "question": "According to the study results, which form of zinc led to a significant increase in zinc levels in hair, urine, and erythrocytes?",
+                    "options": [
+                        "Zinc gluconate",
+                        "Zinc citrate",
+                        "Zinc picolinate",
+                        "Placebo"
+                    ]
+                }, // Correct answer: C
+                {
+                    "id": "t5_q2",
+                    "question": "What is the main practical implication of this study for someone choosing a zinc supplement?",
+                    "options": [
+                        "All forms of zinc supplements increase zinc levels equally",
+                        "Zinc picolinate may be absorbed better by the body compared to zinc citrate or zinc gluconate",
+                        "Zinc supplements should never be taken unless prescribed",
+                        "Zinc citrate is the only form that significantly increases serum zinc"
+                    ]
+                } // Correct answer: B
+            ]
+        };
+
+        // --- STATE ---
+        let sentences = [];
+        let currentIndex = 0;
+        let annotations = {}; // Map: index -> { rating, issues[], vocabWord }
+
+        // --- DOM ---
+        const textPanel = document.getElementById('text-panel');
+        const spotlightControls = document.getElementById('spotlight-controls');
+        const finalFeedback = document.getElementById('final-feedback');
+        const progressIndicator = document.getElementById('progress-indicator');
+        const totalSentencesSpan = document.getElementById('total-sentences');
+        const quizContainer = document.getElementById('quiz-container');
+        
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        const likertBtns = document.querySelectorAll('.likert-btn');
+        const diagnosisSection = document.getElementById('diagnosis-section');
+        const chkVocab = document.getElementById('chk-vocab');
+        const vocabInputContainer = document.getElementById('vocab-input-container');
+        const vocabInput = document.getElementById('vocab-input');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Modal Logic
+            document.getElementById('btn-close-modal').addEventListener('click', () => {
+                document.getElementById('instruction-modal').style.display = 'none';
+            });
+
+            // Improvement Checkbox Logic
+            const checks = document.querySelectorAll('input[name="improvement"]');
+            const max = 3;
+            checks.forEach(check => {
+                check.addEventListener('change', function() {
+                    const checkedCount = document.querySelectorAll('input[name="improvement"]:checked').length;
+                    if (checkedCount > max) {
+                        this.checked = false;
+                        alert("You can only select 3 priorities.");
+                    }
+                });
+            });
+
+            // Init Text
+            const urlParams = new URLSearchParams(window.location.search);
+            const stimulusID = urlParams.get('stimulus') || "text_01";
+            const rawText = studyTexts[stimulusID] || studyTexts["text_01"];
+
+            // Split into sentences (simple regex)
+            const rawSentences = rawText.match(/[^.!?]+[.!?]+(?=\s|$)|[^.!?]+$/g) || [rawText];
+            sentences = rawSentences.map(s => s.trim());
+            totalSentencesSpan.textContent = sentences.length;
+
+            // Render Sentences
+            textPanel.innerHTML = sentences.map((s, i) => 
+                `<span class="sentence" id="sent-${i}" onclick="jumpTo(${i})">${s} </span>`
+            ).join('');
+
+            updateSpotlight();
+
+            // --- EVENT LISTENERS ---
+
+            // Likert Selection
+            likertBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const val = parseInt(btn.dataset.val);
+                    setRating(val);
+                });
+            });
+
+            // Vocab Checkbox
+            chkVocab.addEventListener('change', (e) => {
+                vocabInputContainer.style.display = e.target.checked ? 'block' : 'none';
+                if(e.target.checked) vocabInput.focus();
+            });
+
+            // Navigation
+            btnPrev.addEventListener('click', () => {
+                saveCurrentData();
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSpotlight();
+                }
+            });
+
+            btnNext.addEventListener('click', () => {
+                saveCurrentData();
+                currentIndex++;
+                
+                if (currentIndex < sentences.length) {
+                    updateSpotlight();
+                } else {
+                    enterQuizMode();
+                }
+            });
+        });
+
+        // --- CORE FUNCTIONS ---
+
+        // Jump to sentence (onclick)
+        window.jumpTo = (index) => {
+            // Only allow jumping if we are still in annotation mode
+            if(finalFeedback.classList.contains('active')) return; 
+            
+            saveCurrentData();
+            currentIndex = index;
+            updateSpotlight();
+        }
+
+        function updateSpotlight() {
+            // 1. Visual Highlight
+            sentences.forEach((_, i) => {
+                const el = document.getElementById(`sent-${i}`);
+                if (i === currentIndex) {
+                    el.className = 'sentence active';
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    el.className = 'sentence dimmed';
+                }
+            });
+
+            // 2. UI State
+            progressIndicator.textContent = currentIndex + 1;
+            btnPrev.disabled = (currentIndex === 0);
+            btnNext.textContent = (currentIndex === sentences.length - 1) ? "Finish & Quiz" : "Next";
+            
+            // 3. Load Existing Data (if any)
+            resetForm();
+            if (annotations[currentIndex]) {
+                const data = annotations[currentIndex];
+                setRating(data.rating, false); // Load rating without resetting
+                
+                // Load checkboxes
+                if (data.issues) {
+                    document.querySelectorAll('input[name="issue"]').forEach(chk => {
+                        if (data.issues.includes(chk.value)) chk.checked = true;
+                    });
+                    if (data.issues.includes('Vocabulary')) {
+                        vocabInputContainer.style.display = 'block';
+                        vocabInput.value = data.vocabWord || '';
+                    }
+                }
+                btnNext.classList.add('active'); // Allow next since data exists
+            }
+        }
+
+        function setRating(val, clearDiagnosis = true) {
+            // Highlight Button
+            likertBtns.forEach(b => {
+                b.classList.remove('selected');
+                if(parseInt(b.dataset.val) === val) b.classList.add('selected');
+            });
+
+            // Show/Hide Diagnosis
+            if (val >= 3) {
+                diagnosisSection.style.display = 'block';
+            } else {
+                diagnosisSection.style.display = 'none';
+                if(clearDiagnosis) {
+                    document.querySelectorAll('input[name="issue"]').forEach(c => c.checked = false);
+                    vocabInputContainer.style.display = 'none';
+                }
+            }
+            btnNext.classList.add('active');
+        }
+
+        function saveCurrentData() {
+            const selectedBtn = document.querySelector('.likert-btn.selected');
+            if (!selectedBtn) return; // Nothing to save
+
+            const issues = [];
+            document.querySelectorAll('input[name="issue"]:checked').forEach(c => issues.push(c.value));
+            
+            annotations[currentIndex] = {
+                text: sentences[currentIndex],
+                rating: parseInt(selectedBtn.dataset.val),
+                issues: issues,
+                vocabWord: (issues.includes('Vocabulary')) ? vocabInput.value : ''
+            };
+        }
+
+        function resetForm() {
+            likertBtns.forEach(b => b.classList.remove('selected'));
+            diagnosisSection.style.display = 'none';
+            document.querySelectorAll('input[name="issue"]').forEach(c => c.checked = false);
+            vocabInputContainer.style.display = 'none';
+            vocabInput.value = '';
+            btnNext.classList.remove('active');
+        }
+
+        // --- QUIZ MODE ---
+        function enterQuizMode() {
+            spotlightControls.style.display = 'none';
+            finalFeedback.classList.add('active');
+
+            // OPEN BOOK: Remove dimming from all sentences
+            document.querySelectorAll('.sentence').forEach(el => {
+                el.className = 'sentence'; // Removes .dimmed and .active
+                el.style.cursor = 'default';
+            });
+
+            // Render Quiz using the User Provided Function
+            renderQuiz();
+            
+            // Scroll sidebar to top
+            document.querySelector('.sidebar-right').scrollTop = 0;
+        }
+
+        // 4. QUIZ GENERATION (User Provided Replacement)
+        const renderQuiz = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const stimulusID = urlParams.get('stimulus') || "text_01";
+            
+            quizContainer.innerHTML = '';
+            const questions = studyQuizzes[stimulusID] || [];
+            
+            if (questions.length === 0) {
+                quizContainer.innerHTML = '<p>No questions for this text.</p>';
+                return;
+            }
+
+            questions.forEach((q, index) => {
+                const block = document.createElement('div');
+                block.className = 'quiz-block';
+                
+                let html = `<label class="quiz-question-text">Q${index + 1}. ${q.question}</label>`;
+                
+                q.options.forEach(opt => {
+                    html += `
+                    <div class="form-option">
+                        <input type="radio" name="${q.id}_ans" value="${opt}">
+                        <label>${opt}</label>
+                    </div>`;
+                });
+
+                html += `
+                <div class="quiz-meta-q">
+                    <label style="font-weight:bold; font-size:0.9em;">How difficult was this question to answer?</label>
+                    <div style="display:flex; justify-content:space-between; font-size: 0.8em; margin-top:5px;">
+                        <span>Easy</span>
+                        <span>Hard</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between;">
+                        <input type="radio" name="${q.id}_diff" value="1">
+                        <input type="radio" name="${q.id}_diff" value="2">
+                        <input type="radio" name="${q.id}_diff" value="3">
+                        <input type="radio" name="${q.id}_diff" value="4">
+                        <input type="radio" name="${q.id}_diff" value="5">
+                    </div>
+                </div>`;
+
+                block.innerHTML = html;
+                quizContainer.appendChild(block);
+            });
+        };
+
+        // --- SUBMIT ---
+        document.getElementById('btn-submit-final').addEventListener('click', () => {
+            const btn = document.getElementById('btn-submit-final');
+            btn.textContent = "Submitting...";
+            btn.disabled = true;
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const stimulusID = urlParams.get('stimulus') || "text_01";
+            
+            const finalForm = document.getElementById('final-form');
+            const formData = new FormData(finalForm);
+            
+            // Gather Improvements Checkboxes
+            const improvements = [];
+            document.querySelectorAll('input[name="improvement"]:checked').forEach(c => improvements.push(c.value));
+
+            // Gather Quiz Answers (Updated for new _ans / _diff logic)
+            const quizResults = (studyQuizzes[stimulusID] || []).map(q => ({
+                question_id: q.id,
+                answer: formData.get(`${q.id}_ans`) || "N/A",
+                difficulty_rating: formData.get(`${q.id}_diff`) || "N/A"
+            }));
+
+            // Format Annotations for Google Sheets (Map to Array)
+            const annotationArray = Object.keys(annotations).sort().map(k => annotations[k]);
+
+            const payload = {
+                worker_id: urlParams.get('PROLIFIC_PID') || "TEST_USER",
+                study_id: urlParams.get('STUDY_ID') || "TEST_STUDY",       // NEW: Matches Col C in AppScript
+                session_id: urlParams.get('SESSION_ID') || "TEST_SESSION", // NEW: Matches Col D in AppScript
+                stimulus_id: stimulusID,
+                familiarity: formData.get('familiarity') || "N/A",
+                overall_difficulty: formData.get('difficulty') || "N/A",
+                confidence: formData.get('confidence') || "N/A",
+                improvements: improvements.join(', '),
+                annotations: annotationArray,
+                quiz_results: quizResults
+            };
+
+            fetch(googleScriptURL, {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify(payload)
+            }).then(() => {
+                const cc = urlParams.get('cc') || "TEST_CODE";
+                window.location.href = "https://app.prolific.com/submissions/complete?cc=" + cc;
+            }).catch(err => {
+                alert("Error submitting. See console.");
+                console.error(err);
+                btn.disabled = false;
+            });
+        });
+
+    </script>
+</body>
+</html>
