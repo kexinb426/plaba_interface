@@ -41,6 +41,68 @@
             font-size: 1.1rem; width: 100%; margin-top: 10px; cursor: pointer; border:none; border-radius:4px;
         }
 
+        /* --- MULTI-PAGE MODAL UPDATES --- */
+        .instr-step {
+            display: none; /* Hide all steps by default */
+            animation: fadeIn 0.3s;
+        }
+        .instr-step.active {
+            display: block; /* Show only the active step */
+        }
+
+        .modal-nav-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-modal-nav {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .btn-modal-back {
+            background: #f1f3f5;
+            color: #555;
+        }
+        .btn-modal-next {
+            background: #007bff;
+            color: white;
+        }
+        .btn-modal-next:hover { background: #0056b3; }
+
+        /* Simple fade animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Progress Dots */
+        .step-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .step-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .step-dot.active {
+            background-color: #007bff;
+            transform: scale(1.2);
+        }
+
         /* Layout */
         .top-bar {
             background: #fff; padding: 10px 20px;
@@ -76,6 +138,23 @@
             gap: 15px;
             overflow-y: auto;
             padding-right: 5px;
+        }
+
+        /* Button */
+        .btn-help {
+            background: transparent;
+            border: 1px solid #ccc;
+            color: #555;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .btn-help:hover {
+            background: #f1f1f1;
+            border-color: #bbb;
+            color: #333;
         }
 
         /* --- SPOTLIGHT STYLES (NEW) --- */
@@ -160,25 +239,63 @@
     <!-- Instructions Modal -->
     <div id="instruction-modal" class="modal-overlay">
         <div class="modal-content">
-            <h2>Help Us Improve Medical Information</h2>
-            <p><strong>Task:</strong> Imagine you are reading this text to find important medical information for yourself or a family member. </p>
-            <p>We will show you the text <strong>one sentence at a time</strong>.</p>
-            <ul>
-                <li>Rate how difficult each sentence is to understand.</li>
-                <li>If it's difficult, tell us why (Vocabulary, Grammar, Logic, etc.).</li>
-            </ul>
-            <div style="background-color: #e8f6f3; padding: 10px; border-left: 4px solid #1abc9c; margin: 15px 0; font-size: 0.9em;">
-                <strong><span style="font-size:1.2em">📝</span> Note:</strong> 
-                There will be <strong>2 brief questions</strong> about the text content at the end. 
-                Please read carefully enough to answer them!
+            
+            <div class="instr-step active" data-step="0">
+                <h2>👋 Welcome to the Medical Clarity Study</h2>
+                <p>Thank you for participating! In this task, you will help us understand what makes medical texts difficult for regular people to read.</p>
+                <p><strong>Goal:</strong> Imagine you are reading this text to find important medical information for yourself or a family member.</p>
+                <div class="example-box">
+                    <p style="margin:0">We need your honest opinion on exactly which parts are confusing.</p>
+                </div>
             </div>
-            <button class="btn-start" id="btn-close-modal">I understand, Start Task</button>
+
+            <div class="instr-step" data-step="1">
+                <h2>🔍 How to Annotate</h2>
+                <p>We will show you the text <strong>one sentence at a time</strong>.</p>
+                <ul>
+                    <li><strong>Rate Difficulty:</strong> For each sentence, rate how difficult it felt to understand using a scale from <strong>1 (very easy)</strong> to <strong>5 (very hard)</strong>.</li>
+                    <li><strong>Diagnose Issues:</strong> If you rate it <strong>3 or higher</strong>, tell us <em>why</em> (e.g., tough vocabulary, confusing grammar, missing background knowledge).</li>
+                </ul>
+
+                <div style="background-color:#f7f9fc; padding:10px; border-left:4px solid #3498db; margin:15px 0; font-size:0.9em;">
+                    <p style="margin-top:0;"><strong>Difficulty scale (1–5):</strong></p>
+                    <ul style="margin:0 0 0 18px; padding:0;">
+                        <li><strong>1 – Very easy:</strong> You understood it immediately on first read. No effort needed.</li>
+                        <li><strong>2 – Easy:</strong> Mostly clear. Maybe one small tricky part, but you still understood it without much effort.</li>
+                        <li><strong>3 – Moderate:</strong> You had to slow down or reread once. Some parts were unclear, but you got the general idea.</li>
+                        <li><strong>4 – Hard:</strong> You reread it and still felt unsure. Several words or ideas were confusing, and you’re not confident you understood it.</li>
+                        <li><strong>5 – Very hard:</strong> You could not really understand what the sentence was saying, even after rereading.</li>
+                    </ul>
+                </div>
+
+                <p>You can use the <strong>Previous</strong> and <strong>Next</strong> buttons to navigate through the sentences.</p>
+            </div>
+
+            <div class="instr-step" data-step="2">
+                <h2>📝 Final Check</h2>
+                <p>After you finish rating the sentences, there will be a short <strong>Comprehension Quiz</strong>.</p>
+                <div style="background-color: #e8f6f3; padding: 10px; border-left: 4px solid #1abc9c; margin: 15px 0; font-size: 0.9em;">
+                    <strong>Note:</strong> Please read the text carefully enough to answer 2 brief questions about the content at the end.
+                </div>
+                <p>Click "Start Task" when you are ready to begin.</p>
+            </div>
+
+            <div class="step-indicators" id="step-indicators"></div>
+
+            <div class="modal-nav-bar">
+                <button class="btn-modal-nav btn-modal-back" id="modal-btn-back" style="visibility: hidden;">Back</button>
+                <div style="flex-grow:1"></div>
+                <button class="btn-modal-nav btn-modal-next" id="modal-btn-next">Next</button>
+            </div>
+
         </div>
     </div>
 
+
     <!-- Top Header -->
-    <div class="top-bar">
+    <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center;">
         <h2 style="margin:0; font-size: 1.2rem;">🏥 Medical Clarity Study</h2>
+        <button id="btn-show-help" class="btn-help">? Instructions</button>
     </div>
     
     <!-- Main Layout -->
@@ -333,7 +450,8 @@
         const googleScriptURL = "https://script.google.com/macros/s/AKfycbwefYLFqc-MUxps38IuE6pQAxOIQtg3x-ytywkMhfbISoQLBwmQRBbMPCKZSFWd7YhrOQ/exec";
 
         // --- DATA ---
-        const studyTexts = {
+        const studyTexts = 
+        {
             "text_01": "This chapter covers antidepressants that fall into the class of serotonin (5-HT) and norepinephrine (NE) reuptake inhibitors. That is, they bind to the 5-HT and NE transporters with varying levels of potency and binding affinity ratios. Duloxetine is a more potent 5-HT and NE reuptake inhibitor with a more balanced profile of binding at about 10:1 for 5HT and NE transporter binding. It is also a moderate inhibitor of CYP2D6, so that modest dose reductions and careful monitoring will be needed when prescribing duloxetine in combination with drugs that are preferentially metabolized by CYP2D6. The most common side effects identified in clinical trials are nausea, dry mouth, dizziness, constipation, insomnia, asthenia, and hypertension, consistent with its mechanisms of action. Clinical trials to date have demonstrated rates of response and remission in patients with major depression that are comparable to other marketed antidepressants reviewed in this book. In addition to approval for MDD, duloxetine is approved for diabetic peripheral neuropathic pain, fibromyalgia, and musculoskeletal pain. All medications in the class can cause serotonin syndrome when combined with MAOIs.",
             
             "text_02": "Asthma is the most common chronic disease of childhood and, in the latter part of the 20th century, reached epidemic proportions. Asthma is generally believed to result from gene-environment interactions. There is consensus that a 'window of opportunity' exists during pregnancy and early in life when environmental factors may influence its development. We review multiple environmental, biologic and sociologic factors that may be important in the development of asthma. Meta-analyses of studies have demonstrated that multifaceted interventions are required in order to develop asthma prevention. Multifaceted allergen reduction studies have shown clinical benefits. Asthma represents a dysfunctional interaction with our genes and the environment to which they are exposed, especially in fetal and early infant life. The increasing prevalence of asthma also may be an indication of increased population risk for the development of other chronic non-communicable autoimmune diseases. This review will focus on the factors which may be important in the primary prevention of asthma. Better understanding of the complex gene-environment interactions involved in the development of asthma will provide insight into personalized interventions for asthma prevention.",
@@ -487,9 +605,76 @@
         const otherInput = document.getElementById('other-input');
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Modal Logic
-            document.getElementById('btn-close-modal').addEventListener('click', () => {
-                document.getElementById('instruction-modal').style.display = 'none';
+            // --- NEW MULTI-PAGE MODAL LOGIC (Start) ---
+            let currentStep = 0;
+            const steps = document.querySelectorAll('.instr-step');
+            const modalBack = document.getElementById('modal-btn-back');
+            const modalNext = document.getElementById('modal-btn-next');
+            const modalOverlay = document.getElementById('instruction-modal');
+            const dotsContainer = document.getElementById('step-indicators');
+
+            // 1. Initialize Dots (Create them dynamically based on HTML)
+            steps.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.classList.add('step-dot');
+                if (i === 0) dot.classList.add('active');
+                dotsContainer.appendChild(dot);
+            });
+            const dots = document.querySelectorAll('.step-dot');
+
+            // 2. Function to Update UI
+            function updateModalUI() {
+                // Show/Hide Steps
+                steps.forEach((step, index) => {
+                    step.classList.toggle('active', index === currentStep);
+                });
+
+                // Update Dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentStep);
+                });
+
+                // Handle Back Button Visibility
+                modalBack.style.visibility = (currentStep === 0) ? 'hidden' : 'visible';
+
+                // Handle Next/Start Button Text & Color
+                if (currentStep === steps.length - 1) {
+                    modalNext.textContent = "Start Task";
+                    modalNext.style.backgroundColor = "#28a745"; // Green
+                } else {
+                    modalNext.textContent = "Next";
+                    modalNext.style.backgroundColor = "#007bff"; // Blue
+                }
+            }
+
+            // 3. Button Listeners
+            modalNext.addEventListener('click', () => {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateModalUI();
+                } else {
+                    modalOverlay.style.display = 'none';
+                }
+            });
+
+            modalBack.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateModalUI();
+                }
+            });
+            // --- NEW MULTI-PAGE MODAL LOGIC (End) ---
+
+            // --- RE-OPEN INSTRUCTIONS BUTTON ---
+            document.getElementById('btn-show-help').addEventListener('click', () => {
+                // 1. Reset to the first page
+                currentStep = 0;
+                
+                // 2. Refresh the dots and buttons
+                updateModalUI();
+                
+                // 3. Show the modal
+                modalOverlay.style.display = 'flex';
             });
 
             // Improvement Checkbox Logic

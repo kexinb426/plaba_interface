@@ -611,6 +611,10 @@
             const goBackButton = document.getElementById('btn-go-back');
 
             let activeSelectedText = ""; 
+            // NEW: Store precise location
+            let activeStartIndex = -1;
+            let activeEndIndex = -1;
+            
             let activeSentenceSpan = null; 
             let activeHighlightSpan = null; 
 
@@ -653,6 +657,28 @@
                     }
                 });
             };
+            
+            // --- NEW HELPER: Calculates offsets ignoring 'S' buttons ---
+            const getCleanSelectionOffsets = (container, range) => {
+                // 1. Measure text coming BEFORE the selection
+                const preSelectionRange = range.cloneRange();
+                preSelectionRange.selectNodeContents(container);
+                preSelectionRange.setEnd(range.startContainer, range.startOffset);
+
+                const div = document.createElement('div');
+                div.appendChild(preSelectionRange.cloneContents());
+                // Remove buttons from the measurement
+                div.querySelectorAll('.select-sentence-btn').forEach(el => el.remove());
+                const start = div.textContent.length;
+                
+                // 2. Measure the selected text itself
+                const contentDiv = document.createElement('div');
+                contentDiv.appendChild(range.cloneContents());
+                contentDiv.querySelectorAll('.select-sentence-btn').forEach(el => el.remove());
+                const cleanText = contentDiv.textContent;
+                
+                return { start, end: start + cleanText.length, text: cleanText };
+            };
 
             // 2. SELECTION LOGIC
             const showSelectionForm = (selectedText) => {
@@ -666,22 +692,37 @@
             };
 
             textPanel.addEventListener('mouseup', () => {
+                // 1. Safety checks
                 if (finalFeedbackPanel.classList.contains('is-active')) return;
                 
                 const selection = document.getSelection();
-                const selectedText = selection.toString().trim();
-                
-                if (selectedText.length > 0) {
-                    if (activeSentenceSpan) {
-                        activeSentenceSpan.classList.remove('is-selected');
-                        activeSentenceSpan = null;
-                    }
-                    if (activeHighlightSpan) {
-                        removeHighlight();
-                    }
 
-                    if (selection.rangeCount > 0) {
-                        const range = selection.getRangeAt(0);
+                // Ensure user actually selected a range inside the panel
+                if (selection.rangeCount > 0 && !selection.isCollapsed && textPanel.contains(selection.anchorNode)) {
+                    
+                    const range = selection.getRangeAt(0);
+
+                    // 2. NEW: Calculate the clean offsets and text
+                    // This ignores the "S" buttons so indices are accurate
+                    const result = getCleanSelectionOffsets(textPanel, range);
+                    const selectedText = result.text.trim();
+
+                    if (selectedText.length > 0) {
+                        // 3. NEW: Save these numbers to your global variables 
+                        // (Make sure you defined activeStartIndex/activeEndIndex at the top of your script!)
+                        activeStartIndex = result.start;
+                        activeEndIndex = result.end;
+                        activeSelectedText = selectedText;
+
+                        // --- Existing Visual Logic Starts Here ---
+                        if (activeSentenceSpan) {
+                            activeSentenceSpan.classList.remove('is-selected');
+                            activeSentenceSpan = null;
+                        }
+                        if (activeHighlightSpan) {
+                            removeHighlight();
+                        }
+
                         try {
                             const span = document.createElement('span');
                             span.className = 'temp-highlight';
@@ -689,10 +730,12 @@
                             activeHighlightSpan = span;
                             selection.removeAllRanges();
                         } catch (e) {
-                            console.log("Selection crosses boundaries, skipping visual highlight.");
+                            console.log("Selection crosses boundaries, visual highlight skipped.");
                         }
+                        // --- Existing Visual Logic Ends Here ---
+
+                        showSelectionForm(selectedText);
                     }
-                    showSelectionForm(selectedText);
                 }
             });
             
@@ -735,6 +778,8 @@
 
                 const annotation = {
                     text: activeSelectedText,
+                    start_index: activeStartIndex, // NEW field
+                    end_index: activeEndIndex,     // NEW field
                     reasons: description
                 };
                 savedAnnotations.push(annotation);
