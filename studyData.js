@@ -151,12 +151,12 @@ const studyQuizzes = {
         {
             "sentence_id": 8,
             "original_sentence": "All medications in the class can cause serotonin syndrome when combined with MAOIs.",
-            "question": "What risk appears when these medicines are taken together with a certain older drug type?",
+            "question": "What risk appears when these medicines are taken together with MAOIs, another drug type?",
             "options": {
                 "A": "The combination can trigger a serious reaction involving high serotonin activity.",
-                "B": "The danger only comes from using two older drugs together.",
+                "B": "None of the other options.",
                 "C": "The reaction is mild, so low amounts are safe.",
-                "D": "People taking these medicines will show warning signs even without the older drug."
+                "D": "People taking these medicines will show warning signs even without the other drug."
             },
             "correct_answer": "A"
         }
