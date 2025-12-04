@@ -25,20 +25,27 @@
             display: flex; justify-content: center; align-items: center; z-index: 1000;
         }
         .modal-content {
-            background: white; padding: 16px; border-radius: 8px;
-            max-width: 900px; width: 80%;
-            max-height: 120vh;
+            background: white; padding: 20px; border-radius: 8px;
+            max-width: 850px; width: 85%;
+            max-height: 80vh;
             overflow-y: auto;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            font-size: 0.95rem;
-            line-height: 1.4;
+            font-size: 1.1rem;
+            line-height: 1.5;
         }
-        .modal-content h2 { margin: 6px 0 10px; color: #007bff; font-size: 1.2rem; }
-        .modal-content h3 { margin: 8px 0 6px; font-size: 1.05rem; }
-        .modal-content p { margin: 4px 0; }
+        .modal-content h2 { margin: 6px 0 10px; color: #007bff; font-size: 1.5rem; }
+        .modal-content h3 { margin: 8px 0 6px; font-size: 1.2rem; }
+        .modal-content p { margin: 10px 0; }
         .modal-content li { margin: 4px 0; }
-        .modal-content ul { margin-top: 2px; margin-bottom: 6px; }
-        .modal-content ol { margin-top: 4px; margin-bottom: 8px; padding-left: 18px; }
+        .modal-content ul { margin-top: 2px; margin-bottom: 8px; }
+        .modal-content ol { margin-top: 4px; margin-bottom: 10px; padding-left: 18px; }
+        .instruction-block {
+            margin: 12px 0;
+            padding: 10px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background: #f9fafb;
+        }
         .example-box {
             background: #f1f3f5; padding: 15px; border-radius: 5px;
             margin: 15px 0; border-left: 4px solid #007bff;
@@ -255,54 +262,59 @@
         <div class="modal-content">
             <div class="instr-step active">
                 <h2>👋 Thank you for participating!</h2>
-                <p>In this study, you will read a medical abstract about <strong><span id="instruction-topic">{topic}</span></strong>.</p>
-                <p><strong>Please imagine you're reading this text to find important medical information for yourself or a family member.</strong></p>
-                <p>Your responses will help us understand which parts of medical writing are easy or difficult for everyday readers.</p>
+                <p>In this study, you will read a scientific abstract about <span id="instruction-topic">{topic}</span>.</p>
 
-                <h3>What you will do</h3>
+                <div class="instruction-block">
+                    <h3 style="margin-top:0;">What you will do</h3>
+                    <p>Imagine you're reading this text to find important medical information for yourself or a family member.</p>
+                    <ol>
+                        <li>
+                            <strong>Rate each sentence</strong><br>
+                            <ul style="margin-top:4px; margin-bottom:4px;">
+                                <li><strong>Reading Effort</strong> — how hard the sentence was to read.</li>
+                                <li><strong>Understanding</strong> — how well you understood what the sentence means.</li>
+                                (If anything feels difficult to understand, you can optionally leave a brief comment.)
+                            </ul>
+                        </li>
 
-                <ol>
-                    <li>
-                        <strong>Rate each sentence</strong><br>
-                        As you read the abstract, each sentence will be <strong>highlighted in turn</strong>.
-                        For each highlighted sentence, you will rate:
-                        <ul style="margin-top:4px; margin-bottom:4px;">
-                            <li><strong>Reading Effort</strong> — how hard the sentence was to read.</li>
-                            <li><strong>Understanding Confidence</strong> — how sure you are that you understood it.</li>
-                        </ul>
-                        If anything feels difficult to understand, you can optionally leave a brief comment.
-                    </li>
+                        <li>
+                            <strong>Give your overall impressions</strong><br>
+                            After rating all sentences, you will answer a few questions about the text as a whole.
+                        </li>
 
-                    <li>
-                        <strong>Give your overall impressions</strong><br>
-                        After rating all sentences, you will answer a few questions about the text as a whole.
-                    </li>
+                        <li>
+                            <strong>Complete a short comprehension quiz</strong><br>
+                            Finally, you will answer <strong>several questions</strong> to check your understanding of the content.
+                        </li>
+                    </ol>
+                </div>
+                <p><strong>Your responses will help us understand which parts of medical writing are easy or difficult for everyday readers, so we can help improve communication for patients and families.</strong></p>
+            </div>
 
-                    <li>
-                        <strong>Complete a short comprehension quiz</strong><br>
-                        Finally, you will answer <strong>several questions</strong> to check your understanding of the content.
-                    </li>
-                </ol>
+            <div class="instr-step">
+                <h3>How to use the rating scales</h3>
 
                 <div style="background-color:#f7f9fc; padding:12px; border-left:4px solid #3498db; margin:18px 0; font-size:0.9em;">
-                    <p style="margin:0 0 6px 0;"><strong>How to use the rating scales</strong></p>
-
-                    <p style="margin:6px 0 2px 0;"><strong>Reading Effort (1–5)</strong></p>
+                    <p style="margin:0 0 6px 0;"><strong>Reading Effort (1–5)</strong></p>
                     <ul style="margin:0 0 8px 18px; padding:0;">
                         <li><strong>1 – No effort:</strong> Very easy to read; no pauses or rereading.</li>
-                        <li><strong>5 – Very high effort:</strong> Very hard to read; you needed to slow down or reread multiple times.</li>
+                        <li><strong>5 – Very high effort:</strong> Very hard to read; you needed to slow down constantly or reread multiple times.</li>
                     </ul>
 
-                    <p style="margin:8px 0 2px 0;"><strong>Understanding Confidence (1–5)</strong></p>
+                    <p style="margin:8px 0 2px 0;"><strong>Understanding (1–5)</strong></p>
                     <ul style="margin:0 0 0 18px; padding:0;">
-                        <li><strong>1 – Not confident:</strong> You understood almost none of it. You could not explain what it means.</li>
-                        <li><strong>5 – Very confident:</strong> You fully understand the meaning and could answer a question about it.</li>
+                        <li><strong>1 – Not at all:</strong> You understood almost none of it and could not explain what it means.</li>
+                        <li><strong>5 – Understood it completely:</strong> You fully understood the meaning and could explain it in your own words.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="modal-nav-bar" style="margin-top: 16px; justify-content: flex-end;">
-                <button class="btn-modal-nav btn-modal-next" id="modal-btn-next">Start Task</button>
+            <div class="step-indicators" id="step-indicators"></div>
+
+            <div class="modal-nav-bar" style="margin-top: 16px;">
+                <button class="btn-modal-nav btn-modal-back" id="modal-btn-back">Back</button>
+                <div style="flex-grow:1"></div>
+                <button class="btn-modal-nav btn-modal-next" id="modal-btn-next">Next</button>
             </div>
 
         </div> <!-- modal-content -->
@@ -345,24 +357,20 @@
                     <div class="likert-btn" data-val="5">5<span class="likert-label">Very high effort</span></div>
                 </div>
 
-                <p class="question-label" style="margin:12px 0 6px;">2. How confident are you that you understood this sentence well enough to answer a question about it?</p>
+                <p class="question-label" style="margin:12px 0 6px;">2. How well do you feel you understood the meaning of this sentence?</p>
                 <div class="likert-scale" id="likert-confidence">
-                    <div class="likert-btn" data-val="1">1<span class="likert-label">Not confident</span></div>
+                    <div class="likert-btn" data-val="1">1<span class="likert-label">Not at all</span></div>
                     <div class="likert-btn" data-val="2">2<span class="likert-label"></span></div>
                     <div class="likert-btn" data-val="3">3<span class="likert-label"></span></div>
                     <div class="likert-btn" data-val="4">4<span class="likert-label"></span></div>
-                    <div class="likert-btn" data-val="5">5<span class="likert-label">Very confident</span></div>
+                    <div class="likert-btn" data-val="5">5<span class="likert-label">Completely</span></div>
                 </div>
 
                 <!-- Feedback box -->
                 <div id="diagnosis-section" class="feedback-box" style="margin-top:12px; padding:10px; border:1px solid #eee; border-radius:6px; background:#f9fafb;">
-                    <p class="question-label" style="margin:0 0 8px 0;">If something was hard to understand, please tell us here.</p>
-                    <p style="margin:0 0 8px 0; font-size:0.9rem; color:#555;">(You can copy/paste the part, describe what felt unclear, or ask any questions.)</p>
-                    <textarea id="sentence-feedback" rows="3" style="width:95%; border:1px solid #ccc; border-radius:4px; padding:8px; resize: vertical;" placeholder="Optional"></textarea>
-                    <label class="checkbox-option" style="margin-top:8px;">
-                        <input type="checkbox" id="sentence-entire-hard">
-                        <span>The whole sentence was hard to understand</span>
-                    </label>
+                    <p class="question-label" style="margin:0 0 8px 0;">Did anything create a barrier to understanding?</p>
+                    <!-- <p style="margin:0 0 8px 0; font-size:0.9rem; color:#555;">(You can copy/paste the part, describe what felt confusing, or ask any questions.)</p> -->
+                    <textarea id="sentence-feedback" rows="3" style="width:95%; border:1px solid #ccc; border-radius:4px; padding:8px; resize: vertical;" placeholder="Copy/paste the part, describe what felt confusing, or ask any questions."></textarea>
                 </div>
 
                 <div class="nav-bar">
@@ -377,25 +385,7 @@
                     <div id="overall-section">
                         <h3>Step 2. Overall Feedback</h3>
             
-                        <label class="question-label">Q1. How familiar were you with this topic before reading?</label>
-                        <div class="likert-scale" id="overall-fam">
-                            <div class="likert-btn" data-group="overall_fam" data-val="1">1<span class="likert-label">Not familiar</span></div>
-                            <div class="likert-btn" data-group="overall_fam" data-val="2">2<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_fam" data-val="3">3<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_fam" data-val="4">4<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_fam" data-val="5">5<span class="likert-label">Very familiar</span></div>
-                        </div>
-
-                        <label class="question-label" style="margin-top: 16px;">Q2. How often do you read academic or scientific texts?</label>
-                        <div class="likert-scale" id="overall-freq">
-                            <div class="likert-btn" data-group="overall_freq" data-val="1">1<span class="likert-label">Never</span></div>
-                            <div class="likert-btn" data-group="overall_freq" data-val="2">2<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_freq" data-val="3">3<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_freq" data-val="4">4<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_freq" data-val="5">5<span class="likert-label">Very often</span></div>
-                        </div>
-
-                        <label class="question-label" style="margin-top: 20px;">Q3. How much effort did it take to read this text?</label>
+                        <label class="question-label">Q1. How much effort did it take to read this text?</label>
                         <div class="likert-scale" id="overall-eff">
                             <div class="likert-btn" data-group="overall_effort" data-val="1">1<span class="likert-label">No effort</span></div>
                             <div class="likert-btn" data-group="overall_effort" data-val="2">2<span class="likert-label"></span></div>
@@ -404,18 +394,18 @@
                             <div class="likert-btn" data-group="overall_effort" data-val="5">5<span class="likert-label">Very high effort</span></div>
                         </div>
 
-                        <label class="question-label" style="margin-top: 20px;">Q4. How confident are you that you understood the main points of the text?</label>
+                        <label class="question-label" style="margin-top: 20px;">Q2. How well do you think you understood the main points of the text?</label>
                         <div class="likert-scale" id="overall-conf">
-                            <div class="likert-btn" data-group="overall_confidence" data-val="1">1<span class="likert-label">Not confident</span></div>
+                            <div class="likert-btn" data-group="overall_confidence" data-val="1">1<span class="likert-label">Not at all</span></div>
                             <div class="likert-btn" data-group="overall_confidence" data-val="2">2<span class="likert-label"></span></div>
                             <div class="likert-btn" data-group="overall_confidence" data-val="3">3<span class="likert-label"></span></div>
                             <div class="likert-btn" data-group="overall_confidence" data-val="4">4<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_confidence" data-val="5">5<span class="likert-label">Very confident</span></div>
+                            <div class="likert-btn" data-group="overall_confidence" data-val="5">5<span class="likert-label">Completely</span></div>
                         </div>
 
                         <div class="final-comments">
                             <label class="question-label" style="margin-top: 20px;">
-                                Q5. If you could improve this text, what are the changes that would help the most (select at most 3)?
+                                Q3. If you could improve this text, what are the changes that would help the most (select at most 3)?
                             </label>
                             
                             <div class="checkbox-group" id="wishlist-group">
@@ -451,6 +441,42 @@
                             </div>
                         </div>
 
+                        <div style="margin-top: 20px;">
+                            <h4 style="margin:0 0 8px 0; font-size:1.5rem;">Tell us a bit about yourself!</h4>
+                            <label class="question-label">Q4. How much of the information in this abstract was new to you?</label>
+                            <div class="likert-scale" id="overall-fam">
+                                <div class="likert-btn" data-group="overall_fam" data-val="1">1<span class="likert-label">None</span></div>
+                                <div class="likert-btn" data-group="overall_fam" data-val="2">2<span class="likert-label">A little</span></div>
+                                <div class="likert-btn" data-group="overall_fam" data-val="3">3<span class="likert-label">Some</span></div>
+                                <div class="likert-btn" data-group="overall_fam" data-val="4">4<span class="likert-label">Most</span></div>
+                                <div class="likert-btn" data-group="overall_fam" data-val="5">5<span class="likert-label">Almost all</span></div>
+                            </div>
+
+                            <label class="question-label" style="margin-top: 16px;">Q5. Which of the following types of texts do you read or encounter in your daily life? (Check all that apply)</label>
+                            <div class="checkbox-group" id="overall-exposure">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="exposure" value="General news or magazine articles">
+                                    <span>General news or magazine articles</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="exposure" value="In-depth nonfiction or detailed articles">
+                                    <span>In-depth nonfiction or detailed articles</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="exposure" value="Professional or technical documents">
+                                    <span>Professional or technical documents</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="exposure" value="Academic or research articles">
+                                    <span>Academic or research articles</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="exposure" value="None of the above" id="exposure-none">
+                                    <span>None of the above</span>
+                                </label>
+                            </div>
+                        </div>
+
                         <button type="button" class="btn-start" id="btn-start-quiz" style="margin-top:20px;" disabled>Begin Quiz</button>
                     </div>
 
@@ -468,7 +494,7 @@
     </div>
 
     <script src="studyConfig.js"></script>
-    <script src="studyData.js"></script>
+    <script src="studyDataNew.js"></script>
     <script>
         // --- CONFIG ---
         const submissionURL = (typeof googleScriptURL === 'string' && googleScriptURL.trim().length > 0)
@@ -498,19 +524,60 @@
         const effortButtons = document.querySelectorAll('#likert-effort .likert-btn');
         const confidenceButtons = document.querySelectorAll('#likert-confidence .likert-btn');
         const diagnosisSection = document.getElementById('diagnosis-section');
+        const steps = document.querySelectorAll('.instr-step');
+        const modalBack = document.getElementById('modal-btn-back');
+        const stepDotsContainer = document.getElementById('step-indicators');
+        let currentStep = 0;
         
         // Inputs
         const sentenceFeedback = document.getElementById('sentence-feedback');
-        const sentenceEntireHard = document.getElementById('sentence-entire-hard');
 
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Simple modal logic (single page) ---
+            // Build dots
+            steps.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = 'step-dot' + (i === 0 ? ' active' : '');
+                stepDotsContainer.appendChild(dot);
+            });
+            const stepDots = stepDotsContainer.querySelectorAll('.step-dot');
+
+            function updateModalUI() {
+                steps.forEach((step, idx) => {
+                    step.classList.toggle('active', idx === currentStep);
+                });
+                stepDots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === currentStep);
+                });
+                modalBack.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
+                if (currentStep === steps.length - 1) {
+                    modalNext.textContent = 'Start Task';
+                    modalNext.style.backgroundColor = '#28a745';
+                } else {
+                    modalNext.textContent = 'Next';
+                    modalNext.style.backgroundColor = '#007bff';
+                }
+            }
+
             modalNext.addEventListener('click', () => {
-                modalOverlay.style.display = 'none';
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateModalUI();
+                } else {
+                    modalOverlay.style.display = 'none';
+                }
+            });
+
+            modalBack.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateModalUI();
+                }
             });
 
             // --- RE-OPEN INSTRUCTIONS BUTTON ---
             document.getElementById('btn-show-help').addEventListener('click', () => {
+                currentStep = 0;
+                updateModalUI();
                 modalOverlay.style.display = 'flex';
             });
 
@@ -530,6 +597,7 @@
 
             // Overall feedback likert interactions & enabling quiz
             const overallBtns = document.querySelectorAll('#overall-section .likert-btn');
+            const exposureChecks = document.querySelectorAll('#overall-exposure input[type="checkbox"]');
             overallBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     const group = btn.dataset.group;
@@ -545,13 +613,28 @@
                 });
             });
 
+            // Exposure checkbox logic (None of the above deselects others)
+            exposureChecks.forEach(chk => {
+                chk.addEventListener('change', () => {
+                    if (chk.value === "None of the above" && chk.checked) {
+                        exposureChecks.forEach(c => {
+                            if (c !== chk) c.checked = false;
+                        });
+                    } else if (chk.value !== "None of the above" && chk.checked) {
+                        const none = document.getElementById('exposure-none');
+                        if (none) none.checked = false;
+                    }
+                    updateBeginQuizState();
+                });
+            });
+
             function updateBeginQuizState() {
                 const hasFam = !!document.querySelector('input[name="overall_fam"]');
-                const hasFreq = !!document.querySelector('input[name="overall_freq"]');
                 const hasEff = !!document.querySelector('input[name="overall_effort"]');
                 const hasConf = !!document.querySelector('input[name="overall_confidence"]');
                 const hasImprovement = document.querySelectorAll('input[name="improvement"]:checked').length > 0;
-                startQuizBtn.disabled = !(hasFam && hasFreq && hasEff && hasConf && hasImprovement);
+                const exposureSelected = document.querySelectorAll('#overall-exposure input[type="checkbox"]:checked').length > 0;
+                startQuizBtn.disabled = !(hasFam && hasEff && hasConf && hasImprovement && exposureSelected);
             }
 
             // Init Text
@@ -561,6 +644,7 @@
             const topicText = (typeof studyTopics !== 'undefined' && studyTopics[stimulusID]) ? studyTopics[stimulusID] : (urlParams.get('topic') || "a medical topic");
             const topicSpan = document.getElementById('instruction-topic');
             if (topicSpan) topicSpan.textContent = topicText;
+            quizHighlightDisabled = urlParams.get('quiz_highlight') !== 'on';
 
             // Build ordered sentence list from the segmented data (object keyed by sentence index).
             let sentenceList = [];
@@ -665,7 +749,6 @@
                 setRating(data.rating, false); // Load rating without clearing diagnosis
                 setConfidence(data.confidence, false);
                 sentenceFeedback.value = data.feedbackText || '';
-                sentenceEntireHard.checked = !!data.entireHard;
             }
             updateNavState();
         }
@@ -696,10 +779,30 @@
             return sel ? parseInt(sel.dataset.val) : null;
         }
 
+        function allSentencesCompleted(currentRating, currentConfidence) {
+            if (!sentences || !sentences.length) return false;
+            for (let i = 0; i < sentences.length; i++) {
+                if (i === currentIndex) {
+                    if (currentRating === null || currentRating === undefined || currentConfidence === null || currentConfidence === undefined) {
+                        return false;
+                    }
+                    continue;
+                }
+                const data = annotations[i];
+                if (!data || data.rating === null || data.rating === undefined || data.confidence === null || data.confidence === undefined) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         function updateNavState() {
             const ratingVal = getSelectedRating();
             const confidenceVal = getSelectedConfidence();
-            if (ratingVal !== null && confidenceVal !== null) {
+            const currentComplete = ratingVal !== null && confidenceVal !== null;
+            const allComplete = allSentencesCompleted(ratingVal, confidenceVal);
+            const allowNext = currentComplete && (currentIndex !== sentences.length - 1 ? true : allComplete);
+            if (allowNext) {
                 btnNext.classList.add('active');
                 btnNext.disabled = false;
             } else {
@@ -717,8 +820,7 @@
                 text: sentences[currentIndex],
                 rating: ratingVal,
                 confidence: confidenceVal,
-                feedbackText: sentenceFeedback.value || '',
-                entireHard: sentenceEntireHard.checked
+                feedbackText: sentenceFeedback.value || ''
             };
         }
 
@@ -726,7 +828,6 @@
             effortButtons.forEach(b => b.classList.remove('selected'));
             confidenceButtons.forEach(b => b.classList.remove('selected'));
             sentenceFeedback.value = '';
-            sentenceEntireHard.checked = false;
             btnNext.classList.remove('active');
             btnNext.disabled = true;
         }
@@ -759,6 +860,7 @@
         let quizIndex = 0;
         const quizResponses = {}; // idx -> {sentence_id, selected_option, correct_answer, is_correct, question, difficulty, options}
         const quizOptionOrder = {}; // idx -> shuffled array of [key, text]
+        let quizHighlightDisabled = true;
 
         // Start quiz only after overall feedback section
         startQuizBtn.addEventListener('click', () => {
@@ -793,13 +895,14 @@
             const block = document.createElement('div');
             block.className = 'quiz-block';
 
-            let html = `<h3 style="margin-top:0;">Step 3. Comprehension Questions</h3>
-            <p style="margin:4px 0 12px 0; color:#555;">Answer the question based on the highlighted sentence.</p>`;
+            let html = `<h3 style="margin-top:0;">Step 3. Comprehension Questions</h3>`;
 
             const optionEntries = Object.entries(q.options || {});
             const order = quizOptionOrder[quizIndex] || shuffleOptions(optionEntries);
             quizOptionOrder[quizIndex] = order;
-            html += `<label class="quiz-question-text"><strong>Q${quizIndex + 1} of ${quizQuestions.length}. ${q.question}</strong></label>`;
+            const rawQuestion = q.question || "";
+            const cleanedQuestion = rawQuestion.replace(/^Answer the question based on the highlighted sentence\.?\s*/i, '').trim() || rawQuestion;
+            html += `<label class="quiz-question-text"><strong>Q${quizIndex + 1} of ${quizQuestions.length}. ${cleanedQuestion}</strong></label>`;
 
             order.forEach(([key, text]) => {
                 const inputName = `quiz_${quizIndex}_ans`;
@@ -857,8 +960,12 @@
                 if (confInput) confInput.checked = true;
             }
 
-            // Highlight the referenced sentence
-            highlightQuizSentence(q.sentence_id);
+            // Highlight the referenced sentence (toggle via URL: ?quiz_highlight=off)
+            if (quizHighlightDisabled) {
+                clearQuizHighlight();
+            } else {
+                highlightQuizSentence(q.sentence_id);
+            }
 
             // Wire buttons
             const quizPrev = document.getElementById('quiz-prev');
@@ -912,7 +1019,7 @@
             const effInput = document.querySelector(`input[name="quiz_${quizIndex}_effort"]:checked`);
             const confInput = document.querySelector(`input[name="quiz_${quizIndex}_conf"]:checked`);
             if (require && (!ansInput || !effInput || !confInput)) {
-                alert("Please select an answer, effort, and confidence rating before continuing.");
+                alert("Please select an answer, effort, and understanding rating before continuing.");
                 return false;
             }
             const q = quizQuestions[quizIndex];
@@ -950,6 +1057,13 @@
             }
         }
 
+        function clearQuizHighlight() {
+            document.querySelectorAll('.sentence').forEach(el => {
+                el.classList.remove('active');
+                el.classList.remove('dimmed');
+            });
+        }
+
         function shuffleOptions(arr) {
             const copy = arr.slice();
             for (let i = copy.length - 1; i > 0; i--) {
@@ -982,7 +1096,7 @@
             const annotationArray = Object.keys(annotations).sort().map(k => annotations[k]);
 
             const topicFam = formData.get('overall_fam') || "N/A";
-            const readingFreq = formData.get('overall_freq') || "N/A";
+            const exposures = Array.from(document.querySelectorAll('#overall-exposure input[type=\"checkbox\"]:checked')).map(c => c.value);
             const overallEffortVal = formData.get('overall_effort') || "N/A";
             const overallConfVal = formData.get('overall_confidence') || "N/A";
 
@@ -994,7 +1108,7 @@
                 // Pack familiarity + reading frequency together to fit existing App Script field
                 familiarity: JSON.stringify({
                     topic_familiarity: topicFam,
-                    reading_frequency: readingFreq
+                    reading_exposure: exposures
                 }),
                 overall_difficulty: overallEffortVal, // mapped to effort
                 confidence: overallConfVal,
