@@ -24,26 +24,7 @@ const studyTexts = {
         "6": "The respective breath biomarkers targeted in each test are discussed in relation to their physiological production in the human body and the development and implementation of the associated tests.",
         "7": "The paper concludes with a brief insight into prospective tests and an outlook of the future direction of breath research."
     },
-    "text_01_simp": {
-        "1": "Detecting chemical compounds in exhaled human breath may help determine health status, identify disease, or measure environmental exposure.",
-        "2": "Recent advances in research of small energy molecules (metabolomics) led to better methods to explore human health status in breath.",
-        "3": "Despite some methodological challenges, exhaled breath is a desirable tool for metabolomics due to its non-surgery, convenient, and limitless availability.",
-        "4": "Many breath-based tests that target internal or external gas compounds are established and used in practice.",
-        "5": "This review outlines the concept of breath analysis regarding these unique breath-based tests and their applications.",
-        "6": "The breath biological disease markers in each test are discussed based on their production in humans and development and use of the associated tests.",
-        "7": "The paper ends with a short look into future tests and direction of breath research."
-    },
     "text_02": {
-        "1": "Chronic throat clearing or a feeling of 'something' at the back of the oropharynx or nasopharynx is a common cause for referral to otorhinolaryngology services.",
-        "2": "While treatment of an underlying causative condition might be expected to improve these symptoms, in many cases a clear underlying cause is not found.",
-        "3": "Currently, there is no recognized treatment which is effective against these troublesome symptoms.",
-        "4": "This observational study investigated the effectiveness of a regime of sipping ice cold carbonated water to try to break the vicious cycle of throat clearing.",
-        "5": "Seventy-two patients with these symptoms who had previously been advised to use the regime were contacted with a postal questionnaire.",
-        "6": "Sixty-three per cent of patients documented an improvement in their symptom severity score.",
-        "7": "The most severely and most frequently affected patients had the greatest benefit.",
-        "8": "We conclude that the suggested regime can be effective in breaking the vicious cycle of persistent throat-clearing."
-    },
-    "text_02_simp": {
         "1": "Chronic throat clearing or a feeling of 'something' at the back of the oropharynx or nasopharynx is a common cause for referral to otorhinolaryngology services.",
         "2": "While treatment of an underlying causative condition might be expected to improve these symptoms, in many cases a clear underlying cause is not found.",
         "3": "Currently, there is no recognized treatment which is effective against these troublesome symptoms.",
@@ -62,15 +43,6 @@ const studyTexts = {
         "6": "Prevention rather than mere treatment of established ulcers remains a top priority in the effort to reduce the incidence of this common, complex and difficult problem.",
         "7": "Use of assessment tools that quantify the primary risk factors for the development of pressure ulcers is helpful in predicting and preventing compromise of tissue."
     },
-    "text_03_simp": {
-        "1": "The use of wound dressings based on moist wound healing principles has recently changed how pressure ulcers (skin sores) are treated. Moist wound healing is when an injury is kept damp to prevent drying out.",
-        "2": "These products may improve healing rates. They may also offer improved comfort to the patient, reduced dressing time, and improved wound appearance.",
-        "3": "However, healing is unlikely to occur unless the reasons the ulcer was formed are addressed.",
-        "4": "There are several principles of ulcer management or healing. These principles include: eliminating or reducing pressure and other contributing factors, treating infection, appropriate wound management, involvement and education of the patient and caregivers, and maintenance of healed tissue.",
-        "5": "It is estimated that 95% of all pressure ulcers are preventable.",
-        "6": "Preventing ulcers rather than treating ulcers is a priority in the effort to reduce the incidence (frequency) of this common, complex, and difficult problem.",
-        "7": "Use of assessment (measurement) tools that identify the main reasons pressure ulcers are caused is helpful to predict and prevent injuries to the skin."
-    },
     "text_04": {
         "1": "Compression therapy is the basic therapy in phlebology and lymphology.",
         "2": "The pressure under the bandages has to exceed the intravenous pressure especially in standing position.",
@@ -81,17 +53,6 @@ const studyTexts = {
         "7": "Even after one week of wearing, inelastic bandages keep higher resting and working pressure during walking than elastic bandages.",
         "8": "However, more important is that they have lower resting pressure than elastic materials.",
         "9": "Long stretch bandages and compression garments with great extensibility ensure low working pressure and higher resting pressure than short stretch systems."
-    },
-    "text_04_simp": {
-        "1": "Compression therapy is the basic therapy when treating the circulatory (blood) or lymphatic (body drainage) system.",
-        "2": "The pressure under the bandages has to exceed the intravenous pressure, especially when standing. Intravenous pressure is the pressure of blood in veins.",
-        "3": "Different compression materials work differently on ambulatory venous hypertension (excess pressure in veins). The material used can affect both the rate in which swelling is reduced and blood flow. Some compression materials include short stretch systems, long stretch bandages, and compression garments.",
-        "4": "Compression with very stiff materials is more effective than compression with low stiffness, elastic materials.",
-        "5": "These materials have to be placed correctly.",
-        "6": "Inelastic systems should be applied with high initial pressure. This is because the pressure will decrease after walking.",
-        "7": "Even after one week of wearing, inelastic bandages keep higher optimal pressure during walking than elastic bandages.",
-        "8": "More importantly, inelastic bandages have lower resting pressure than elastic materials.",
-        "9": "Long stretch bandages and compression garments that are able to stretch ensure low working pressure and higher resting pressure than short stretch systems."
     },
     "text_05": {
         "1": "Tardive dyskinesia (TD) is caused by exposure to medications with dopamine antagonism, mainly antipsychotics.",
@@ -105,85 +66,42 @@ const studyTexts = {
         "9": "Long-term studies will further guide us in how to optimize treatment, especially in the real-world setting.",
         "10": "As clinicians, we need to take into consideration all aspects of symptomatology, etiology, potential side effects of the medications, to find the best possible \"match\" for our patients."
     },
-    "text_05_simp": {
-        "1": "Taking medications, mainly antipsychotics, that reduce activity of dopamine (a chemical messenger released when your brain is expecting a reward) causes tardive dyskinesia (TD) - a movement disorder.",
-        "2": "TD often causes physical and emotional pain or suffering and affects the quality of life of patients.",
-        "3": "We rated scientific studies to summarize the latest advancements in the area of TD.",
-        "4": "We found that FDA approved vesicular monoamine transporter type 2 (VMAT2) inhibitors, drugs that reduce dopamine (a chemical messenger released when your brain is expecting a reward), deutetrabenazine and valbenazine, in 2017.",
-        "5": "These drugs work in several clinical trials.",
-        "6": "Best practice guidelines for doctors for treating tardive dyskinesia have also been updated.",
-        "7": "Different drugs are being used to treat TD with VMAT2 inhibitors to be the first drug approved by the FDA.",
-        "8": "Drugs used to treat TD should be specific to the individual patient.",
-        "9": "Long-term studies will determine how best to treat patients, especially in the real world.",
-        "10": "As doctors, we need to consider all symptoms, causes, and possible drug side effects to find the best possible \"match\" for our patients."
-    },
     "text_06": {
         "1": "Several risk factors for asthma have been linked with exposures during pregnancy, making their true effects similarly hard to elucidate given the constraints of conducting research in this particular group, and the difficulty of interpreting any findings.",
         "2": "A report published in Pediatrics outlined the effects of maternal and infant nutrition on the development of atopic disease (including asthma) in children, reflecting that multiple factors could act in concert to influence disease development.",
         "3": "Maternal exposure to vitamin D has been investigated as a risk factor for childhood asthma and wheeze, with conflicting findings; several studies have reported that vitamin D could protect against asthma attacks or prevent worsening asthma symptoms.",
-        "4": "Other environmental exposures during pregnancy such as maternal smoking or traffic pollution are associated with increased risk for wheeze and asthma, whereas contact with a farming environment may be protective."
-    },
-    "text_06_simp": {
-        "1": "Several risk factors for asthma have been linked with exposures during pregnancy, making their true effects similarly hard to elucidate given the constraints of conducting research in this particular group, and the difficulty of interpreting any findings.",
-        "2": "A report published in Pediatrics outlined the effects of maternal and infant nutrition on the development of atopic disease (including asthma) in children, reflecting that multiple factors could act in concert to influence disease development.",
-        "3": "Maternal exposure to vitamin D has been investigated as a risk factor for childhood asthma and wheeze, with conflicting findings; several studies have reported that vitamin D could protect against asthma attacks or prevent worsening asthma symptoms.",
-        "4": "Other environmental exposures during pregnancy such as maternal smoking or traffic pollution are associated with increased risk for wheeze and asthma, whereas contact with a farming environment may be protective."
+        "4": "Many studies have investigated such associations with risk of disease, but the reporting in the media of the study findings often leaves much to be desired in terms of nuance and balance."
     },
     "text_07": {
-        "1": "The new criteria for the diagnosis of diabetes mellitus have recently been released.",
-        "2": "There are three major changes to the new criteria.",
-        "3": "The first is that the diagnostic test suggested for screening is the non-fasting test for plasma glucose.",
-        "4": "The second is that a lower plasma glucose concentration is now taken as diagnostic for diabetes."
-    },
-    "text_07_simp": {
-        "1": "The new criteria for the diagnosis of diabetes mellitus have recently been released.",
-        "2": "There are three major changes to the new criteria.",
-        "3": "The first is that the diagnostic test suggested for screening is the non-fasting test for plasma glucose.",
-        "4": "The second is that a lower plasma glucose concentration is now taken as diagnostic for diabetes."
+        "1": "In 1997 the American Diabetes Association lowered the threshold for diagnosis of diabetes from a fasting plasma glucose concentration of 7.8 mmol/l to 7.0 mmol/l and advised that the oral glucose tolerance test no longer be used in routine clinical practice.",
+        "2": "In 1999 the World Health Organization endorsed the reduction in fasting plasma glucose threshold but recommended retaining the oral glucose tolerance test for anyone with impaired fasting glucose (6.1 mmol/l-6.9 mmol/l).",
+        "3": "This Review discusses the impact of these changes on the prevalence of diabetes and examines the implications for individuals and specific high-risk groups.",
+        "4": "The phenotype of those diagnosed with diabetes and the predictive value for the development of complications according to the different criteria are compared.",
+        "5": "It is clear that these changes in diagnostic criteria have major importance both for individuals and for resource planning at a national level."
     },
     "text_08": {
-        "1": "Primary asthma prevention offers a potential method to reduce the substantial economic and social burden of this chronic disease.",
-        "2": "Asthma has likely been increasing due to changes in the environment.",
-        "3": "Many interventions that have been proposed are biologically plausible.",
-        "4": "However, extensive studies have not been done to evaluate these interventions.",
-        "5": "The most data are available for multifaceted interventions against allergens, which have shown a modest reduction in asthma development.",
-        "6": "Future studies will need to evaluate feasibility of large-scale public health interventions such as increasing omega-3 fatty acids in the diet and reducing maternal smoking.",
-        "7": "As the proportion of studies devoted to primary prevention increases in the coming years, asthma prevention is likely to become a viable public health strategy."
-    },
-    "text_08_simp": {
-        "1": "Primary asthma prevention offers a potential method to reduce the substantial economic and social burden of this chronic disease.",
-        "2": "Asthma has likely been increasing due to changes in the environment.",
-        "3": "Many interventions that have been proposed are biologically plausible.",
-        "4": "However, extensive studies have not been done to evaluate these interventions.",
-        "5": "The most data are available for multifaceted interventions against allergens, which have shown a modest reduction in asthma development.",
-        "6": "Future studies will need to evaluate feasibility of large-scale public health interventions such as increasing omega-3 fatty acids in the diet and reducing maternal smoking.",
-        "7": "As the proportion of studies devoted to primary prevention increases in the coming years, asthma prevention is likely to become a viable public health strategy."
+        "1": "Asthma, which typically begins in childhood and is the most common chronic disease of childhood, has reached epidemic proportions.",
+        "2": "Asthma is associated with gene-environment interactions, and there is consensus that a \"window of opportunity\" exists early in life when environmental factors may influence its development.",
+        "3": "This review considers biologic and sociologic factors in the development of allergy and asthma.",
+        "4": "Meta-analysis of studies demonstrates that monoallergen reduction does not impact asthma prevention.",
+        "5": "However, multifaceted allergen reduction studies have shown clinical benefit.",
+        "6": "We propose that allergic diseases, including asthma, represent a dysfunctional interaction with our environment and that the increasing prevalence of asthma and allergy herald increased population risk for the development of other inflammatory and autoimmune diseases.",
+        "7": "Better understanding of the complex factors for asthma and allergies may provide insight into many other chronic complex diseases."
     },
     "text_09": {
-        "1": "Muscle cramps are painful and involuntary muscle contractions, which can occur in rest or during a voluntary contraction.",
-        "2": "It is important to distinguish pathological muscle cramps from exercise-associated muscle cramp.",
-        "3": "The causes of muscle cramps are various, and its aetiology is not well understood.",
-        "4": "It is important to note that a painful contraction that is limited to a specific area does not mean that the cause of the cramp is necessarily local."
-    },
-    "text_09_simp": {
-        "1": "Muscle cramps are painful and involuntary muscle contractions, which can occur in rest or during a voluntary contraction.",
-        "2": "It is important to distinguish pathological muscle cramps from exercise-associated muscle cramp.",
-        "3": "The causes of muscle cramps are various, and its aetiology is not well understood.",
-        "4": "It is important to note that a painful contraction that is limited to a specific area does not mean that the cause of the cramp is necessarily local."
+        "1": "Muscle cramps result in continuous, involuntary, painful, and localized contraction of an entire muscle group, individual single muscle, or select muscle fibers.",
+        "2": "Generally, the cramp can last from minutes to a few seconds for idiopathic or known causes with healthy subjects or in the presence of diseases.",
+        "3": "Palpating the muscle area of the cramp will present a knot.",
+        "4": "Exercise-associated muscle cramps are the most frequent condition requiring medical/therapeutic intervention during sports.",
+        "5": "The specific etiology is not well understood and possible causes depend on the physiological or pathological situation in which the cramps appear.",
+        "6": "It is important to note that a painful contraction that is limited to a specific area does not mean that the cause of the cramp is necessarily local.",
+        "7": "A cramp is almost never a local effect but involves the whole body system, such as somatic and emotional."
     },
     "text_10": {
-        "1": "The management of ureteric stones continues to evolve with open surgery virtually obsolete due to a range of minimally invasive approaches.",
+        "1": "The landscape of managing ureteric stones has evolved over the last few decades and several treatment options exist depending on the stone size, location, and other patient and stone factors.",
         "2": "While open surgery is now rarely performed, the use of medical expulsive therapy (MET) has been controversial and perhaps only recommended for large distal ureteric stones.",
         "3": "The mainstay treatment balances between shockwave lithotripsy (SWL) and ureteroscopy (URS), with the latter usually recommended for larger stones.",
-        "4": "The choice of treatment should be tailored according to stone features and patient-specific factors.",
-        "5": "Advancements have occurred in all domains of endourology to try and refine treatment and balance it with cost, patient choice and quality of life.",
-        "6": "Dissemination of technologies and demonstration of their efficacy and safety will eventually result in new recommendations among international guidelines and evolution of new gold standards."
-    },
-    "text_10_simp": {
-        "1": "The management of ureteric stones continues to evolve with open surgery virtually obsolete due to a range of minimally invasive approaches.",
-        "2": "While open surgery is now rarely performed, the use of medical expulsive therapy (MET) has been controversial and perhaps only recommended for large distal ureteric stones.",
-        "3": "The mainstay treatment balances between shockwave lithotripsy (SWL) and ureteroscopy (URS), with the latter usually recommended for larger stones.",
-        "4": "The choice of treatment should be tailored according to stone features and patient-specific factors.",
+        "4": "While the principles of ureteric stone management have remained largely unchanged, the modern era has generated new methods and means to deliver it.",
         "5": "Advancements have occurred in all domains of endourology to try and refine treatment and balance it with cost, patient choice and quality of life.",
         "6": "Dissemination of technologies and demonstration of their efficacy and safety will eventually result in new recommendations among international guidelines and evolution of new gold standards."
     }
@@ -593,222 +511,222 @@ const studyQuizzes = {
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: The passage notes conflicting findings but mentions potential protective effects.",
-                "B": "False: The text does not claim evidence clearly shows increased risk.",
-                "C": "False: The text states findings are conflicting, not unanimous.",
-                "D": "False: The passage does not recommend supplementation solely for this purpose."
+                "A": "Correct: The sentence mentions conflicting findings but notes some protective effects.",
+                "B": "False: The passage does not report increased risk.",
+                "C": "False: Findings are conflicting, not uniformly negative.",
+                "D": "False: No clinical recommendation is stated."
             }
         },
         {
             "sentence_id": 4,
-            "original_sentence": "Other environmental exposures during pregnancy such as maternal smoking or traffic pollution are associated with increased risk for wheeze and asthma, whereas contact with a farming environment may be protective.",
-            "question": "According to the passage, how do different pregnancy exposures relate to asthma risk?",
+            "original_sentence": "Many studies have investigated such associations with risk of disease, but the reporting in the media of the study findings often leaves much to be desired in terms of nuance and balance.",
+            "question": "What issue does the passage raise about how study findings are communicated to the public?",
             "options": {
-                "A": "Some exposures raise the risk (like smoking or pollution), while others (like farm contact) may reduce it.",
-                "B": "All environmental exposures during pregnancy are equally harmful.",
-                "C": "Environmental exposures only matter if they occur after birth.",
-                "D": "Only genetic factors, not environmental exposures, influence asthma risk."
+                "A": "Media summaries of research on asthma risk often lack nuance and can misrepresent the complexity of the evidence.",
+                "B": "Media reports usually provide detailed statistical explanations that make the findings difficult for experts to interpret.",
+                "C": "The media routinely suppresses studies showing no connection between pregnancy exposures and asthma.",
+                "D": "Most media outlets decline to report on research unless the results are definitive."
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: It contrasts harmful exposures with potentially protective farm contact.",
-                "B": "False: It distinguishes harmful vs protective exposures.",
-                "C": "False: The sentence focuses on prenatal exposures.",
-                "D": "False: Environmental factors are explicitly mentioned."
+                "A": "Correct: The text says media reporting often lacks nuance and balance.",
+                "B": "False: It criticizes oversimplification, not excessive detail.",
+                "C": "False: Suppression of negative findings is not mentioned.",
+                "D": "False: There is no claim about reporting only definitive findings."
             }
-        }
+        }    
     ],
     "text_07": [
         {
-            "sentence_id": 1,
-            "original_sentence": "The new criteria for the diagnosis of diabetes mellitus have recently been released.",
-            "question": "What recent development is noted regarding diabetes diagnosis?",
-            "options": {
-                "A": "New diagnostic criteria have been issued.",
-                "B": "Diagnosis now relies only on patient symptoms.",
-                "C": "All existing diagnostic methods have been withdrawn.",
-                "D": "No changes have been made to how diabetes is diagnosed."
-            },
-            "correct_answer": "A",
-            "Rationale": {
-                "A": "Correct: The sentence states new criteria have been released.",
-                "B": "False: Symptoms-only diagnosis is not claimed.",
-                "C": "False: No withdrawal of methods is mentioned.",
-                "D": "False: It explicitly notes a change."
-            }
-        },
-        {
             "sentence_id": 2,
-            "original_sentence": "There are three major changes to the new criteria.",
-            "question": "What does the passage say about the updated criteria?",
+            "original_sentence": "In 1999 the World Health Organization endorsed the reduction in fasting plasma glucose threshold but recommended retaining the oral glucose tolerance test for anyone with impaired fasting glucose (6.1 mmol/l-6.9 mmol/l).",
+            "question": "How did the World Health Organization’s 1999 recommendations differ from those of the American Diabetes Association?",
             "options": {
-                "A": "They include three significant changes.",
-                "B": "They revert entirely to older diagnostic thresholds.",
-                "C": "They remove all glucose testing requirements.",
-                "D": "They introduce no substantive differences from the past."
+                "A": "WHO supported the lower fasting glucose threshold but wanted the oral glucose tolerance test kept for people with moderately elevated fasting glucose.",
+                "B": "WHO rejected the lowered fasting threshold and recommended returning to the previous standard.",
+                "C": "WHO advised eliminating all glucose tolerance testing due to concerns about reliability.",
+                "D": "WHO recommended using the OGTT only for patients whose fasting glucose was fully normal."
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: It says there are three major changes.",
-                "B": "False: No reversion is mentioned.",
-                "C": "False: Glucose testing remains central.",
-                "D": "False: Major changes are noted."
+                "A": "Correct: WHO agreed with the lowered threshold but kept the OGTT for those with impaired fasting glucose.",
+                "B": "False: WHO endorsed the reduced threshold.",
+                "C": "False: WHO recommended continued OGTT use for a specific group.",
+                "D": "False: OGTT was recommended for impaired fasting glucose, not normal values."
             }
         },
         {
             "sentence_id": 3,
-            "original_sentence": "The first is that the diagnostic test suggested for screening is the non-fasting test for plasma glucose.",
-            "question": "What change is highlighted about the recommended screening test?",
+            "original_sentence": "This Review discusses the impact of these changes on the prevalence of diabetes and examines the implications for individuals and specific high-risk groups.",
+            "question": "What is one of the main aims of the Review described in the passage?",
             "options": {
-                "A": "A non-fasting plasma glucose test is now suggested for screening.",
-                "B": "Screening now requires a two-day hospital stay.",
-                "C": "Only fasting glucose levels are considered valid.",
-                "D": "Screening is no longer needed before diagnosis."
+                "A": "To evaluate how revised diagnostic criteria influence how many people are identified with diabetes.",
+                "B": "To propose new diagnostic thresholds for future adoption.",
+                "C": "To compare glucose-testing devices manufactured by different companies.",
+                "D": "To review the biological mechanisms underlying diabetes without discussing diagnostic policy."
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: It specifies non-fasting plasma glucose for screening.",
-                "B": "False: No hospital stay is described.",
-                "C": "False: It contrasts with fasting-only approaches.",
-                "D": "False: Screening remains part of the process."
+                "A": "Correct: The Review examines how changes affect prevalence and implications for individuals, including high-risk groups.",
+                "B": "False: The Review analyzes impact, not proposes new thresholds.",
+                "C": "False: Device comparison is not mentioned.",
+                "D": "False: The passage makes clear that diagnostic criteria and implications are central topics."
             }
         },
         {
             "sentence_id": 4,
-            "original_sentence": "The second is that a lower plasma glucose concentration is now taken as diagnostic for diabetes.",
-            "question": "How did the diagnostic threshold change?",
+            "original_sentence": "The phenotype of those diagnosed with diabetes and the predictive value for the development of complications according to the different criteria are compared.",
+            "question": "What comparison does the Review make regarding diagnostic criteria?",
             "options": {
-                "A": "A lower glucose level now qualifies as diagnostic.",
-                "B": "The threshold was raised to reduce overdiagnosis.",
-                "C": "Glucose levels are no longer used to diagnose diabetes.",
-                "D": "Only symptoms are considered for diagnosis."
+                "A": "It examines how people meeting different diagnostic thresholds differ in characteristics and in their likelihood of developing complications.",
+                "B": "It evaluates whether all diagnostic criteria identify the same biological subtype of diabetes.",
+                "C": "It determines which diagnostic method is most popular in routine clinical practice.",
+                "D": "It argues that the older diagnostic criteria had no predictive value at all."
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: The passage states the diagnostic concentration is now lower.",
-                "B": "False: The direction of change is opposite.",
-                "C": "False: Glucose levels remain central.",
-                "D": "False: Symptoms-only is not suggested."
+                "A": "Correct: The passage says the Review compares phenotype and predictive value across criteria.",
+                "B": "False: Biological subtypes are not discussed.",
+                "C": "False: Popularity of methods is not examined.",
+                "D": "False: The text does not claim older criteria lack all predictive value."
+            }
+        },   
+        {
+            "sentence_id": 5,
+            "original_sentence": "It is clear that these changes in diagnostic criteria have major importance both for individuals and for resource planning at a national level.",
+            "question": "What does the passage highlight about the consequences of altering diabetes diagnostic criteria?",
+            "options": {
+                "A": "Such changes have significant implications for personal health outcomes and for how healthcare systems plan and allocate resources.",
+                "B": "The changes mainly affect laboratory workflow but have little impact on individuals.",
+                "C": "They matter primarily for research settings and do not influence public health planning.",
+                "D": "Their importance is limited because diabetes prevalence is unaffected by diagnostic thresholds."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The sentence states these changes are important for individuals and national resource planning.",
+                "B": "False: The implication extends beyond lab workflow.",
+                "C": "False: The passage specifically notes national-level planning.",
+                "D": "False: The Review is concerned precisely because prevalence *does* change."
             }
         }
     ],
     "text_08": [
         {
-            "sentence_id": 2,
-            "original_sentence": "Asthma has likely been increasing due to changes in the environment.",
-            "question": "What explanation does the passage give for rising asthma rates?",
+            "sentence_id": 1,
+            "original_sentence": "Asthma, which typically begins in childhood and is the most common chronic disease of childhood, has reached epidemic proportions.",
+            "question": "What does the passage suggest about the current state of childhood asthma?",
             "options": {
-                "A": "Environmental changes probably contribute to the increase.",
-                "B": "Better diagnosis fully explains the increase.",
-                "C": "Genetic shifts are the sole cause of the rise.",
-                "D": "Asthma rates have not actually been increasing."
+                "A": "It is extremely common in children.",
+                "B": "It is now rare in childhood because most cases resolve early in life.",
+                "C": "It affects adults far more than children, making childhood cases less concerning.",
+                "D": "Its prevalence has stabilized after years of steady decline."
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: It links rising rates to environmental changes.",
-                "B": "False: Diagnostic changes are not cited as the sole reason.",
-                "C": "False: Genetics alone are not blamed.",
-                "D": "False: It states asthma has likely been increasing."
+                "A": "Correct: The sentence states it is the most common chronic disease in children and has reached epidemic proportions.",
+                "B": "False: It says the opposite—common and increasing.",
+                "C": "False: Childhood onset is emphasized.",
+                "D": "False: The text describes an epidemic, not a decline."
+            }
+        },
+        {
+            "sentence_id": 2,
+            "original_sentence": "Asthma is associated with gene-environment interactions, and there is consensus that a \"window of opportunity\" exists early in life when environmental factors may influence its development.",
+            "question": "What does the passage suggest about the significance of early-life timing in asthma development?",
+            "options": {
+                "A": "There is a period in early childhood when environmental conditions may shift the likelihood of developing asthma.",
+                "B": "Environmental exposures affect asthma risk only after long-term symptoms have already appeared.",
+                "C": "The timing of exposures matters mainly for diagnosing asthma, not for influencing whether it develops.",
+                "D": "Early-life environmental influences are negligible because genetic factors dominate during that period."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The 'window of opportunity' refers to early-life environmental influences interacting with genetics.",
+                "B": "False: Influence occurs before full symptom development.",
+                "C": "False: The passage is about disease development, not diagnosis.",
+                "D": "False: The sentence emphasizes interaction, not genetic dominance."
             }
         },
         {
             "sentence_id": 5,
-            "original_sentence": "The most data are available for multifaceted interventions against allergens, which have shown a modest reduction in asthma development.",
-            "question": "What do existing studies show about multifaceted allergen interventions?",
+            "original_sentence": "However, multifaceted allergen reduction studies have shown clinical benefit.",
+            "question": "What contrast does the passage draw regarding allergen-reduction strategies?",
             "options": {
-                "A": "They are linked to a modest reduction in developing asthma.",
-                "B": "They eliminate asthma risk entirely.",
-                "C": "They consistently fail to influence asthma rates.",
-                "D": "They are considered too risky to implement."
+                "A": "Approaches targeting multiple allergens can produce clinical improvement, unlike single-allergen reduction strategies.",
+                "B": "Multifaceted programs are less effective because they dilute the focus on key allergens.",
+                "C": "Reducing exposure to multiple allergens has no measurable impact on clinical outcomes.",
+                "D": "Single-allergen reduction works better than multifaceted approaches for prevention."
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: The passage notes modest reduction.",
-                "B": "False: It does not claim elimination.",
-                "C": "False: It indicates some benefit.",
-                "D": "False: No risk-based avoidance is mentioned."
+                "A": "Correct: Multifaceted reduction shows benefit, in contrast to monoallergen reduction.",
+                "B": "False: The passage indicates the opposite.",
+                "C": "False: Clinical benefit is explicitly mentioned.",
+                "D": "False: Single-allergen reduction is ineffective for prevention."
             }
         },
         {
             "sentence_id": 6,
-            "original_sentence": "Future studies will need to evaluate feasibility of large-scale public health interventions such as increasing omega-3 fatty acids in the diet and reducing maternal smoking.",
-            "question": "What does the passage say future research should examine?",
+            "original_sentence": "We propose that allergic diseases, including asthma, represent a dysfunctional interaction with our environment and that the increasing prevalence of asthma and allergy herald increased population risk for the development of other inflammatory and autoimmune diseases.",
+            "question": "What broader implication does the passage draw from rising rates of asthma and allergy?",
             "options": {
-                "A": "Whether broad public health efforts like diet changes or less maternal smoking are practical.",
-                "B": "If asthma can be cured using only fish oil supplements.",
-                "C": "Whether small pilot studies are sufficient to guide policy.",
-                "D": "If genetic testing should replace environmental interventions."
+                "A": "Their increasing prevalence may signal a wider vulnerability to future inflammatory and autoimmune illnesses.",
+                "B": "They mainly reflect improved diagnostic methods rather than underlying biological issues.",
+                "C": "They show that environmental influences no longer play a major role in immune disease.",
+                "D": "They suggest that asthma and allergy protect against autoimmune disorders."
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: It calls for feasibility studies on large-scale interventions.",
-                "B": "False: No cure claim is made.",
-                "C": "False: It points to large-scale feasibility, not pilots only.",
-                "D": "False: Genetics are not presented as replacements."
-            }
-        },
-        {
-            "sentence_id": 7,
-            "original_sentence": "As the proportion of studies devoted to primary prevention increases in the coming years, asthma prevention is likely to become a viable public health strategy.",
-            "question": "What outlook does the passage offer on asthma prevention?",
-            "options": {
-                "A": "It will likely become a workable public health approach as more research focuses on it.",
-                "B": "It is unlikely to ever be practical on a population level.",
-                "C": "It should be postponed until environmental changes reverse.",
-                "D": "It will replace all treatment efforts immediately."
-            },
-            "correct_answer": "A",
-            "Rationale": {
-                "A": "Correct: The passage is optimistic about prevention becoming viable.",
-                "B": "False: It suggests the opposite.",
-                "C": "False: No postponement is suggested.",
-                "D": "False: It does not say prevention will immediately replace treatment."
+                "A": "Correct: The passage links rising asthma/allergy to greater population risk for other immune diseases.",
+                "B": "False: It points to dysfunctional interactions, not improved diagnostics.",
+                "C": "False: It emphasizes environmental interaction, not its absence.",
+                "D": "False: It suggests increased risk, not protection."
             }
         }
     ],
     "text_09": [
         {
-            "sentence_id": 1,
-            "original_sentence": "Muscle cramps are painful and involuntary muscle contractions, which can occur in rest or during a voluntary contraction.",
-            "question": "How does the passage characterize muscle cramps?",
-            "options": {
-                "A": "They are painful, involuntary contractions that can happen at rest or during movement.",
-                "B": "They only occur when a person is sleeping.",
-                "C": "They are always voluntary and painless.",
-                "D": "They happen only during intense athletic activity."
-            },
-            "correct_answer": "A",
-            "Rationale": {
-                "A": "Correct: It describes painful involuntary contractions at rest or during contraction.",
-                "B": "False: Not limited to sleep.",
-                "C": "False: They are involuntary and painful.",
-                "D": "False: They are not limited to intense activity."
-            }
-        },
-        {
             "sentence_id": 2,
-            "original_sentence": "It is important to distinguish pathological muscle cramps from exercise-associated muscle cramp.",
-            "question": "What distinction does the passage make about muscle cramps?",
+            "original_sentence": "Generally, the cramp can last from minutes to a few seconds for idiopathic or known causes with healthy subjects or in the presence of diseases.",
+            "question": "What point does the passage make about how long muscle cramps last?",
             "options": {
-                "A": "It differentiates cramps linked to disease from those tied to exercise.",
-                "B": "It states all cramps have the same underlying causes.",
-                "C": "It claims exercise cramps are unrelated to muscle function.",
-                "D": "It notes that cramps only matter when they occur during rest."
+                "A": "Their duration varies widely, regardless of whether the person is healthy or has a condition.",
+                "B": "They persist only in people with chronic illnesses and rarely occur in healthy individuals.",
+                "C": "They typically last for hours unless treated immediately with medication.",
+                "D": "Their length is predictable because idiopathic cramps always last longer than disease-related ones."
             },
             "correct_answer": "A",
             "Rationale": {
-                "A": "Correct: It highlights pathological vs exercise-associated cramps.",
-                "B": "False: It implies differing causes.",
-                "C": "False: It does not disconnect exercise cramps from muscle function.",
-                "D": "False: It does not downplay non-rest cramps."
+                "A": "Correct: The sentence emphasizes that cramps may last seconds to minutes across different causes and populations.",
+                "B": "False: Cramps occur in healthy and diseased individuals.",
+                "C": "False: Hours-long cramps are not described.",
+                "D": "False: The passage does not distinguish duration by cause."
             }
         },
         {
-            "sentence_id": 3,
-            "original_sentence": "The causes of muscle cramps are various, and its aetiology is not well understood.",
-            "question": "What does the passage say about the causes of muscle cramps?",
+            "sentence_id": 4,
+            "original_sentence": "Exercise-associated muscle cramps are the most frequent condition requiring medical/therapeutic intervention during sports.",
+            "question": "What does the passage indicate about muscle cramps in athletic settings?",
             "options": {
-                "A": "They have multiple possible causes, and the exact reasons are not fully known.",
+                "A": "Among sports-related issues needing treatment, cramps are especially common.",
+                "B": "Most exercise-related cramps resolve on their own and rarely need medical attention.",
+                "C": "Athletes usually experience cramps only when dehydrated and not for other reasons.",
+                "D": "Other sports injuries are far more common sources of medical intervention than cramps."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The passage says they are the most frequent condition requiring intervention.",
+                "B": "False: The text states they commonly require intervention.",
+                "C": "False: Dehydration is not mentioned.",
+                "D": "False: The passage explicitly identifies cramps as the most frequent condition."
+            }
+        },
+        {
+            "sentence_id": 5,
+            "original_sentence": "The specific etiology is not well understood and possible causes depend on the physiological or pathological situation in which the cramps appear.",
+            "question": "What does the passage suggest about why muscle cramps occur?",
+            "options": {
+                "A": "Their exact cause may differ depending on whether the body is functioning normally or affected by disease.",
                 "B": "Their cause is fully understood and is the same across all situations.",
                 "C": "They arise from a single biochemical pathway regardless of context.",
                 "D": "They are caused only by structural damage to the affected muscle."
