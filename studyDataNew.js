@@ -831,5 +831,768 @@ const studyQuizzes = {
                 "D": "False: The sentence indicates guideline change *after* safety and efficacy are demonstrated, not before."
             }
         }        
-    ]    
+    ],
+    "text_11": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "Cystic Echinococcosis or Hydatid disease is caused by the infection with the larval stage of long tapeworm, Echinococcus granulosus.",
+            "question": "According to the passage, what leads to the development of hydatid disease?",
+            "options": {
+                "A": "Infection with the immature form of a specific tapeworm species.",
+                "B": "Exposure to bacterial toxins produced in contaminated food.",
+                "C": "Autoimmune reactions that target the liver and lungs.",
+                "D": "Overgrowth of normally harmless worms residing in the intestine."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The disease results from infection with the larval stage of Echinococcus granulosus.",
+                "B": "False: Bacterial toxins are unrelated here.",
+                "C": "False: This is not described as an autoimmune condition.",
+                "D": "False: The problem is infection with a tapeworm larva, not overgrowth of normal flora."
+            }
+        },
+    
+        {
+            "sentence_id": 2,
+            "original_sentence": "This condition often remains asymptomatic for years before the cyst grows large enough to cause symptoms in affected organs.",
+            "question": "What does the passage suggest about the timing of symptoms in hydatid disease?",
+            "options": {
+                "A": "Symptoms may not appear until the cyst becomes sizable enough to disrupt the involved organ.",
+                "B": "Symptoms typically arise immediately after infection because the body reacts strongly to the parasite.",
+                "C": "Early signs are usually obvious and detectable during routine physical examination.",
+                "D": "Most patients experience acute pain within days of contracting the infection."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The disease is often silent until the cyst enlarges.",
+                "B": "False: The passage states the opposite—often asymptomatic for years.",
+                "C": "False: No such early, obvious signs are mentioned.",
+                "D": "False: The onset is not described as acute."
+            }
+        },
+        {
+            "sentence_id": 5,
+            "original_sentence": "The cyst was approximately 7.8×6.6×8cm with internal multiple septations at the lower pole cortex of the left kidney.",
+            "question": "What does the passage highlight about the characteristics of the  cyst in this patient?",
+            "options": {
+                "A": "It was a large, multiloculated cyst located at the lower pole of the left kidney.",
+                "B": "It was a small, uniform cyst occupying the entire kidney.",
+                "C": "It showed no internal structure and appeared completely solid.",
+                "D": "It was confined to the upper pole and demonstrated extensive calcification."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The dimensions and presence of septations indicate a large, complex cyst.",
+                "B": "False: It was large and multiloculated, not small or uniform.",
+                "C": "False: It had internal septations, not a solid appearance.",
+                "D": "False: The cyst was at the lower pole with no mention of calcification."
+            }
+        },
+        {
+            "sentence_id": 6,
+            "original_sentence": "Laparoscopic pericystectomy was performed and with no postoperative complications, she was discharged on albendazole and other supportive medication.",
+            "question": "What does the passage indicate about the patient’s initial management?",
+            "options": {
+                "A": "She underwent minimally invasive cyst removal and was started on antiparasitic medication without complications.",
+                "B": "She required open surgery due to extensive damage and had a prolonged hospitalization.",
+                "C": "Surgery was avoided due to high risk, and treatment consisted only of antibiotics.",
+                "D": "She had complications after surgery that required immediate reoperation."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Laparoscopic pericystectomy with albendazole and no complications.",
+                "B": "False: Open surgery and long hospitalization are not mentioned.",
+                "C": "False: She did undergo surgery, and albendazole is antiparasitic, not merely antibiotic.",
+                "D": "False: The passage explicitly says no postoperative complications."
+            }
+        }
+    ],
+    "text_12": [
+        {
+            "sentence_id": 2,
+            "original_sentence": "The age distribution is bimodal with the highest incidence in childhood and after 50 years of age.",
+            "question": "What point does the passage make about when inguinal hernias tend to occur?",
+            "options": {
+                "A": "They have two peak periods.",
+                "B": "They occur steadily across all ages without any peaks.",
+                "C": "They only develop in adulthood and are rarely seen in children.",
+                "D": "They primarily occur in adolescence due to rapid growth."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The distribution is bimodal, with peaks in childhood and after age 50.",
+                "B": "False: The passage highlights two distinct peaks.",
+                "C": "False: Childhood is one of the peaks.",
+                "D": "False: Adolescence is not mentioned."
+            }
+        },
+    
+        {
+            "sentence_id": 3,
+            "original_sentence": "Diagnosis is usually reached through clinical examination of a lump in the inguinal region although some patients can present with intestinal obstruction.",
+            "question": "According to the passage, how are inguinal hernias typically identified?",
+            "options": {
+                "A": "By detecting a lump during physical examination.",
+                "B": "Primarily through CT scans because physical findings are rarely informative.",
+                "C": "Only after symptoms progress to severe abdominal infection.",
+                "D": "Through routine blood tests that detect muscle-wall defects."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Clinical exam of a lump is typical, with occasional obstruction presentations.",
+                "B": "False: The passage emphasizes clinical examination.",
+                "C": "False: Infection is not mentioned.",
+                "D": "False: Blood tests do not diagnose hernias."
+            }
+        },
+    
+        {
+            "sentence_id": 4,
+            "original_sentence": "Inguinal hernia repair is the only definitive treatment and is one of the most common surgical procedures performed.",
+            "question": "What does the passage indicate about treatment for inguinal hernia?",
+            "options": {
+                "A": "Surgical repair is required to definitively treat the condition and is performed very frequently.",
+                "B": "Most inguinal hernias resolve spontaneously without the need for intervention.",
+                "C": "Medication is the preferred first-line treatment, with surgery rarely necessary.",
+                "D": "Only emergency surgery is considered effective for long-term control."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Surgery is the only definitive treatment and is common.",
+                "B": "False: Spontaneous resolution is not described.",
+                "C": "False: Medication is not mentioned as definitive treatment.",
+                "D": "False: It is usually an elective procedure."
+            }
+        },
+    
+        {
+            "sentence_id": 5,
+            "original_sentence": "It is usually performed as an elective procedure in local, spinal or general anasthesia.",
+            "question": "What does the passage suggest about how inguinal hernia repair is performed?",
+            "options": {
+                "A": "It is commonly scheduled rather than emergent.",
+                "B": "It requires emergency operation in nearly all cases.",
+                "C": "It can only be performed under general anesthesia because of its complexity.",
+                "D": "It is typically avoided unless no other medical therapy is available."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The procedure is elective and may use local, spinal, or general anesthesia.",
+                "B": "False: Emergency repair is not typical.",
+                "C": "False: Multiple anesthesia types are acceptable.",
+                "D": "False: Surgery is the only definitive treatment, not a last resort."
+            }
+        }
+    ],
+    "text_13": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "C-reactive protein (CRP) is a phylogenetically highly conserved plasma protein, with homologs in vertebrates and many invertebrates, that participates in the systemic response to inflammation.",
+            "question": "What does the passage suggest about the nature of CRP?",
+            "options": {
+                "A": "It is a widely shared protein across species that plays a role in the body's overall reaction to inflammation.",
+                "B": "It is found only in humans and recently evolved as part of modern immune responses.",
+                "C": "It is produced only by pathogens and signals the presence of infection.",
+                "D": "It functions exclusively in blood clotting rather than inflammation."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The sentence emphasizes evolutionary conservation and participation in systemic inflammatory response.",
+                "B": "False: CRP has homologs in many species, not just humans.",
+                "C": "False: CRP is a host protein, not a pathogen product.",
+                "D": "False: Clotting is not mentioned."
+            }
+        },
+        {
+            "sentence_id": 3,
+            "original_sentence": "CRP is a pattern recognition molecule, binding to specific molecular configurations that are typically exposed during cell death or found on the surfaces of pathogens.",
+            "question": "What function of CRP is highlighted in the passage?",
+            "options": {
+                "A": "It identifies certain molecular patterns associated with dying cells or microbes and binds to them.",
+                "B": "It selectively destroys pathogens through enzymatic activity.",
+                "C": "It blocks immune recognition by masking damaged cells.",
+                "D": "It binds exclusively to healthy tissue to promote repair."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: CRP binds specific structures on dead cells and pathogens.",
+                "B": "False: The passage doesn't describe direct destruction.",
+                "C": "False: It assists recognition, not blocks it.",
+                "D": "False: It targets exposed patterns on damaged or foreign material."
+            }
+        },
+        {
+            "sentence_id": 4,
+            "original_sentence": "Its rapid increase in synthesis within hours after tissue injury or infection suggests that it contributes to host defense and that it is part of the innate immune response.",
+            "question": "What does the passage imply about CRP’s role in immunity?",
+            "options": {
+                "A": "Its quick rise after injury or infection indicates that it participates in defense.",
+                "B": "Its production occurs only after adaptive immunity is fully activated.",
+                "C": "It acts mainly as a late-stage marker once healing has already begun.",
+                "D": "Its levels rise slowly over weeks, limiting its usefulness in immune response."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The passage explicitly links rapid synthesis to innate immunity.",
+                "B": "False: It is part of the innate, not adaptive, response.",
+                "C": "False: It rises early, not late.",
+                "D": "False: It rises within hours."
+            }
+        },
+        {
+            "sentence_id": 5,
+            "original_sentence": "Recently, an association between minor CRP elevation and future major cardiovascular events has been recognized, leading to the recommendation by the Centers for Disease Control and the American Heart Association that patients at intermediate risk of coronary heart disease might benefit from measurement of CRP.",
+            "question": "According to the passage, why has CRP measurement been recommended for patients at risk of coronary heart disease?",
+            "options": {
+                "A": "Increases in CRP levels are linked to a higher likelihood of future cardiovascular problems.",
+                "B": "CRP causes coronary artery blockages and should be monitored in intermediate-risk patients.",
+                "C": "CRP levels can be used to predict the timing of heart attacks in high-risk individuals.",
+                "D": "CRP is the only biomarker capable of diagnosing coronary heart disease on its own."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The passage links minor CRP elevation to future major cardiovascular events and recommends testing in intermediate-risk groups.",
+                "B": "False: Association is noted, not causation.",
+                "C": "False: Timing prediction is not mentioned.",
+                "D": "False: CRP is not described as a standalone diagnostic tool."
+            }
+        }
+    ],
+    "text_14": [  
+        {
+            "sentence_id": 5,
+            "original_sentence": "He did not have any cardiovascular related symptoms.",
+            "question": "Why is the absence of cardiovascular symptoms relevant in the case?",
+            "options": {
+                "A": "It helps suggest that his edema was not due to heart-related causes.",
+                "B": "It confirms that edema is never associated with cardiac disease.",
+                "C": "It indicates that gabapentin is known to protect against heart problems.",
+                "D": "It shows that his swelling was most likely due to kidney failure."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Lack of cardiovascular symptoms makes heart failure–related edema less likely.",
+                "B": "False: Edema can be cardiac in origin.",
+                "C": "False: Gabapentin does not provide cardiac protection.",
+                "D": "False: Kidney issues are not indicated by the text."
+            }
+        },
+        {
+            "sentence_id": 6,
+            "original_sentence": "Physical exam was only significant for 3+ pitting edema with all laboratory values and imaging being unremarkable.",
+            "question": "What does the passage emphasize about the physical exam?",
+            "options": {
+                "A": "Severe leg swelling was present, but no abnormalities were found on other tests.",
+                "B": "Multiple organ abnormalities were detected, explaining the edema.",
+                "C": "The physical exam revealed several problems, including pitting edema.",
+                "D": "Laboratory findings pointed to liver failure as the source of swelling."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Only 3+ edema was notable; all other tests were normal.",
+                "B": "False: No abnormalities were found.",
+                "C": "False: No abnormalities were found.",
+                "D": "False: Liver failure is not suggested."
+            }
+        },
+        {
+            "sentence_id": 7,
+            "original_sentence": "Gabapentin was discontinued and his lower extremity swelling improved over subsequent days.",
+            "question": "What is the implied relationship between stopping gabapentin and the patient’s swelling?",
+            "options": {
+                "A": "Stopping gabapentin led to improvement in swelling, implicating the medication as a likely contributor.",
+                "B": "Discontinuation had no effect, confirming the swelling was unrelated to medication.",
+                "C": "Gabapentin was stopped because his swelling got better.",
+                "D": "His swelling went away right after stopping gabapentin."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Improvement after discontinuation suggests medication-induced edema.",
+                "B": "False",
+                "C": "False",
+                "D": "False"
+            }
+        },
+        {
+            "sentence_id": 8,
+            "original_sentence": "Incidence of pedal edema with gabapentin use is approximately 7 to 7.5% with all studies being in elderly patients receiving doses above 1200 mg/day.",
+            "question": "What does the passage say about the known risk of gabapentin-induced edema?",
+            "options": {
+                "A": "It is mostly reported in older adults taking relatively high doses.",
+                "B": "7–7.5% of elderly patients naturally have pedal edema, unrelated to medication.",
+                "C": "Pedal edema happens in most people who take gabapentin.",
+                "D": "It affects nearly all patients, regardless of age or dosage."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The incidence is about 7–7.5%, primarily in high-dose elderly patients.",
+                "B": "False",
+                "C": "False",
+                "D": "False"
+            }
+        },
+        {
+            "sentence_id": 10,
+            "original_sentence": "It is important to recognize this adverse effect because gabapentin is used in conditions like diabetic neuropathy, which is associated with multiple co-morbidities that can give rise to bilateral leg swelling.",
+            "question": "Why is it important to identify the adverse effect in patients taking gabapentin?",
+            "options": {
+                "A": "Because patients who take gabapentin often have other conditions that can also cause leg swelling, making the true source easy to overlook.",
+                "B": "Because patients with diabetic neuropathy are usually on many medications, and those medicines interfere with gabapentin to cause swelling.",
+                "C": "Because gabapentin commonly causes diabetic neuropathy, and swelling is an early warning sign.",
+                "D": "Because gabapentin almost always leads to severe swelling, so it must be stopped immediately."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Comorbidities can cause leg swelling, so gabapentin effects may be confused with them.",
+                "B": "False",
+                "C": "False",
+                "D": "False"
+            }
+        }
+    ],
+    "text_15": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "Tardive dyskinesia (TD) is a disorder characterized by involuntary movements, typically of the orofacial muscles and also of the extremities and other muscle groups.",
+            "question": "What does the passage highlight about the defining feature of tardive dyskinesia?",
+            "options": {
+                "A": "It involves involuntary movements that commonly affect facial muscles and sometimes the limbs.",
+                "B": "It causes the muscles to become weak and unable to move normally.",
+                "C": "It is marked by intentional repetitive movements due to behavioral habits.",
+                "D": "It always causes uncontrollable movements throughout the entire body."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: TD is defined by involuntary orofacial and extremity movements.",
+                "B": "False: TD involves excessive movement, not weakness.",
+                "C": "False: Movements are involuntary, not intentional.",
+                "D": "False: Overgeneralization"
+            }
+        },
+        {
+            "sentence_id": 3,
+            "original_sentence": "Because the indications and off-label uses for these agents have expanded over the last 2 decades, a larger number of patients are receiving antipsychotic medications than in the past.",
+            "question": "Why does the writer mention that uses for antipsychotics have expanded over the past two decades?",
+            "options": {
+                "A": "Because more patients now receive antipsychotics, increasing overall exposure to the risk of TD.",
+                "B": "Because antipsychotics have become much safer over time, leading doctors to prescribe them more frequently.",
+                "C": "Because mental health conditions have become far more common, requiring broader use of antipsychotic medications.",
+                "D": "Because the expanded indications show that antipsychotics are now effective for a wide variety of medical problems."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Expanded uses have increased the number of patients receiving antipsychotics.",
+                "B": "False: The trend is an increase, not a decrease.",
+                "C": "False: Use has expanded beyond severe cases.",
+                "D": "False: Off-label uses have expanded, not disappeared."
+            }
+        },
+        {
+            "sentence_id": 4,
+            "original_sentence": "While evidence suggests that patients being treated with second-generation antipsychotics have less risk for developing TD than those treated with first-generation antipsychotics, the decreased risk is not as great as was originally expected.",
+            "question": "What does the passage say about TD risk with second-generation antipsychotics?",
+            "options": {
+                "A": "They may lower the risk compared with older agents, but the reduction is smaller than once anticipated.",
+                "B": "They completely eliminate the risk of developing TD.",
+                "C": "They pose a much higher risk than first-generation antipsychotics.",
+                "D": "They are used only when TD has already developed."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Risk is lower but not as dramatically reduced as expected.",
+                "B": "False: The risk is reduced, not eliminated.",
+                "C": "False: They have less, not more, risk.",
+                "D": "False: They are not used only in established TD."
+            }
+        },
+    
+        {
+            "sentence_id": 5,
+            "original_sentence": "In addition, patients with chronic psychiatric conditions often require long-term use of antipsychotics, putting them at risk for TD.",
+            "question": "Why are patients with chronic psychiatric conditions at particular risk for TD?",
+            "options": {
+                "A": "They frequently need long-term antipsychotic therapy, which increases the likelihood of developing TD.",
+                "B": "They are usually treated with medications that completely block dopamine production.",
+                "C": "Their psychiatric symptoms directly cause involuntary movements identical to TD.",
+                "D": "They rarely stay on antipsychotics long enough for adverse effects to appear."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Long-term exposure increases TD risk.",
+                "B": "False: Dopamine production blockade is not mentioned.",
+                "C": "False: TD is drug-related, not symptom-driven.",
+                "D": "False: They often require prolonged treatment."
+            }
+        }
+    ],
+    "text_16": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "An 18 year-old woman presented to an outside hospital with seizure activity after a massive ingestion of lamotrigine, bupropion, trazodone, buspirone, and possibly isoretinoin.",
+            "question": "What does the passage indicate about the circumstances leading to the patient’s presentation?",
+            "options": {
+                "A": "She had seizures because she took a very large amount of several medications.",
+                "B": "She suddenly developed a seizure disorder for no clear reason.",
+                "C": "She fainted after skipping her usual medicines.",
+                "D": "She presented with seizures triggered by a recent head injury."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The seizure activity followed a massive ingestion of several drugs.",
+                "B": "False",
+                "C": "False",
+                "D": "False: Trauma is not noted."
+            }
+        },
+        {
+            "sentence_id": 6,
+            "original_sentence": "She required norepinephrine intermittently for blood pressure support for approximately 2 days.",
+            "question": "What does the passage suggest about her cardiovascular status after arrival?",
+            "options": {
+                "A": "She experienced periods of low blood pressure requiring intermittent vasopressor support.",
+                "B": "Her blood pressure remained consistently high and needed antihypertensive therapy.",
+                "C": "Cardiovascular function stayed normal without pharmacologic assistance.",
+                "D": "She required long-term mechanical circulatory support."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Norepinephrine use indicates hypotension requiring support.",
+                "B": "False: Hypertension is not described.",
+                "C": "False: Norepinephrine contradicts this.",
+                "D": "False: No advanced devices were needed."
+            }
+        },
+        {
+            "sentence_id": 8,
+            "original_sentence": "EEG showed no epileptiform activity from approximately 11 hours-32 hours post ingestion.",
+            "question": "What does the EEG finding indicate about her neurologic status?",
+            "options": {
+                "A": "No seizure activity was detected between roughly 11 and 32 hours after ingestion.",
+                "B": "Continuous seizure activity persisted throughout the monitoring window.",
+                "C": "Her EEG was uninterpretable due to artifacts from abnormal heart rhythms.",
+                "D": "The EEG revealed structural brain injury requiring neurosurgical intervention."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: EEG detected no epileptiform activity in that interval.",
+                "B": "False: The passage says no epileptiform activity.",
+                "C": "False: Rhythm artifacts are not reported.",
+                "D": "False: No structural injury is mentioned."
+            }
+        },
+        {
+            "sentence_id": 11,
+            "original_sentence": "She was extubated on hospital day 5 and discharged to a psychiatric facility on hospital day 13.",
+            "question": "What does the passage indicate about her recovery course?",
+            "options": {
+                "A": "She slowly got better over several days and still needed ongoing mental health care after the medical emergency.",
+                "B": "She stayed on a breathing machine for all 13 days of her hospitalization.",
+                "C": "She recovered fully within 24 hours and was discharged the next day.",
+                "D": "She was discharged home once her seizures stopped."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Extubated day 5, discharged day 13.",
+                "B": "False: Ventilator support ended early.",
+                "C": "False: Hospital stay was 13 days.",
+                "D": "False: She recovered sufficiently for transfer."
+            }
+        }
+    ],
+    "text_17": [
+        {
+            "sentence_id": 3,
+            "original_sentence": "A recent series of pediatric studies appear to show that HbA1c has lower sensitivity than Fasting plasma glucose (FPG) or oral glucose tolerance test (OGTT).",
+            "question": "What do pediatric studies suggest about HbA1c compared with FPG or OGTT?",
+            "options": {
+                "A": "It detects fewer cases, indicating lower sensitivity compared with the other tests.",
+                "B": "It consistently outperforms FPG and OGTT in identifying diabetes.",
+                "C": "It has identical sensitivity to the other tests across age groups.",
+                "D": "It is unsuitable for use in adults but more accurate in children."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Studies indicate HbA1c is less sensitive.",
+                "B": "False: The passage says the opposite.",
+                "C": "False: Sensitivity differs.",
+                "D": "False: Adult accuracy is not addressed here."
+            }
+        },
+        {
+            "sentence_id": 4,
+            "original_sentence": "However, FPG and OGTT have themselves never been validated in children.",
+            "question": "What key point is the passage making by noting that FPG and OGTT have not been validated in children?",
+            "options": {
+              "A": "It challenges the assumption that HbA1c’s lower sensitivity in pediatric studies can be fully trusted.",
+              "B": "It shows that HbA1c is clearly the least useful test for diagnosing diabetes in children.",
+              "C": "It implies that FPG and OGTT are inappropriate for adults as well as children.",
+              "D": "It suggests that HbA1c should be abandoned entirely in favor of glucose-based tests."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: If FPG/OGTT are not validated in children, then comparisons claiming HbA1c is less sensitive may not indicate a true performance difference.",
+              "B": "False: The passage does not declare HbA1c the least useful test.",
+              "C": "False: Adult validation is not in question.",
+              "D": "False: The passage does not advocate abandoning HbA1c; it questions the strength of all tests."
+            }
+        },
+        {
+            "sentence_id": 6,
+            "original_sentence": "Thus, accepting the major ADA diagnostic criteria appears to be the best course of action for the pediatric community.",
+            "question": "What recommendation does the passage make for pediatric practice?",
+            "options": {
+                "A": "Using ADA’s established diagnostic criteria is likely the most practical approach for children.",
+                "B": "Pediatric clinicians should avoid using adult-based ADA criteria entirely.",
+                "C": "Diagnosis should rely solely on OGTT until more data are obtained.",
+                "D": "Clinicians should wait for large validation trials before diagnosing diabetes in children."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The passage recommends adopting ADA criteria in pediatrics.",
+                "B": "False: It recommends acceptance, not rejection.",
+                "C": "False: No such restriction is proposed.",
+                "D": "False: Waiting is not recommended given lack of expected studies."
+            }
+        },
+        {
+            "sentence_id": 7,
+            "original_sentence": "One area in which correlation studies between HbA1c and FPG or OGTT might shed light is in the definition of criteria for intervention in 'pre-diabetes,' as the Diabetes Prevention Program Trial did not use HbA1c.",
+            "question": "According to the passage, how might correlation studies between HbA1c and other tests be useful?",
+            "options": {
+                "A": "They could help clarify when to intervene in children who show early signs of pre-diabetes.",
+                "B": "They would replace the need for any glucose-based testing in the future.",
+                "C": "They are mainly intended to define new adult thresholds, not pediatric ones.",
+                "D": "They could validate HbA1c as the sole diagnostic tool for all forms of diabetes."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Correlation studies could inform intervention criteria for 'pre-diabetes.'",
+                "B": "False: Replacement of glucose tests is not claimed.",
+                "C": "False: The focus is pediatric intervention.",
+                "D": "False: The goal is not exclusive reliance on HbA1c."
+            }
+        }
+    ],
+    "text_18":[
+        {
+          "sentence_id": 2,
+          "original_sentence": "The last 70 years have seen huge advances in the field of implantable cardiac devices, from diagnostic tools to electrical therapies for bradycardia, ventricular arrhythmia and cardiac resynchronisation.",
+          "question": "What key idea is highlighted about heart devices over the past several decades?",
+          "options": {
+            "A": "There has been major progress, expanding from simple tests to treatments for several heart rhythm problems.",
+            "B": "Device technology has barely changed since the 1950s.",
+            "C": "Modern devices work the same way as early pacemakers, only smaller.",
+            "D": "All devices now rely solely on mechanical pumping rather than electrical signals."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: The text states that major advances have broadened their use from diagnosis to multiple rhythm therapies.",
+            "B": "False: The passage emphasizes dramatic advances.",
+            "C": "False: The passage notes expansion, not sameness.",
+            "D": "False: Devices use electrical therapy, not mechanical pumping."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "While out-of-hours specialist cardiology cover and regional arrhythmia pathways are increasingly established, they are not universal, and the management of arrhythmia remains an important facet of clinical medicine for the general physician.",
+          "question": "What challenge does the passage note about emergency care for heart rhythm problems?",
+          "options": {
+            "A": "Some hospitals still lack round-the-clock specialist support, so general doctors must often manage these issues.",
+            "B": "Most hospitals no longer treat arrhythmias because devices have replaced all medical care.",
+            "C": "Heart rhythm problems usually resolve on their own without medical attention.",
+            "D": "Only cardiologists are allowed to evaluate rhythm problems, even in emergencies."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Specialist pathways exist but are not universal, so general physicians play an important role.",
+            "B": "False: Arrhythmias still require medical management.",
+            "C": "False: Arrhythmias often require treatment.",
+            "D": "False: General physicians frequently manage these issues."
+          }
+        },
+        {
+          "sentence_id": 4,
+          "original_sentence": "This article discusses core recommendations from international guidelines with respect to heart rhythm diagnostics, pacing for bradycardia, cardiac resynchronisation and implantable cardioverter defibrillators, along with common complications.",
+          "question": "What kinds of guidance does the article draw from international recommendations?",
+          "options": {
+            "A": "How to diagnose rhythm problems and when to use different devices such as pacemakers and defibrillators.",
+            "B": "Only how to manage heart failure without using devices.",
+            "C": "Instructions for non-medical readers on how to adjust their own implanted devices.",
+            "D": "Rules for choosing medications instead of any device-based treatment."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: The article outlines guideline-based advice on diagnostics, pacing, resynchronisation, defibrillators, and complications.",
+            "B": "False: It is not limited to heart failure.",
+            "C": "False: It does not instruct patients to manipulate their devices.",
+            "D": "False: Devices—not alternatives to them—are the focus."
+          }
+        },
+        {
+          "sentence_id": 5,
+          "original_sentence": "Finally, future innovations such as the diagnostic potential of portable technologies, antibiotic envelopes for cardiac devices and the increasing use of leadless pacemakers are described.",
+          "question": "What future directions does the article describe for heart device technology?",
+          "options": {
+            "A": "Portable tools that can help diagnose rhythm problems, protective materials to reduce infection, and newer devices that avoid traditional wires.",
+            "B": "A shift away from electronic devices toward herbal therapies.",
+            "C": "Complete elimination of pacemakers because they will soon be unnecessary.",
+            "D": "Devices that no longer require electricity or any form of remote monitoring."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: The text mentions portable diagnostics, antibiotic envelopes, and leadless pacemakers.",
+            "B": "False: No such shift is mentioned.",
+            "C": "False: Pacemakers continue to evolve, not disappear.",
+            "D": "False: Devices continue to rely on electrical technology."
+          }
+        }
+    ],
+    "text_19":[
+        {
+          "sentence_id": 1,
+          "original_sentence": "Acute traumatic abdominal wall hernia (TAWH) is a rare type of hernia that occurs after a low or high velocity impact of the abdominal wall against a blunt object with few cases reported.",
+          "question": "Why does the passage stress that this type of hernia is rare and linked to sudden blunt impact?",
+          "options": {
+            "A": "To highlight that it may be overlooked because most doctors and patients do not expect a hernia to form instantly after trauma.",
+            "B": "To show that people with this injury typically have long-standing abdominal weakness.",
+            "C": "To suggest that trauma rarely causes internal injury and hernias are usually unrelated.",
+            "D": "To argue that only high-speed injuries can cause abdominal wall damage."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Emphasizing rarity + sudden force implies the diagnosis is easy to miss.",
+            "B": "False: No chronic weakness is mentioned.",
+            "C": "False: Trauma is directly linked to the hernia.",
+            "D": "False: The passage includes both low and high velocity impacts."
+          }
+        },
+        {
+          "sentence_id": 2,
+          "original_sentence": "Perforations of the hollow viscera commonly follow abdominal trauma and likely require surgery for hemorrhage and sepsis source control.",
+          "question": "What key point is the passage making about injuries to internal organs after blunt trauma?",
+          "options": {
+            "A": "Damage inside the abdomen may not stay contained and can quickly become life-threatening, requiring urgent surgical control.",
+            "B": "Most internal tears heal naturally, so surgery is rarely necessary.",
+            "C": "Bleeding from internal organs usually causes only mild symptoms after trauma.",
+            "D": "Infections from internal injuries occur slowly and do not require immediate attention."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: The passage says trauma perforations often require surgery for bleeding + infection control.",
+            "B": "False: It states the opposite.",
+            "C": "False: Hemorrhage is a key concern.",
+            "D": "False: Sepsis risk is immediate and serious."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "We report a case where a high velocity impact of the abdominal wall against the stump of a felled tree caused a TAWH with concomitant gastric perforation in a 20-year-old male patient who required exploratory laparotomy with primary repair of the stomach and fascia.",
+          "question": "What important idea does the case example illustrate?",
+          "options": {
+            "A": "A single strong blow can cause both a tear in the abdominal wall and a dangerous injury to an internal organ, requiring open surgery.",
+            "B": "Most traumatic hernias do not involve any risk to the stomach or other organs.",
+            "C": "Internal organ damage occurs only when a person has a previous hernia.",
+            "D": "Exploratory surgery is usually unnecessary because traumatic hernias can be repaired from the outside."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: The passage shows both wall + stomach injury from one impact.",
+            "B": "False: This case shows a serious organ injury.",
+            "C": "False: The patient had no prior hernia.",
+            "D": "False: Open surgery was required."
+          }
+        },
+        {
+          "sentence_id": 6,
+          "original_sentence": "It is imperative to emphasize the importance of the physical examination goal of not losing diagnosis of TAWH.",
+          "question": "What broader message is being emphasized about evaluating abdominal trauma?",
+          "options": {
+            "A": "Hands-on exam is essential because traumatic hernias can be subtle and are easily missed.",
+            "B": "Physical examination is optional because imaging always detects traumatic hernias.",
+            "C": "Once a patient reports pain, no examination is needed to make a diagnosis.",
+            "D": "Traumatic hernias are obvious enough that detailed evaluation is unnecessary."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: The passage warns that TAWH can be overlooked without diligent exam.",
+            "B": "False: Imaging alone may not catch it.",
+            "C": "False: Pain alone is nonspecific.",
+            "D": "False: TAWH is described as easily missed."
+          }
+        }
+    ],
+    "text_20":[
+        {
+          "sentence_id": 2,
+          "original_sentence": "This X aneuploidy condition is associated with a diverse set of clinical phenotypes such as gonadal dysfunction, short stature, osteoporosis and Type II diabetes mellitus, among others.",
+          "question": "What does the wide range of physical and metabolic features in Turner syndrome suggest?",
+          "options": {
+            "A": "That losing X-linked genetic material can influence many organs rather than just one area of the body.",
+            "B": "That the condition is limited to growth problems and does not affect other systems.",
+            "C": "That all symptoms are caused by lifestyle choices instead of genetics.",
+            "D": "That Turner syndrome affects only reproductive organs."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Several different systems are affected, implying broad genetic impact.",
+            "B": "False: Bone, metabolic, and reproductive effects are all listed.",
+            "C": "False: The cause is chromosomal, not behavioral.",
+            "D": "False: Symptoms clearly extend beyond gonads."
+          }
+        },
+        {
+          "sentence_id": 6,
+          "original_sentence": "In the current study, we have analysed the transcriptome profiles of human untransformed 45,X and 46,XX fibroblast cells and identified differential expression of genes in these two karyotypes.",
+          "question": "What key insight can be gained by comparing gene activity in 45,X fibroblast cells with 46,XX fibroblast cells?",
+          "options": {
+            "A": "It shows how losing one X chromosome changes the activity of many genes compared with typical female cells.",
+            "B": "It shows that both cell types lack the Y chromosome and therefore behave identically.",
+            "C": "It shows that fibroblast cells do not use X-linked genes at all.",
+            "D": "It proves that environmental exposures, not genes, cause all symptoms."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: The comparison reveals expression differences tied to X monosomy.",
+            "B": "False: Similar absence of the Y chromosome is irrelevant here.",
+            "C": "False: Fibroblasts do express many X-linked genes.",
+            "D": "False: The study explicitly examines gene-based mechanisms."
+          }
+        },
+        {
+          "sentence_id": 7,
+          "original_sentence": "Functional analysis revealed that these differentially expressing genes are associated with bone differentiation, glucose metabolism and gonadal development pathways.",
+          "question": "What does the connection between altered gene activity and pathways for bone, glucose, and gonadal function suggest?",
+          "options": {
+            "A": "That the molecular changes identified in the study align with the clinical features commonly seen in Turner syndrome.",
+            "B": "That Turner syndrome mainly affects digestion and has little effect on other systems.",
+            "C": "That changes in gene activity have no relationship to the symptoms of the disorder.",
+            "D": "That only glucose metabolism is involved, with no changes to growth or reproduction."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: The affected pathways mirror known clinical issues.",
+            "B": "False: Digestion is never mentioned.",
+            "C": "False: The study directly links molecular and clinical findings.",
+            "D": "False: Bone and gonadal pathways clearly appear."
+          }
+        },
+        {
+            "sentence_id": 8,
+            "original_sentence": "We also report differential expression of lincRNAs in X monosomic cells.",
+            "question": "What is the main point the study makes about lincRNAs in cells with only one X chromosome?",
+            "options": {
+              "A": "Their activity levels differ between 45,X cells and typical 46,XX cells.",
+              "B": "They are the main cause of all physical features seen in Turner syndrome.",
+              "C": "They show identical expression patterns regardless of X chromosome number.",
+              "D": "They are not affected by X chromosome loss."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The only claim in the text is that lincRNAs show different expression in X monosomic cells.",
+              "B": "False: The text never states they are the primary cause of symptoms.",
+              "C": "False: The passage explicitly says the expression is different.",
+              "D": "False: Differential expression means they are affected."
+            }
+        }
+    ]            
 };
