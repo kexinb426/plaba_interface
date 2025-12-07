@@ -104,6 +104,104 @@ const studyTexts = {
         "4": "While the principles of ureteric stone management have remained largely unchanged, the modern era has generated new methods and means to deliver it.",
         "5": "Advancements have occurred in all domains of endourology to try and refine treatment and balance it with cost, patient choice and quality of life.",
         "6": "Dissemination of technologies and demonstration of their efficacy and safety will eventually result in new recommendations among international guidelines and evolution of new gold standards."
+    },
+    "text_11": {
+        "1": "Cystic Echinococcosis or Hydatid disease is caused by the infection with the larval stage of long tapeworm, Echinococcus granulosus.",
+        "2": "This condition often remains asymptomatic for years before the cyst grows large enough to cause symptoms in affected organs.",
+        "3": "The most common organs involved are liver and lungs although the heart, brain, bone, central nervous system, and kidney may also be involved.",
+        "4": "This case is about a young woman who presented with left flank pain and urinary tract infection who was later diagnosed as having left renal hydatid cyst.",
+        "5": "The cyst was approximately 7.8\u00d76.6\u00d78cm with internal multiple septations at the lower pole cortex of the left kidney.",
+        "6": "Laparoscopic pericystectomy was performed and with no postoperative complications, she was discharged on albendazole and other supportive medication.",
+        "7": "With timely management using combination therapy, this condition is curable and the patient can live a healthy life with normal kidney function."
+    },
+    "text_12":{
+        "1": "Inguinal hernia is the most frequently diagnosed hernia and during their lifetime one third of males are diagnosed with an inguinal hernia.",
+        "2": "The age distribution is bimodal with the highest incidence in childhood and after 50 years of age.",
+        "3": "Diagnosis is usually reached through clinical examination of a lump in the inguinal region although some patients can present with intestinal obstruction.",
+        "4": "Inguinal hernia repair is the only definitive treatment and is one of the most common surgical procedures performed.",
+        "5": "It is usually performed as an elective procedure in local, spinal or general anasthesia.",
+        "6": "The repair constitutes of reinforcing the posterior wall of the inguinal canal, often using a polypropylene mesh; either via an open anterior approach or posteriorly from within the abdomen with laparoscopy.",
+        "7": "The most common complications following a hernia repair are recurrent hernia and chronic -discomfort but recurrence rates have improved with the use of mesh and laparoscopic techniques.",
+        "8": "This evidence based review describes the -epidemiology and etiology of inguinal hernia together with the most common surgical procedures; focusing on recent innovations."
+    },
+    "text_13": {
+        "1": "C-reactive protein (CRP) is a phylogenetically highly conserved plasma protein, with homologs in vertebrates and many invertebrates, that participates in the systemic response to inflammation.",
+        "2": "Its plasma concentration increases during inflammatory states, a characteristic that has long been employed for clinical purposes.",
+        "3": "CRP is a pattern recognition molecule, binding to specific molecular configurations that are typically exposed during cell death or found on the surfaces of pathogens.",
+        "4": "Its rapid increase in synthesis within hours after tissue injury or infection suggests that it contributes to host defense and that it is part of the innate immune response.",
+        "5": "Recently, an association between minor CRP elevation and future major cardiovascular events has been recognized, leading to the recommendation by the Centers for Disease Control and the American Heart Association that patients at intermediate risk of coronary heart disease might benefit from measurement of CRP.",
+        "6": "This review will largely focus on our current understanding of the structure of CRP, its ligands, the effector molecules with which it interacts, and its apparent functions."
+    },
+    "text_14":{
+        "1": "46 year old male with past medical history of schizoaffective disorder and chronic lower back pain, was admitted for management of worsening depression and anxiety.",
+        "2": "He was started on gabapentin, 300mg twice daily for his back pain and anxiety symptoms.",
+        "3": "His only other medication was hydrocodone.",
+        "4": "Over next few days, he started developing worsening bilateral lower extremity edema.",
+        "5": "He did not have any cardiovascular related symptoms.",
+        "6": "Physical exam was only significant for 3+ pitting edema with all laboratory values and imaging being unremarkable.",
+        "7": "Gabapentin was discontinued and his lower extremity swelling improved over subsequent days.",
+        "8": "Incidence of pedal edema with gabapentin use is approximately 7 to 7.5% with all studies being in elderly patients receiving doses above 1200 mg/day.",
+        "9": "This case illustrates that lower doses of gabapentin can also cause this adverse effect.",
+        "10": "It is important to recognize this adverse effect because gabapentin is used in conditions like diabetic neuropathy, which is associated with multiple co-morbidities that can give rise to bilateral leg swelling.",
+        "11": "Presence of gabapentin induced leg swelling can thus confound the clinical picture."
+    },
+    "text_15":{
+        "1": "Tardive dyskinesia (TD) is a disorder characterized by involuntary movements, typically of the orofacial muscles and also of the extremities and other muscle groups.",
+        "2": "The condition is associated with exposure to dopamine receptor blocking agents, including antipsychotics.",
+        "3": "Because the indications and off-label uses for these agents have expanded over the last 2 decades, a larger number of patients are receiving antipsychotic medications than in the past.",
+        "4": "While evidence suggests that patients being treated with second-generation antipsychotics have less risk for developing TD than those treated with first-generation antipsychotics, the decreased risk is not as great as was originally expected.",
+        "5": "In addition, patients with chronic psychiatric conditions often require long-term use of antipsychotics, putting them at risk for TD.",
+        "6": "This article addresses the prevalence, risk factors, and prevention of TD; assessment strategies including diagnostic criteria and rating scales; and evidence for TD treatments, including 2 newly approved medications: deutetrabenazine and valbenazine."
+    },
+    "text_16":{
+        "1": "An 18 year-old woman presented to an outside hospital with seizure activity after a massive ingestion of lamotrigine, bupropion, trazodone, buspirone, and possibly isoretinoin.",
+        "2": "Her initial vital signs were remarkable for tachycardia (120 bpm).",
+        "3": "She was intubated for airway protection.",
+        "4": "For treatment of status epilepticus, she received a total of 12 mg of IV lorazepam along with a lorazepam infusion titrated to 15 mg/hr, a propofol infusion of unknown dosing, and phenobarbital 650 mg.",
+        "5": "She was transferred to a receiving hospital.",
+        "6": "Her initial ECG at the receiving hospital showed a QRS of 117 ms which narrowed with 50 mEq of sodium bicarbonate after approximately 6 hours.",
+        "7": "She required norepinephrine intermittently for blood pressure support for approximately 2 days.",
+        "8": "The patient had no dysrhythmias.",
+        "9": "EEG showed no epileptiform activity from approximately 11 hours-32 hours post ingestion.",
+        "10": "At the receiving hospital, her serum lamotrigine concentration was 109 mcg/mL (reference 3.0-14.0 mcg/mL) 7 hours after ingestion.",
+        "11": "Her bupropion concentration was 92 ng/mL (reference 50-100 ng/mL).",
+        "12": "She was extubated on hospital day 5 and discharged to a psychiatric facility on hospital day 13."
+    },
+    "text_17":{
+        "1": "Diagnostic criteria for diabetes in children have not been established with nearly the rigor as that employed in adults.",
+        "2": "Recently revised American Diabetes Association (ADA) criteria allowed utilization of hemoglobin A(1c) (HbA1c) \u2265 6.5 % for diagnosis of diabetes.",
+        "3": "A recent series of pediatric studies appear to show that HbA1c has lower sensitivity than Fasting plasma glucose (FPG) or oral glucose tolerance test (OGTT).",
+        "4": "However, FPG and OGTT have themselves never been validated in children.",
+        "5": "Studies to validate diagnostic thresholds in children appear unlikely to take place.",
+        "6": "Thus, accepting the major ADA diagnostic criteria appears to be the best course of action for the pediatric community.",
+        "7": "One area in which correlation studies between HbA1c and FPG or OGTT might shed light is in the definition of criteria for intervention in 'pre-diabetes,' as the Diabetes Prevention Program Trial did not use HbA1c.",
+        "8": "However, such treatment, and the exact diagnostic thresholds at which it should be initiated in children, remains unproven."
+    },
+    "text_18": {
+        "1": "This article provides an overview of current cardiac device management, complications, and future areas for development.",
+        "2": "The last 70 years have seen huge advances in the field of implantable cardiac devices, from diagnostic tools to electrical therapies for bradycardia, ventricular arrhythmia and cardiac resynchronisation.",
+        "3": "While out-of-hours specialist cardiology cover and regional arrhythmia pathways are increasingly established, they are not universal, and the management of arrhythmia remains an important facet of clinical medicine for the general physician.",
+        "4": "This article discusses core recommendations from international guidelines with respect to heart rhythm diagnostics, pacing for bradycardia, cardiac resynchronisation and implantable cardioverter defibrillators, along with common complications.",
+        "5": "Finally, future innovations such as the diagnostic potential of portable technologies, antibiotic envelopes for cardiac devices and the increasing use of leadless pacemakers are described."
+    },
+    "text_19": {
+        "1": "Acute traumatic abdominal wall hernia (TAWH) is a rare type of hernia that occurs after a low or high velocity impact of the abdominal wall against a blunt object with few cases reported.",
+        "2": "Perforations of the hollow viscera commonly follow abdominal trauma and likely require surgery for hemorrhage and sepsis source control.",
+        "3": "We report a case where a high velocity impact of the abdominal wall against the stump of a felled tree caused a TAWH with concomitant gastric perforation in a 20-year-old male patient who required exploratory laparotomy with primary repair of the stomach and fascia.",
+        "4": "The physical examination findings without previous history of abdominal hernia and pneumoperitoneum in the chest X-ray made suspect our diagnosis and it was confirmed intraoperatively.",
+        "5": "At 3 months postoperatively the patient has a strong abdominal wall.",
+        "6": "It is imperative to emphasize the importance of the physical examination goal of not losing diagnosis of TAWH."
+    },
+    "text_20":{
+        "1": "Turner syndrome is a chromosomal abnormality characterized by the absence of whole or part of the X chromosome in females.",
+        "2": "This X aneuploidy condition is associated with a diverse set of clinical phenotypes such as gonadal dysfunction, short stature, osteoporosis and Type II diabetes mellitus, among others.",
+        "3": "These phenotypes differ in their severity and penetrance among the affected individuals.",
+        "4": "Haploinsufficiency for a few X linked genes has been associated with some of these disease phenotypes.",
+        "5": "RNA sequencing can provide valuable insights to understand molecular mechanism of disease process.",
+        "6": "In the current study, we have analysed the transcriptome profiles of human untransformed 45,X and 46,XX fibroblast cells and identified differential expression of genes in these two karyotypes.",
+        "7": "Functional analysis revealed that these differentially expressing genes are associated with bone differentiation, glucose metabolism and gonadal development pathways.",
+        "8": "We also report differential expression of lincRNAs in X monosomic cells.",
+        "9": "Our observations provide a basis for evaluation of cellular and molecular mechanism(s) in the establishment of Turner syndrome phenotypes."
     }
 };
 
