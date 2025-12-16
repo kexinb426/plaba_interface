@@ -368,7 +368,7 @@
 
                 <!-- Feedback box -->
                 <div id="diagnosis-section" class="feedback-box" style="margin-top:12px; padding:10px; border:1px solid #eee; border-radius:6px; background:#f9fafb;">
-                    <p class="question-label" style="margin:0 0 8px 0;">Did anything create a barrier to understanding?</p>
+                    <p class="question-label" style="margin:0 0 8px 0;">Did anything make this sentence harder to read, follow, or understand?</p>
                     <!-- <p style="margin:0 0 8px 0; font-size:0.9rem; color:#555;">(You can copy/paste the part, describe what felt confusing, or ask any questions.)</p> -->
                     <textarea id="sentence-feedback" rows="3" style="width:95%; border:1px solid #ccc; border-radius:4px; padding:8px; resize: vertical;" placeholder="Copy/paste the part, describe what felt confusing, or ask any questions."></textarea>
                 </div>
@@ -874,6 +874,7 @@
             startQuizBtn.style.display = 'inline-block';
             overallSection.style.display = 'block';
             startQuizBtn.disabled = true;
+            quizLocked = false;
             
             // Scroll sidebar to top
             document.querySelector('.sidebar-right').scrollTop = 0;
@@ -885,6 +886,7 @@
         const quizResponses = {}; // idx -> {sentence_id, selected_option, correct_answer, is_correct, question, difficulty, options}
         const quizOptionOrder = {}; // idx -> shuffled array of [key, text]
         let quizHighlightDisabled = true;
+        let quizLocked = false; // Prevent edits after showing answers
 
         // Start quiz only after overall feedback section
         startQuizBtn.addEventListener('click', () => {
@@ -902,6 +904,7 @@
             quizQuestions = studyQuizzes[quizKey] || [];
             quizIndex = 0;
             Object.keys(quizOptionOrder).forEach(k => delete quizOptionOrder[k]);
+            quizLocked = false;
 
             if (quizQuestions.length === 0) {
                 quizContainer.innerHTML = '<p>No questions for this text.</p>';
@@ -1003,6 +1006,11 @@
             const confInputs = document.querySelectorAll(`input[name="quiz_${quizIndex}_conf"]`);
 
             const updateNextState = () => {
+                if (quizLocked) {
+                    quizNext.classList.remove('active');
+                    quizNext.disabled = true;
+                    return;
+                }
                 const hasAnswer = document.querySelector(`input[name="quiz_${quizIndex}_ans"]:checked`);
                 const hasEffort = document.querySelector(`input[name="quiz_${quizIndex}_effort"]:checked`);
                 const hasConf = document.querySelector(`input[name="quiz_${quizIndex}_conf"]:checked`);
@@ -1021,6 +1029,7 @@
             updateNextState();
 
             quizPrev.addEventListener('click', () => {
+                if (quizLocked) return;
                 saveQuizAnswer();
                 if (quizIndex > 0) {
                     quizIndex--;
@@ -1028,6 +1037,7 @@
                 }
             });
             quizNext.addEventListener('click', () => {
+                if (quizLocked) return;
                 const savedOk = saveQuizAnswer(true);
                 if (!savedOk) return;
                 if (quizIndex < quizQuestions.length - 1) {
@@ -1039,8 +1049,14 @@
                     quizNext.disabled = true;
                     quizNext.classList.remove('active');
                     renderQuizSummary();
+                    lockQuizInputs();
                 }
             });
+
+            if (quizLocked) {
+                [quizPrev, quizNext].forEach(btn => btn && (btn.disabled = true));
+                [...answerInputs, ...effortInputs, ...confInputs].forEach(inp => inp.disabled = true);
+            }
         }
 
         function saveQuizAnswer(require = false) {
@@ -1135,6 +1151,19 @@
 
             quizSummary.style.display = 'block';
             quizCompleteMessage.style.display = 'block';
+        }
+
+        function lockQuizInputs() {
+            quizLocked = true;
+            const prevBtn = document.getElementById('quiz-prev');
+            const nextBtn = document.getElementById('quiz-next');
+            if (prevBtn) prevBtn.disabled = true;
+            if (nextBtn) nextBtn.disabled = true;
+
+            const currentAnswerInputs = document.querySelectorAll(`input[name="quiz_${quizIndex}_ans"]`);
+            const currentEffortInputs = document.querySelectorAll(`input[name="quiz_${quizIndex}_effort"]`);
+            const currentConfInputs = document.querySelectorAll(`input[name="quiz_${quizIndex}_conf"]`);
+            [...currentAnswerInputs, ...currentEffortInputs, ...currentConfInputs].forEach(inp => inp.disabled = true);
         }
 
         // --- SUBMIT ---
