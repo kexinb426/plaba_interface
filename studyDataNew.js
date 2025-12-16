@@ -15,6 +15,9 @@ const studyTopics = {
 };
 
 const studyTexts = {
+    "text_00": {
+        "1": "For testing purpose."
+    },
     "text_01": {
         "1": "The detection of chemical compounds in exhaled human breath presents an opportunity to determine physiological state, diagnose disease or assess environmental exposure.",
         "2": "Recent advancements in metabolomics research have led to improved capabilities to explore human metabolic profiles in breath.",
@@ -110,11 +113,11 @@ const studyTexts = {
         "2": "This condition often remains asymptomatic for years before the cyst grows large enough to cause symptoms in affected organs.",
         "3": "The most common organs involved are liver and lungs although the heart, brain, bone, central nervous system, and kidney may also be involved.",
         "4": "This case is about a young woman who presented with left flank pain and urinary tract infection who was later diagnosed as having left renal hydatid cyst.",
-        "5": "The cyst was approximately 7.8\u00d76.6\u00d78cm with internal multiple septations at the lower pole cortex of the left kidney.",
+        "5": "The cyst was approximately 7.8×6.6×8cm with internal multiple septations at the lower pole cortex of the left kidney.",
         "6": "Laparoscopic pericystectomy was performed and with no postoperative complications, she was discharged on albendazole and other supportive medication.",
         "7": "With timely management using combination therapy, this condition is curable and the patient can live a healthy life with normal kidney function."
     },
-    "text_12":{
+    "text_12": {
         "1": "Inguinal hernia is the most frequently diagnosed hernia and during their lifetime one third of males are diagnosed with an inguinal hernia.",
         "2": "The age distribution is bimodal with the highest incidence in childhood and after 50 years of age.",
         "3": "Diagnosis is usually reached through clinical examination of a lump in the inguinal region although some patients can present with intestinal obstruction.",
@@ -145,7 +148,7 @@ const studyTexts = {
         "10": "It is important to recognize this adverse effect because gabapentin is used in conditions like diabetic neuropathy, which is associated with multiple co-morbidities that can give rise to bilateral leg swelling.",
         "11": "Presence of gabapentin induced leg swelling can thus confound the clinical picture."
     },
-    "text_15":{
+    "text_15": {
         "1": "Tardive dyskinesia (TD) is a disorder characterized by involuntary movements, typically of the orofacial muscles and also of the extremities and other muscle groups.",
         "2": "The condition is associated with exposure to dopamine receptor blocking agents, including antipsychotics.",
         "3": "Because the indications and off-label uses for these agents have expanded over the last 2 decades, a larger number of patients are receiving antipsychotic medications than in the past.",
@@ -169,7 +172,7 @@ const studyTexts = {
     },
     "text_17":{
         "1": "Diagnostic criteria for diabetes in children have not been established with nearly the rigor as that employed in adults.",
-        "2": "Recently revised American Diabetes Association (ADA) criteria allowed utilization of hemoglobin A(1c) (HbA1c) \u2265 6.5 % for diagnosis of diabetes.",
+        "2": "Recently revised American Diabetes Association (ADA) criteria allowed utilization of hemoglobin A(1c) (HbA1c) ≥ 6.5 % for diagnosis of diabetes.",
         "3": "A recent series of pediatric studies appear to show that HbA1c has lower sensitivity than Fasting plasma glucose (FPG) or oral glucose tolerance test (OGTT).",
         "4": "However, FPG and OGTT have themselves never been validated in children.",
         "5": "Studies to validate diagnostic thresholds in children appear unlikely to take place.",
@@ -202,11 +205,1030 @@ const studyTexts = {
         "7": "Functional analysis revealed that these differentially expressing genes are associated with bone differentiation, glucose metabolism and gonadal development pathways.",
         "8": "We also report differential expression of lincRNAs in X monosomic cells.",
         "9": "Our observations provide a basis for evaluation of cellular and molecular mechanism(s) in the establishment of Turner syndrome phenotypes."
+    },
+    "text_21": {
+        "1": "Basal insulin secretion was compared in nine islet-cell antibody positive, non-diabetic first-degree relatives of children with Type 1 (insulin-dependent) diabetes mellitus and nine normal control subjects matched for age, sex and weight.",
+        "2": "Acute insulin responses to a 25 g intravenous glucose tolerance test were similar in the two groups (243 (198-229) vs 329 (285-380) mU.l-1 x 10 min-1, mean (+/- SE), p = 0.25).",
+        "3": "Fasting plasma insulin was assayed in venous samples taken at one min intervals for 2 h.",
+        "4": "Time series analysis was used to demonstrate oscillatory patterns in plasma insulin.",
+        "5": "Autocorrelation showed that regular oscillatory activity was generally absent in the islet-cell antibody-positive group, whereas a regular 13 min cycle was shown in control subjects (p less than 0.0001).",
+        "6": "Fourier transformation did, however, show a 13 min spectral peak in the islet-cell antibody positive group, consistent with intermittent pulsatility.",
+        "7": "We conclude that overall oscillatory patterns of basal insulin secretion are altered in islet-cell antibody positive subjects even when the acute insulin response is within the normal range."
+    },
+    "text_22": {
+        "1": "Circadian variation in atrial fibrillation (AF) frequency is explored in this paper by employing recent advances in signal processing.",
+        "2": "Once the AF frequency has been estimated and tracked by a hidden Markov model approach, the resulting trend is analyzed for the purpose of detecting and characterizing the presence of circadian variation.",
+        "3": "With cosinor analysis, the results show that the short-term variations in the AF frequency exceed the variation that may be attributed to circadian.",
+        "4": "Using the autocorrelation method, circadian variation was found in 13 of 18 ambulatory ECG recordings (Holter) acquired from patients with long-standing persistent AF.",
+        "5": "Using the ensemble correlation method, the highest AF frequency usually occurred during the afternoon, whereas the lowest usually occurred during late night.",
+        "6": "It is concluded that circadian variation is present in most patients with long-standing persistent AF though the short-term variation in the AF frequency is considerable and should be taken into account."
+    },
+    "text_23": {
+        "1": "Purpose of review: Hyperkalemia is a potentially fatal electrolyte disorder, more commonly present when the potassium excretion capacity is imparied.",
+        "2": "Hyperkalemia can lead to adverse outcomes, especially due to severe cardiac arrhythmias.",
+        "3": "It can also impair the cardiovascular effects of renin-angiotensin-aldosterone system inhibitors (RAASis) and potassium rich diets, as hyperkalemia frequently leads to their discontinuation.",
+        "4": "Recent findings: Potassium is a predictor of mortality and should be monitored closely for patients who are at risk for hyperkalemia.",
+        "5": "Acute hyperkalemia protocols have been revised and updated.",
+        "6": "Randomized trials have shown that the new anti-hyperkalemic agents (patiromer and zirconium cyclosilicate) are effective hyperkalemia treatment options.",
+        "7": "The use of anti-hyperkalemic agents may allow for a less restrictive potassium diet and lower RAASi discontinuation rates.",
+        "8": "Summary: Hyperkalemia should be monitored closely for high-risk patients, as it is associated with adverse outcomes.",
+        "9": "New therapies have demonstrated effective control, offering hope for potential use in patients that would benefit from diet or medications associated with an increase in serum potassium, indicating that the use of hyperkalemic agents can be associated with better outcomes."
+    },
+    "text_24": {
+        "1": "The term \"shock\" refers to a life-threatening circulatory failure caused by an imbalance between the supply and demand of cellular oxygen.",
+        "2": "Hypovolemic shock is characterized by a reduction of intravascular volume and a subsequent reduction in preload.",
+        "3": "The body compensates the loss of volume by increasing the stroke volume, heart frequency, oxygen extraction rate, and later by an increased concentration of 2,3-diphosphoglycerate with a rightward shift of the oxygen dissociation curve.",
+        "4": "Hypovolemic hemorrhagic shock impairs the macrocirculation and microcirculation and therefore affects many organ systems (e.g. kidneys, endocrine system and endothelium).",
+        "5": "For further identification of a state of shock caused by bleeding, vital functions, coagulation tests and hematopoietic procedures are implemented.",
+        "6": "Every hospital should be in possession of a specific protocol for massive transfusions.",
+        "7": "The differentiated systemic treatment of bleeding consists of maintenance of an adequate homeostasis and the administration of blood products and coagulation factors."
+    },
+    "text_25": {
+        "1": "Recent studies have shown that nitric oxide (NO) is a central mediator in diseases occurring with thoracic aortic aneurysm (TAA), such as Marfan syndrome (MFS).",
+        "2": "The progressive dilation of the aorta in TAA ultimately leads to aortic dissection.",
+        "3": "Unfortunately, current medical treatments neither halt aortic enlargement nor prevent rupture, leaving surgical repair as the only effective treatment.",
+        "4": "There is therefore a pressing need for effective therapies to delay or even avoid the need for surgical repair in TAA patients.",
+        "5": "Here, we summarize the mechanisms through which NO signalling dysregulation causes TAA, particularly in MFS and discuss recent advances based on the identification of new MFS mediators related to pathway overactivation that represent potential disease biomarkers.",
+        "6": "Likewise, we propose iNOS, sGC, and PRKG1, whose pharmacological inhibition reverses aortopathy in MFS mice, as targets for therapeutic intervention in TAA and candidates for clinical trials."
+    },
+    "text_26": {
+        "1": "Phenylketonuria (PKU) is an inborn error of metabolism (IEM) most often caused by missense mutations in the gene encoding phenylalanine hydroxylase (PAH) which catalyzes the hydroxylation of phenylalanine (Phe) generating tyrosine (Tyr).",
+        "2": "PKU belongs to a class of amino acid aminoacidopathies termed “toxic accumulation-IEMs” where the circulating toxin is an amino acid or its metabolites.",
+        "3": "Mutations in an enzyme, such as PAH, are recessive since one functioning enzyme with the wild-type allele is sufficient.",
+        "4": "Tetrahydrobiopterin (BH4) binds to the catalytic domain of PAH and is a cofactor for this reaction.",
+        "5": "PAH is primarily a hepatic enzyme.",
+        "6": "Elevated blood Phe levels and decreased Tyr levels characterize PKU.",
+        "7": "Newborns with PKU can appear normal at birth with the first signs appearing after several months.",
+        "8": "These signs can include musty odor from skin and urine, fair skin, eczema, seizures, tremors, and hyperactivity."
+    },
+    "text_27": {
+        "1": "Detection of individuals with phenylketonuria (PKU), an autosomal recessively inherited disorder in phenylalanine degradation, is straightforward and efficient due to newborn screening programs.",
+        "2": "A recent introduction of the pharmacological treatment option emerged rapid development of molecular testing.",
+        "3": "However, variants responsible for PKU do not all suppress enzyme activity to the same extent.",
+        "4": "A spectrum of over 850 variants, gives rise to a continuum of hyperphenylalaninemia from very mild, requiring no intervention, to severe classical PKU, requiring urgent intervention.",
+        "5": "Locus-specific and genotypes database are today an invaluable resource of information for more efficient classification and management of patients.",
+        "6": "The high-tech molecular methods allow patients' genotype to be obtained in a few days, especially if each laboratory develops a panel for the most frequent variants in the corresponding population."
+    },
+    "text_28": {
+        "1": "Lupus nephritis (LN) is the most frequent severe organ manifestation of systemic lupus erythematosus (SLE).",
+        "2": "About 30% of patients are refractory to treatment.",
+        "3": "The authors report a case of treatment of LN with interleukin-17-targeted therapy, demonstrating its possible benefit, after reports of T helper 17 cell involvement in SLE pathogenesis.",
+        "4": "We present the case of a childbearing age woman with SLE, who developed refractory LN despite all the indicated therapeutic options.",
+        "5": "During follow up, infection with human papillomavirus was detected, a possible trigger, and the following management was based on this discovery.",
+        "6": "We currently know that cytokines play a major role in tissue damage and interleukin-17 (IL-17) seems to be a fundamental key in SLE and LN, having shown its expression in renal glomeruli and urinary sediment.",
+        "7": "Thus, it was decided to start treatment with an anti-IL-17A antibody, secukinumab.",
+        "8": "After starting secukinumab, clinical and biological features improved and complete renal response was achieved."
+    },
+    "text_29": {
+        "1": "This review focuses on the rheumatological features of achondroplasia, which is the most common skeletal dysplasia and the most frequent cause of short-limbed dwarfism.",
+        "2": "It is inherited in an autosomal dominant manner but results in the majority of cases of de novo mutations.",
+        "3": "The disease is related to a mutation in the fibroblast growth factor receptor-3 (FGFR3) gene encoding one member of the FGFR subfamily of tyrosine kinase receptors, which results in constitutive activation of the receptor.",
+        "4": "Biochemical studies of FGFR3 combined with experiments in knock-out mice have demonstrated that FGFR3 is a negative regulator of chondrocytes proliferation and differentiation in growth plate.",
+        "5": "This mutation induces a disturbance of endochondral bone formation.",
+        "6": "The diagnosis of achondroplasia is based on typical clinical and radiological features including short stature, macrocephaly with frontal bossing, midface hypoplasia and rhizomelic shortening of the limbs.",
+        "7": "The most common rheumatological complications of achondroplasia are medullar and radicular compressions due to spinal stenosis and deformities of the lower limbs.",
+        "8": "Current treatment and future therapies are discussed."
+    },
+    "text_30": {
+        "1": "Autosomal dominant mutations in fibroblast growth factor receptor 3 (FGFR3) cause achondroplasia (Ach), the most common form of dwarfism in humans, and related chondrodysplasia syndromes that include hypochondroplasia (Hch), severe achondroplasia with developmental delay and acanthosis nigricans (SADDAN), and thanatophoric dysplasia (TD).",
+        "2": "FGFR3 is expressed in chondrocytes and mature osteoblasts where it functions to regulate bone growth.",
+        "3": "Analysis of the mutations in FGFR3 revealed increased signaling through a combination of mechanisms that include stabilization of the receptor, enhanced dimerization, and enhanced tyrosine kinase activity.",
+        "4": "Paradoxically, increased FGFR3 signaling profoundly suppresses proliferation and maturation of growth plate chondrocytes resulting in decreased growth plate size, reduced trabecular bone volume, and resulting decreased bone elongation.",
+        "5": "In this review, we discuss the molecular mechanisms that regulate growth plate chondrocytes, the pathogenesis of Ach, and therapeutic approaches that are being evaluated to improve endochondral bone growth in people with Ach and related conditions."
+    },
+    "text_31": {
+        "1": "We present here a potential new treatment adjunct for glioblastoma.",
+        "2": "Building on murine studies, a series of papers appeared recently showing that therapeutic irradiation of the ipsilateral subventricular zone (SVZ) retards growth of more peripherally growing cortical glioblastomas in humans, suggesting a tumor trophic function for the SVZ.",
+        "3": "Further studies showed that SVZ cells migrate out towards a peripheral glioblastoma.",
+        "4": "Dopamine signaling through D3 subtype receptor indirectly drives this centrifugal migration in humans.",
+        "5": "Since psychiatry has several drugs with good D3 blocking attributes, such as fluphenazine, or perphenazine, we suggest that adding one of these D3 blocking drugs to current standard treatment of resection followed by temozolomide and irradiation might prolong survival by depriving glioblastoma of the trophic functions previously subserved by dopaminergic signaling on SVZ cells."
+    },
+    "text_32": {
+        "1": "The effects of single oral doses of 10, 15, or 30 mg of prednisone on circulating mononuclear cells, autologous MLR, mitogen responses, and allogeneic MLR were studied in healthy volunteers.",
+        "2": "Doses as low as 10 mg were immunosuppressive, causing diminution of circulating T cells and monocytes, and significant reduction in autologous but not allogeneic MLR responses.",
+        "3": "These effects were maximal 6 hr after drug administration and gone by 24 hr.",
+        "4": "Autologous MLR responses were particularly sensitive to the effects of prednisone being significantly and consistently suppressed 2 hr after drug administration, before significant cell redistribution had occurred.",
+        "5": "Macrophage-enriched stimulating cells were more easily suppressed than responding T cells.",
+        "6": "Since the autologous MLR may be important in in vivo regulation of immune responses, its reduction by low-dose glucocorticoids may be of clinical relevance.",
+        "7": "This suppressive effect must be considered in studies of the autologous MLR in patients receiving glucocorticoid therapy."
+    },
+    "text_33": {
+        "1": "As COVID-19 continues to spread rapidly worldwide and variants continue to emerge, the development and deployment of safe and effective vaccines are urgently needed.",
+        "2": "Here, we developed an mRNA vaccine based on the trimeric receptor-binding domain (RBD) of the SARS-CoV-2 spike (S) protein fused to ferritin-formed nanoparticles (TF-RBD).",
+        "3": "Compared to the trimeric form of the RBD mRNA vaccine (T-RBD), TF-RBD delivered intramuscularly elicited robust and durable humoral immunity as well as a Th1-biased cellular response.",
+        "4": "After further challenge with live SARS-CoV-2, immunization with a two-shot low-dose regimen of TF-RBD provided adequate protection in hACE2-transduced mice.",
+        "5": "In addition, the mRNA template of TF-RBD was easily and quickly engineered into a variant vaccine to address SARS-CoV-2 mutations.",
+        "6": "The TF-RBD multivalent vaccine produced broad-spectrum neutralizing antibodies against Alpha (B.1.1.7) and Beta (B.1.351) variants.",
+        "7": "This mRNA vaccine based on the encoded self-assembled nanoparticle-based trimer RBD provides a reference for the design of mRNA vaccines targeting SARS-CoV-2."
+    },
+    "text_34": {
+        "1": "Patients with end-stage renal disease (ESRD) on maintenance dialysis have a high risk of developing hyperkalemia, generally defined as serum potassium (K+) concentrations of >5.0 mmol/l, particularly those undergoing maintenance hemodialysis.",
+        "2": "Currently, the key approaches to the management of hyperkalemia in patients with ESRD are dialysis, dietary K+ restriction, and avoidance of medications that increase hyperkalemia risk.",
+        "3": "In this review, we highlight the issues and challenges associated with effective management of hyperkalemia in patients undergoing maintenance dialysis using an illustrative case presentation.",
+        "4": "In addition, we examine the potential nondialysis options for the management of these patients, including use of the newer K+ binder agents patiromer and sodium zirconium cyclosilicate, which may reduce the need for the highly restrictive dialysis diet, with its own implication on nutritional status in patients with ESRD, as well as reducing the risk of potentially life-threatening hyperkalemia."
+    },
+    "text_35": {
+        "1": "The first trimester screening programme offers a noninvasive option for the early detection of aneuploidy pregnancies.",
+        "2": "This screening is done by a combination of two biochemical markers i.e. serum free β-human chorionic gonadotrophin (free β-hCG) and pregnancy associated plasma protein A (PAPP-A), maternal age and fetal nuchal translucency (NT) thickness at 11 + 0-13 + 6 weeks of gestation.",
+        "3": "A beneficial consequence of screening is the early diagnosis or trisomies 21, 18 and 13.",
+        "4": "At 11 + 0-13 + 6 weeks, the relative prevalence of trisomies 18 and 13 to trisomy 21 are found to be one to three and one to seven, respectively.",
+        "5": "All three trisomies are associated with increased maternal age, increased fetal NT and decreased PAPP-A, but in trisomy 21 serum free β-hCG is increased whereas in trisomies 18 and 13 free β-hCG is decreased."
+    },
+    "text_36": {
+        "1": "Mitochondria are the energy-producing organelles of the cell, generating ATP via oxidative phosphorylation mainly by using pyruvate derived from glycolytic processing of glucose.",
+        "2": "Ketone bodies generated by fatty acid oxidation can serve as alternative metabolites for aerobic energy production.",
+        "3": "The ketogenic diet, which is high in fat and low in carbohydrates, mimics the metabolic state of starvation, forcing the body to utilize fat as its primary source of energy.",
+        "4": "The ketogenic diet is used therapeutically for pharmacoresistant epilepsy and for \"rare diseases\" of glucose metabolism (glucose transporter type 1 and pyruvate dehydrogenase deficiency).",
+        "5": "As metabolic reprogramming from oxidative phosphorylation toward increased glycolysis is a hallmark of cancer cells; there is increasing evidence that the ketogenic diet may also be beneficial as an adjuvant cancer therapy by potentiating the antitumor effect of chemotherapy and radiation treatment."
+    },
+    "text_37": {
+        "1": "Total-body potassium (K+) content and appropriate distribution of K+ across the cell membrane is vitally important for normal cellular function.",
+        "2": "Total-body K+ content is determined by changes in excretion of K+ by the kidneys in response to intake levels.",
+        "3": "Under normal conditions, insulin and β-adrenergic tone also make important contributions in maintaining internal distribution of K+.",
+        "4": "However, despite these homeostatic pathways, disorders of altered K+ homeostasis are common.",
+        "5": "Appreciating the pathophysiology and regulatory influences that determine the internal distribution and external balance of K+ is critical in designing effective treatments to restore K+ homeostasis.",
+        "6": "We provide an up-to-date review of the regulatory aspects of normal K+ physiology as a preface to highlighting common disorders in K+ homeostasis and their treatment.",
+        "7": "This review of K+ homeostasis is designed as a resource for clinicians and a tool for educators who are teaching trainees to understand the pivotal factors involved in K+ balance."
+    },
+    "text_38": {
+        "1": "Background and Objectives. The importance of mitochondria in inflammatory pathologies, besides providing energy, is associated with the release of mitochondrial damage products, such as mitochondrial DNA (mt-DNA), which may perpetuate inflammation.",
+        "2": "In this review, we aimed to show the importance of mitochondria, as organelles that produce energy and intervene in multiple pathologies, focusing mainly in COVID-19 and using multiple molecular mechanisms that allow for the replication and maintenance of the viral genome, leading to the exacerbation and spread of the inflammatory response.",
+        "3": "The evidence suggests that mitochondria are implicated in the replication of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), which forms double-membrane vesicles and evades detection by the cell defense system.",
+        "4": "These mitochondrion-hijacking vesicles damage the integrity of the mitochondrion's membrane, releasing mt-DNA into circulation and triggering the activation of innate immunity, which may contribute to an exacerbation of the pro-inflammatory state.",
+        "5": "Conclusions. While mitochondrial dysfunction in COVID-19 continues to be studied, the use of mt-DNA as an indicator of prognosis and severity is a potential area yet to be explored."
+    },
+    "text_39": {
+        "1": "SARS-CoV-2 infection is characterized by a protean clinical picture that can range from asymptomatic patients to life-threatening conditions.",
+        "2": "Severe COVID-19 patients often display a severe pulmonary involvement and develop neutrophilia, lymphopenia, and strikingly elevated levels of IL-6.",
+        "3": "There is an over-exuberant cytokine release with hyperferritinemia leading to the idea that COVID-19 is part of the hyperferritinemic syndrome spectrum.",
+        "4": "Indeed, very high levels of ferritin can occur in other diseases including hemophagocytic lymphohistiocytosis, macrophage activation syndrome, adult-onset Still's disease, catastrophic antiphospholipid syndrome and septic shock.",
+        "5": "Numerous studies have demonstrated the immunomodulatory effects of ferritin and its association with mortality and sustained inflammatory process.",
+        "6": "High levels of free iron are harmful in tissues, especially through the redox damage that can lead to fibrosis.",
+        "7": "Iron chelation represents a pillar in the treatment of iron overload.",
+        "8": "In addition, it was proven to have an anti-viral and anti-fibrotic activity.",
+        "9": "Herein, we analyse the pathogenic role of ferritin and iron during SARS-CoV-2 infection and propose iron depletion therapy as a novel therapeutic approach in the COVID-19 pandemic."
     }
 };
 
+const studyTextsSimplified = {
+    "text_01_simp": {
+      "1": "Detection of chemical compounds in exhaled human breath provides an opportunity to determine several aspects about human health.",
+      "2": "These aspects include evaluating physiological state (how the body is functioning), determining any disease, and/or assessing (measuring) environmental exposures (or things in the environment that can lead to disease).",
+      "3": "Recent advancements in metabolomics research have led to better opportunities to explore human metabolic profiles in depth.",
+      "4": "Metabolomics is the study of metabolites within the body.",
+      "5": "Metabolites are small substances involved in cell metabolism or energy-production.",
+      "6": "Despite some test challenges, exhaled breath represents a good sample for metabolomics applications.",
+      "7": "Breath is ideal as it is non-invasive, convenient, and nearly limitless in availability.",
+      "8": "There are several breath-based tests that target either internal or external chemical compounds.",
+      "9": "These tests are already established and are in practical and/or clinical use.",
+      "10": "This paper reviews the concept of breath analysis used for these unique tests and their applications.",
+      "11": "The breath biomarkers targeted in each test are discussed in relation to their function in the human body.",
+      "12": "Additionally, the paper evaluates the development and implementation of the associated tests.",
+      "13": "The paper concludes with a brief insight into prospective (future) tests and an outlook of the future direction of breath research."
+    },
+    "text_02_simp": {
+      "1": "Chronic throat clearing or a feeling of 'something' at the back of the throat (or nose) is a common cause for referral to ear, nose, and throat dostors.",
+      "2": "Treatment of the problem causing these symptoms may help.",
+      "3": "But in many cases the cause is not found.",
+      "4": "Currently, there is no accepted treatment which is effective against these symptoms.",
+      "5": "Researchers studied a plan of sipping ice cold sparkling, fizzy (carbonated) water to help stop the cycle of throat-clearing.",
+      "6": "A questionnaire was mailed to 72 patients that had been told to use this plan.",
+      "7": "Improvement was seen in the severity of the symptoms in 63% of these patients",
+      "8": "The greatest improvement was seen in patients who had the worse symptoms and who had them most often.",
+      "9": "Doctors advise that sipping ice cold carbonated water can help to break the cycle of throat-clearing."
+    },
+    "text_03_simp": {
+      "1": "The use of wound dressings based on moist wound healing principles has recently changed how pressure ulcers (skin sores) are treated.",
+      "2": "Moist wound healing is when an injury is kept damp to prevent drying out.",
+      "3": "These products may improve healing rates.",
+      "4": "They may also offer improved comfort to the patient, reduced dressing time, and improved wound appearance.",
+      "5": "However, healing is unlikely to occur unless the reasons the ulcer was formed are addressed.",
+      "6": "There are several principles of ulcer management or healing.",
+      "7": "These principles include: eliminating or reducing pressure and other contributing factors, treating infection, appropriate wound management, involvement and education of the patient and caregivers, and maintenance of healed tissue.",
+      "8": "It is estimated that 95% of all pressure ulcers are preventable.",
+      "9": "Preventing ulcers rather than treating ulcers is a priority in the effort to reduce the incidence (frequency) of this common, complex, and difficult problem.",
+      "10": "Use of assessment (measurement) tools that identify the main reasons pressure ulcers are caused is helpful to predict and prevent injuries to the skin."
+    },
+    "text_04_simp": {
+      "1": "Compression therapy is the basic therapy when treating the circulatory (blood) or lymphatic (body drainage) system.",
+      "2": "The pressure under the bandages has to exceed the intravenous pressure, especially when standing.",
+      "3": "Intravenous pressure is the pressure of blood in veins.",
+      "4": "Different compression materials work differently on ambulatory venous hypertension (excess pressure in veins).",
+      "5": "The material used can affect both the rate in which swelling is reduced and blood flow.",
+      "6": "Some compression materials include short stretch systems, long stretch bandages, and compression garments.",
+      "7": "Compression with very stiff materials is more effective than compression with low stiffness, elastic materials.",
+      "8": "These materials have to be placed correctly.",
+      "9": "Inelastic systems should be applied with high initial pressure.",
+      "10": "This is because the pressure will decrease after walking.",
+      "11": "Even after one week of wearing, inelastic bandages keep higher optimal pressure during walking than elastic bandages.",
+      "12": "More importantly, inelastic bandages have lower resting pressure than elastic materials.",
+      "13": "Long stretch bandages and compression garments that are able to stretch ensure low working pressure and higher resting pressure than short stretch systems."
+    },
+    "text_05_simp": {
+      "1": "Taking medications, mainly antipsychotics, that reduce activity of dopamine (a chemical messenger released when your brain is expecting a reward) causes tardive dyskinesia (TD) - a movement disorder.",
+      "2": "TD often causes physical and emotional pain or suffering and affects the quality of life of patients.",
+      "3": "We rated scientific studies to summarize the latest advancements in the area of TD.",
+      "4": "We found that FDA approved vesicular monoamine transporter type 2 (VMAT2) inhibitors, drugs that reduce dopamine (a chemical messenger released when your brain is expecting a reward), deutetrabenazine and valbenazine, in 2017.",
+      "5": "These drugs work in several clinical trials.",
+      "6": "Best practice guidelines for doctors for treating tardive dyskinesia have also been updated.",
+      "7": "Different drugs are being used to treat TD with VMAT2 inhibitors to be the first drug approved by the FDA.",
+      "8": "Drugs used to treat TD should be specific to the individual patient.",
+      "9": "Long-term studies will determine how best to treat patients, especially in the real world.",
+      "10": "As doctors, we need to consider all symptoms, causes, and possible drug side effects to find the best possible \"match\" for our patients."
+    },
+    "text_06_simp": {
+      "1": "Several risk factors for developing asthma are linked with being exposed to certain things during pregnancy.",
+      "2": "Because conducting research on pregnant women is limited and findings are difficult to interpret, understanding these exposures is challenging.",
+      "3": "A report published in a scientific journal called Pediatrics outlined the effects of the mother's and infant's nutrition on developing atopic diseases (a genetic tendency to develop an allergy), including asthma in children.",
+      "4": "Exposure by the mother to vitamin D as a risk for childhood asthma has been investigated, but the results clash.",
+      "5": "Some studies report that vitamin D may protect against asthma attacks or prevent asthma symptoms from getting worse.",
+      "6": "While many studies have investigated such links with the risk of developing a disease, the media often reports these findings without including details or other considerations."
+    },
+    "text_07_simp": {
+      "1": "In 1997 the American Diabetes Association lowered the threshold for diagnosis of diabetes from a fasting (having not eaten food recently) blood glucose (sugar) level of 7.8 mmol/l to 7.0 mmol/l and advised that the by-mouth glucose tolerance test no longer be used in regular clinical practice.",
+      "2": "In 1999 the World Health Organization supported the reduction in fasting blood glucose threshold but recommended keeping the by-mouth glucose tolerance test for anyone with affected fasting glucose (6.1 mmol/l-6.9 mmol/l).",
+      "3": "This Review discusses the effect of these changes on the prevalance of diabetes and checks how it affects individuals and specific high-risk groups.",
+      "4": "The physical effects of those identified with diabetes and the predictive value for the development of side effects according to the different criteria are compared.",
+      "5": "It is clear that these changes in identification criteria have major importance both for individuals and for planning at a national level."
+    },
+    "text_08_simp": {
+      "1": "Asthma, which usually begins in childhood and is the most common chronic disease of childhood, has become very widespread.",
+      "2": "Asthma is connected with gene-environment interactions, which is when two different genes respond to something in the environment in different ways.",
+      "3": "There is agreement that there are certain times during pregnancy and early in a child's life when environmental factors (such as food, pollutants, and temperature) may shape asthma's development.",
+      "4": "This review considers biologic factors, such as brain chemistry, genes, nutrition, gender, and hormone levels, as well as sociologic factors, such as education and economic activity, in the development of allergies and asthma.",
+      "5": "Studies show that the strategy of decreasing exposure to one allergen (any substance that causes an allergic reaction) does not impact asthma prevention.",
+      "6": "However, decreasing exposure to more than one allergen has shown a positive effect, such as improved health or symptoms.",
+      "7": "It is suggested that asthma and other allergic diseases represent an error in how our genes and the environment interact.",
+      "8": "The increasing number of cases may be a sign that the general population is at risk for developing other inflammatory (when the body reacts to an injury or infection) and autoimmune diseases (where the body attacks healthy cells).",
+      "9": "A better understanding of the multiple factors that impact asthma and allergies may help researchers understand other chronic diseases."
+    },
+    "text_09_simp": {
+      "1": "Muscle cramps cause constant and unintended contraction of muscles, causing pain.",
+      "2": "They can occur for individual muscles, groups of muscles, or small parts of muscles.",
+      "3": "A cramp usually lasts seconds or minutes, regardless of cause and how healthy you are.",
+      "4": "A knot (hard area) can be felt beneath the skin where the cramp is.",
+      "5": "Muscle cramps are the most common reason for seeking medical help during sports.",
+      "6": "We still don't know why muscle cramps happen.",
+      "7": "Causes may also depend on the person and the situation.",
+      "8": "Importantly, even though the pain of a muscle cramp can be in a specific area, the cause may lie elsewhere.",
+      "9": "A cramp can almost never be explained just by local effects, and it involves both the whole body and your emotional state."
+    },
+    "text_10_simp": {
+      "1": "Managing stones in the ureter (the tube that carries urine from the kidney to the bladder)  has changed over the last few decades, and several treatment options exist.",
+      "2": "These options depend on the stone size, location, and other patient and stone factors.",
+      "3": "While open surgery (cutting tissues so the surgeon has a full view of the organs) is now rarely performed, the use of medications to treat stones, which is called medical expulsive therapy (MET), has been controversial and perhaps only recommended for large stones in the ureter.",
+      "4": "Common treatments are either shockwave lithotripsy, where shockwaves are focused to one point in the body and used to crush kidney stones into dust, or ureteroscopy, a procedure where a small telescope is inserted through the urethra and bladder and up the ureter to where the stone is located.",
+      "5": "Ureteroscopy is recommended for larger stones.",
+      "6": "The overall practice of managing stones has remained mostly unchanged, but new methods and ways to deliver treatment have surfaced in modern times.",
+      "7": "Advancements have occurred in all areas of stone disease to try and refine treatment and balance it with cost, patient choice and quality of life.",
+      "8": "Sharing information on technology and showing their effectiveness and safety will eventually result in new recommendations among guidelines and new gold standards for care."
+    },
+    "text_11_simp": {
+      "1": "Cystic Echinococcosis, also called Hydatid disease, is caused by the infection of a long tapeworm called Echinococcus granulosus, after it has hatched into the larval stage.",
+      "2": "A person can often have this condition without symptoms for years before the cyst (growth) grows large enough to cause symptoms in affected organs.",
+      "3": "The most common organs involved are the liver and lungs although the heart, brain, bone, central nervous system (spinal cord and brain), and kidney may also be involved.",
+      "4": "This case is about a young woman who presented with left back pain and urinary tract infection (UTI - bladder infection) who was later diagnosed as having left kidney hydatid cyst.",
+      "5": "The cyst was about 7.8×6.6×8cm with multiple compartments at the lower pole cortex (lower part) of the left kidney.",
+      "6": "A procedure that uses tiny incisions was performed to remove the cyst and some tissue around the cyst.",
+      "7": "No complications occurred after the procedure, and she was sent home with anti-worm medicine and other medications.",
+      "8": "With timely management using several therapies, this condition is curable, and the patient can live a healthy life with normal kidney function."
+    },
+    "text_12_simp": {
+      "1": "Inguinal hernia, a bulging of digestive organs occurring in the groin area, is the most often diagnosed hernia.",
+      "2": "During their lifetime one third of males are diagnosed with an inguinal hernia.",
+      "3": "People are most likely to get an inguinal hernia in childhood and after 50 years old.",
+      "4": "Doctors usually diagnose an inguinal hernia by a lump in the groin region although some patients can have blocked intestines.",
+      "5": "Inguinal hernia repair is the only treatment and is one of the most common surgeries done.",
+      "6": "Surgery is usually non-urgent and done under anesthesia.",
+      "7": "The repair involves strengthening the area of the groin, often using a plastic mesh; either by traditional or minimally invasive surgery.",
+      "8": "The most common complications after a hernia repair are the hernia returning and long-term discomfort, but the rate of a hernia returning has gone down with the use of mesh and minimally invasive surgery.",
+      "9": "This data-driven review describes the spread, contributing factors, and causes of inguinal hernias and the most common surgeries, focusing on recent methods."
+    },
+    "text_13_simp": {
+      "1": "C-reactive protein (CRP) is a protein that has remained relatively unchanged from evolution.",
+      "2": "CRP has similar forms in vertebrates and many invertebrates and participates in the systemic (full-body) response to inflammation (infection-fighting).",
+      "3": "Its plasma (blood) concentration increases during inflammation.",
+      "4": "This is a characteristic that has long been employed for clinical purposes.",
+      "5": "CRP is a pattern recognition molecule.",
+      "6": "This means CRP binds to specific molecular configurations typically found during cell death or on the surfaces of pathogens (foreign organisms).",
+      "7": "The rapid increase in CRP production within hours after tissue injury or infection suggests that it contributes to host defense.",
+      "8": "This also indicates that CRP is part of the innate immune response.",
+      "9": "Recently, an association between minor CRP elevation and future major heart-related events has been recognized.",
+      "10": "This has lead to government health agencies recommending that patients at intermediate risk of coronary heart disease (damage in the heart's major blood vessels) might benefit from measurement of CRP.",
+      "11": "This review focuses on the current understanding of the structure of CRP, the molecules it binds and interacts with, and its functions."
+    },
+    "text_14_simp": {
+      "1": "A 46 year old male with past medical history of schizoaffective (reality-distorting) disorder, a mental disorder, and chronic lower back pain, is admitted to a medical facility to manage worsening depression and anxiety.",
+      "2": "He is started on a medicine called gabapentin (nerve pain medication) for his back pain and anxiety symptoms.",
+      "3": "His only other medication is an opioid pain reliever called hydrocodone.",
+      "4": "Over the next few days, he starts developing worsening edema, swelling caused by too much fluid trapped in the body's tissues, in both legs.",
+      "5": "He does not have any cardiovascular (heart) related symptoms.",
+      "6": "A physical exam found pitting edema, where pressing into the swollen area leaves a pit or indentation.",
+      "7": "All other lab tests and imaging scans did not show anything significant.",
+      "8": "Gabapentin is stopped and the swelling in his legs improved over the following days.",
+      "9": "In other studies, the occurrence of swollen feet (pedal edema) while on gabapentin is about 7 to 7.5% in elderly patients receiving doses above 1200 mg/day.",
+      "10": "This case illustrates that lower doses of gabapentin can also cause this negative effect.",
+      "11": "It is important to recognize this negative effect because gabapentin is used in conditions like nerve damage common with diabetes (diabetic neuropathy), which is associated with multiple illnesses that can give rise to swelling in both legs."
+    },
+    "text_15_simp": {
+      "1": "Tardive dyskinesia (TD) is characterized by uncontrolled movements, usually of the face muscles and also of the arms, legs, and other muscles.",
+      "2": "TD is related to antipsychotic use.",
+      "3": "Because reasons to prescribe and unapproved uses for antipsychotics have increased, more patients are taking antipsychotic drugs than in the past.",
+      "4": "Although data suggest that patients taking second-generation (newer) antipsychotics are less likely to develop TD than those taking first-generation (older) antipsychotics, the decreased risk is not as great as originally thought.",
+      "5": "In addition, patients with long-term mental conditions often need long-term antipsychotics use, putting them at risk for TD.",
+      "6": "This article looks at the total number of TD cases at a given time, risk factors, and prevention of TD; ways to measure TD including signs and symptoms and questionnaires; and TD treatments, including 2 newly approved drugs: deutetrabenazine and valbenazine."
+    },
+    "text_16_simp": {
+      "1": "An 18-year-old woman went to one hospital with seizures after swallowing a large amount of lamotrigine (anti-seizure), bupropion (antidepressant), trazodone (antidepressant), buspirone (anti-anxiety), and possibly isoretinoin (acne).",
+      "2": "She had a high heart rate (120 beats per minute).",
+      "3": "A breathing tube was put in her windpipe to make sure she continued to breathe.",
+      "4": "To treat a seizure lasting longer than 5 minutes or seizures occurring close together without recovery in between, she was given lorazepam (anti-seizure), propofol (anesthesia), and phenobarbital (anti-seizure).",
+      "5": "She was transferred to another hospital.",
+      "6": "The patient did not have an irregular heartbeat.",
+      "7": "Her breathing tube was removed and she was sent to a psychiatric facility after 13 days in the hospital."
+    },
+    "text_17_simp": {
+      "1": "Standards of diagnosing diabetes in children have not been established with nearly the same precision as has been used in adults",
+      "2": "Recently revised American Diabetes Association (ADA) guidelines uses the standard of  ≥ 6.5 % in the HbA1c test as a diagnosis of diabetes.",
+      "3": "Recent studies in children show that the HbA1c test is not as accurate as other tests that measure glucose in the blood.",
+      "4": "However, other glucose measuring blood tests have not yet been verified to work in children.",
+      "5": "Future studies, to see which glucose measuring test is best in children, are unlikely to happen.",
+      "6": "Accepting the ADA guidelines for diagnosing diabetes in children appears to be the best option for pediatricians.",
+      "7": "Future studies on blood glucose tests should try to develop a guideline for doctors to treat ‘pre-diabetes’.",
+      "8": "However, such treatment, and the best way to diagnose and treat ’pre-diabetes’, has not been proven."
+    },
+    "text_18_simp": {
+      "1": "This article provides an overview of current heart device management, complications, and future areas for development.",
+      "2": "The last 70 years have seen huge advances in the field of implantable cardiac devices, from tools to diagnose conditions to electrical therapies to address slower heart rates, ventricular arrhythmia that causes irregular heart beats that don't send enough blood to the body, and cardiac resynchronisation to help the heart beat at the right rhythm.",
+      "3": "While out-of-hours specialist cardiology cover and regional (localized) arrhythmia pathways are increasingly established, they are not universal, and the management of arrhythmia remains an important part of clinical medicine for the general physician.",
+      "4": "This article discusses recommendations on diagnosing heart rhythms, pacing for bradycardia (slower than normal heart beat), cardiac resynchronization and implantable cardioverter defibrillator devices to treat fast heart beats, along with common complications.",
+      "5": "Finally, future developments such as the potential of portable devices to help with diagnosing problems, enclosing cardiac devices in a mesh covering that has antibiotic (bacteria-fighting) medicines, and the increasing use of pacemakers that do not include any wires are described."
+    },
+    "text_19_simp": {
+      "1": "Acute traumatic abdominal wall hernia (TAWH) is a rare type of hernia that happens when the stomach wall hits a smooth object at low or high speed with few cases reported.",
+      "2": "Tears in the stomach wall that allow stomach contents to spill out often result from stomach injury and likely require surgery for bleeding and controlling the source of the body's extreme response to the spillage.",
+      "3": "We report a case where a high-speed impact of the stomach wall against a tree stump caused a TAWH with stomach tearing in a 20-year-old man who needed abdominal surgery and repair of the wound.",
+      "4": "The physical exam, no history of stomach hernia, and air in the stomach suggested TAWH, which was confirmed during surgery.",
+      "5": "The patient had a strong stomach wall 3 months after surgery.",
+      "6": "It is important to not rule out TAWH based on the physical exam."
+    },
+    "text_20_simp": {
+      "1": "Turner syndrome is a chromosomal abnormality.",
+      "2": "The disease is characterized by the absence of the whole or part of the X chromosome in females.",
+      "3": "This X aneuploidy condition, or condition of having abnormal number of chromosomes, is associated with a diverse set of clinical phenotypes.",
+      "4": "These phenotypes, or outward characteristics, include ovary dysfunction, short stature, brittle bones, and Type II diabetes mellitus.",
+      "5": "These phenotypes differ in their severity and penetrance (extent) among those with the syndrome.",
+      "6": "Haploinsufficiency, or when one copy of a gene is deleted, for a few X linked genes has been associated with some of these disease phenotypes.",
+      "7": "RNA (special genetic material to create proteins) quantification can provide valuable insights to understand how these diseases form.",
+      "8": "This study analyzed RNA profiles of human 45,X (abnormal) and 46,XX (normal) cells.",
+      "9": "This study identified differential (unique function) expression of genes in these two chromosomal types.",
+      "10": "Analysis revealed that these differentially expressing genes are associated with bone differentiation, glucose metabolism, and gonadal development pathways.",
+      "11": "This study also reported differential expression of non-coding RNAs (RNAs that cannot be transformed into proteins) in X cells with abnormal chromosome count.",
+      "12": "This study provides a basis for evaluation of cellular and molecular mechanism(s) in the establishment of Turner syndrome phenotypes."
+    },
+    "text_21_simp": {
+      "1": "We compared background insulin release in nine islet-cell antibody (protein made against insulin-producing cells) positive, non-diabetic parents or siblings of children with type 1 (insulin-dependent) diabetes and nine normal people matched for age, sex and weight.",
+      "2": "Short-term insulin responses to an I.V. (injected) glucose tolerance test were similar in the two groups.",
+      "3": "We measured blood insulin in people who had not had anything to eat for a period of time in blood samples taken every minute for 2 hours.",
+      "4": "We looked at blood insulin over time to see how it rises and falls.",
+      "5": "The islet-cell antibody-positive group (group with the antibody) did not have a regular pattern, but normal people had a 13-minute cycle.",
+      "6": "The islet-cell antibody-positive group did have a peak every 13 minutes.",
+      "7": "We conclude that the overall rise and fall of background insulin release is changed in islet-cell antibody positive people even when the short-term insulin response is normal."
+    },
+    "text_22_simp": {
+      "1": "Circadian variation (a part of the natural, internal process that regulates the sleep–wake cycle) in atrial fibrillation (a fluttery and irregular heartbeat that can lead to blood clots or stroke) frequency is explored in this paper by using recent advances in signal processing, which monitors the heart's electrical activity.",
+      "2": "When the atrial fibrillation frequency is estimated and tracked by signal processing tools, the information is further reviewed to detect and describe the presence of circadian variation.",
+      "3": "The results show that the short-term variations in the atrial fibrillation frequency are greater than the variation that may be attributed to circadian.",
+      "4": "Circadian variation is found in 13 of 18 patients with long-standing and persistent (last longer than 7 days) atrial fibrillation.",
+      "5": "The highest atrial fibrillation frequency usually occurred during the afternoon, whereas the lowest usually occurred during late night.",
+      "6": "Circadian variation is present in most patients with long-standing persistent atrial fibrillation, though the short-term variation in the AF frequency is great and should be taken into account."
+    },
+    "text_23_simp": {
+      "1": "Hyperkalemia is a condition where the potassium level in the blood is higher than normal.",
+      "2": "Potassium is a very important mineral (electrolyte) in the body.",
+      "3": "Hyperkalemia is a potentially fatal electrolyte disorder.",
+      "4": "It more likely occurs when the body cannot get rid of potassium as well as it should.",
+      "5": "Hyperkalemia can lead to serious problems.",
+      "6": "Especially because hyperkalemia can cause severe problems with the heart beat.",
+      "7": "The renin-angiotensin-aldosterone system (RAAS) is a hormone system that manages blood pressure and fluid balance in the body.",
+      "8": "Drugs that block the RAAS (RAAS blockers) have good effects on the cardiovascular system (heart and blood vessels).",
+      "9": "But the RAAS blockers can cause hyperkalemia.",
+      "10": "High-potassium diets can also have good effects on the cardiovascular system.",
+      "11": "But doctors have to stop giving these RAAS blockers and also recommend low-potassium diets in patients with hyperkalemia.",
+      "12": "Potassium can predict mortality.",
+      "13": "Potassium levels should be checked often in patients at risk for hyperkalemia.",
+      "14": "The rules for treating hyperkalemia that occurs rapidly have been updated.",
+      "15": "Patient studies have shown that the new drugs to treat hyperkalemia (patiromer and zirconium cyclosilicate) work well to treat hyperkalemia.",
+      "16": "These new drugs may let doctors continue to use the RAAS blockers more often.",
+      "17": "Doctors may be able to recommend less strict potassium diets too.",
+      "18": "Hyperkalemia should be closely watched for in high-risk patients because it can lead to poor outcomes.",
+      "19": "New drugs have been shown to work well.",
+      "20": "There is hope that these new drugs can control the blood potassium levels in patients that would benefit from RAAS blockers and diets higher in potassium, leading to better overall treatment results."
+    },
+    "text_24_simp": {
+      "1": "\"Shock\" refers to a life-threatening circulatory failure.",
+      "2": "Shock is caused by an imbalance between the supply and demand of oxygen within cells.",
+      "3": "Hypovolemic shock is characterized by a decreased volume in blood vessels and a subsequent reduction in preload (volume of blood within the heart when its relaxed).",
+      "4": "The body compensates the volume loss by increasing stroke volume, heart frequency, and oxygen extraction rate.",
+      "5": "Following these steps, the body will then increase 2,3-diphosphoglycerate (a chemical that controls oxygen movement) to increase available oxygen.",
+      "6": "Hypovolemic shock is due to volume loss with blood vessels or blood vascular system.",
+      "7": "Hypovolemic hemorrhagic shock impairs blood circulation.",
+      "8": "Because of this, this type of shock affects many organ systems.",
+      "9": "Vital functions, coagulation (blood) tests, and hematopoietic (blood cell creation) procedures are used to identify a state of shock caused by bleeding.",
+      "10": "Every hospital should have a specific protocol for massive transfusions (transfers).",
+      "11": "Treatment of bleeding within the body consists of homeostasis (bodily equilibrium) maintenance and administration (use) of blood products and blood clothing (scabbing) medications."
+    },
+    "text_25_simp": {
+      "1": "Recent studies have shown that nitric oxide (NO) is a key mediator (regulator) in diseases occurring with thoracic aortic aneurysm (TAA), such as Marfan syndrome (MFS).",
+      "2": "Thoracic aortic aneurysm is characterized by an abnormal bulge in the blood vessel.",
+      "3": "The progressive dilation, or widening, of the aorta (the largest human artery) in TAA ultimately leads to aortic dissection.",
+      "4": "This is a tear in the inner layer of the blood artery.",
+      "5": "Unfortunately, current medical treatments neither halt aortic enlargement nor prevent rupture.",
+      "6": "This leaves surgical repair as the only effective treatment.",
+      "7": "There is a need for effective therapies to delay or even avoid the need for surgical repair in TAA patients.",
+      "8": "This paper summarizes the ways NO signaling dysregulation (or dysfunction) causes TAA, particularly in MFS.",
+      "9": "Additionally, this paper will discuss recent advances on the identification of new MFS mediators that represent potential biomarkers.",
+      "10": "Biomarkers are measurable, biological substances that can indicate disease in a patient.",
+      "11": "The authors propose several biological substances as targets for therapeutic intervention in TAA and candidates for clinical trials."
+    },
+    "text_26_simp": {
+      "1": "Phenylketonuria (PKU) is a disorder in which the body cannot properly turn food into energy often caused by not enough of a specific protein (phenylalanine hydroxylase, PAH) that changes one molecule (phenylalanine, Phe) into another molecule (tyrosine, Tyr).",
+      "2": "PKU is a type of molecular (amino acid) metabolism disorder called \"toxic accumulation IEMs,\" in which the buildup of the molecule is toxic.",
+      "3": "Changes to DNA of a protein, such as PAH, are made in both copies of the gene that is altered, because one working copy of the gene allows the protein to function.",
+      "4": "PAH is mainly a liver protein.",
+      "5": "PKU is associated with high blood Phe levels and low Tyr levels.",
+      "6": "Newborns with PKU can look normal at birth with the first signs showing many months later.",
+      "7": "Signs of PKU can include a musty smell from skin and pee, fair skin, red and itchy skin, seizures, tremors, and an active and disruptive behavior."
+    },
+    "text_27_simp": {
+      "1": "Checks for conditions that affect newborns make finding individuals with phenylketonuria (PKU), a disorder inherited from both parents in which the body cannot properly turn a substance (phenylalanine) into energy, easy and effective.",
+      "2": "A recent drug treatment option brought fast development of a lab method that checks for certain genes, proteins, or other molecules that may be a sign of a disease.",
+      "3": "However, genetic alternations that cause PKU do not equally reduce protein activity.",
+      "4": "A range of over 850 genetic alterations causes elevated phenylalanine blood levels from very mild with no treatment to severe PKU, which needs immediate treatment.",
+      "5": "Databases of physical gene locations and alterations carried in a gene allow effective classification and treatment of patients.",
+      "6": "The lab method that checks for certain genes, proteins, or other molecules determines a patient's genetic alterations in a few days, especially if each lab comes up with a test to look for alterations in more than one gene for the most common alterations in a group of people."
+    },
+    "text_28_simp": {
+      "1": "Lupus nephritis is the most common form systemic lupus erythematosus (lupus - when your immune system attacks healthy cells) that severely impacts organs.",
+      "2": "About 30% of patients do not respond to standard treatment.",
+      "3": "This report summarizes a case of treating lupus nephritis by targeting a type of protein called interleukin-17, demonstrating its possible benefit.",
+      "4": "The case is of a childbearing age woman with lupus who developed lupus nephritis and did not respond to available treatment.",
+      "5": "During follow up visits with the patient, infection with a common sexually transmitted disease called human papillomavirus (HPV) is detected.",
+      "6": "A possible trigger and the following care and treatment is based on this discovery.",
+      "7": "Interleukin-17 (IL-17 - a chemical messenger) seems to be a basic key in lupus and lupus nephritis.",
+      "8": "Therefore, it is decided to start treatment with an anti-IL-17A antibody drug called secukinumab.",
+      "9": "After starting secukinumab, clinical and biological features improved, and complete kidney response was achieved."
+    },
+    "text_29_simp": {
+      "1": "This review focuses on the muscle and bone-related features of achondroplasia, which is the most common bone growth impairment and the most frequent cause of short-limbed dwarfism.",
+      "2": "The gene that causes achondroplasia affects many members of a family but in the majority of cases is due to a new mutation.",
+      "3": "The diseases is related to a mutation in the fibroblast growth factor receptor-3 (FGFR3) gene and results in a continuously active receptor.",
+      "4": "Experiments show that FGFR3 prevents bone growth by preventing cartilage cells in the bone growth region from growing and maturing.",
+      "5": "The mutation responsible for achondroplasia prevents growth of long bones.",
+      "6": "The diagnosis of achondroplasia is based on physical and X-ray features including short stature, large head with a prominent forehead, underdevelopment of the middle part of the face and shortening of the limbs.",
+      "7": "The most common bone-related complications of achondroplasia are  shortening of the spine and deformities of the lower limbs.",
+      "8": "Current treatment and future therapies are discussed."
+    },
+    "text_30_simp": {
+      "1": "Mutations in fibroblast growth factor receptor 3 (FGFR3) cause achondroplasia (Ach), the most common form of dwarfism in humans and related chondrodysplasia syndromes that include hypochondroplasia (Hch), severe achondroplasia with developmental delay and acanthosis nigricans (SADDAN), and thanatophoric dysplasia (TD).",
+      "2": "The mutations are passed on nonsex chromosomes and causes the child that inherits the mutation from an affected parent to have a 50% chance to be affected.",
+      "3": "FGFR3 is expressed in cartilage cells and mature bone-forming cells where it functions to regulate bone growth.",
+      "4": "Analysis of the mutations in FGFR3 revealed increased signaling through a combination of mechanisms that include stabilization of the receptor, enhanced binding of two receptors to each other, and enhanced enzyme activity of the receptor.",
+      "5": "Paradoxically, increased FGFR3 signaling profoundly suppresses cell multiplication and maturation of growth plate cartilage cells resulting in decreased growth region size, reduced volume of the ends of long bones, and resulting decreased bone elongation.",
+      "6": "In this review, authors discuss the molecular mechanisms that regulate growth region cartilage cells, development of Achondroplasia (Ach), and therapeutic approaches that are being evaluated to improve bone growth in people with Ach and related conditions."
+    },
+    "text_31_simp": {
+      "1": "We look at a possible new treatment to add to standard treatment for glioblastoma, a type of brain cancer.",
+      "2": "Based on mouse studies, several recent studies showed that radiation of the part of the brain where brain cells are made reduces growth of some glioblastomas in humans, suggesting this part of the brain might play a role in fueling brain tumors.",
+      "3": "More studies showed cells from the part of the brain where brain cells are made move outward toward a glioblastoma.",
+      "4": "Certain molecule signaling causes this cell movement.",
+      "5": "Because many mental health drugs block molecule signaling, such as fluphenazine, or perphenazine, we suggest adding one of these drugs to the current standard treatment of surgery followed by chemotherapy and radiation to possibly increase survival time by cutting off fuel to the glioblastoma."
+    },
+    "text_32_simp": {
+      "1": "The effects of single oral (by mouth) doses of prednisone (a type of man-made steroid drug that can help lower certain immune-related symptoms, including inflammation and swelling) on circulating mononuclear cells (major cells in the body that signal the immune system), autologous mixed lymphocyte reaction (MLR) (the availability of non T-cells to stimulate T-cells), mitogen responses (to help measure immune response), and allogeneic MLR (grouping of white blood cells called lymphocytes from unrelated individuals resulting in T cell activation) are studied in healthy volunteers.",
+      "2": "Low doses were immunosuppressive (drugs or medicines that lower the body's ability to reject a transplanted organ), causing reduced circulation and amounts of T-cells (a type of immune cell that help protect the body from infection) and monocytes (an immune cell that attacks and breaks down germs and bacteria that enter the body), and major losses in autologous but not allogeneic MLR responses.",
+      "3": "The maximum effect occurred 6 hours after the drug is provided, and effects are gone by 24 hours.",
+      "4": "Autologous MLR responses are very sensitive to the effects of prednisone and were significantly and consistently slowed or stopped 2 hours after the drug was provided.",
+      "5": "Macrophage-enriched stimulating cells (a type of white blood cell that surrounds and kills foreign organisms like bacteria and activates other immune system cells) were more easily slowed than responding T cells.",
+      "6": "Because autologous MLR may be important in in vivo (experiments within a living human or animal) monitoring of immune responses, its reduction by low dose glucocorticoids (medicines that fight inflammation and work with your immune system) may be important.",
+      "7": "This suppressive (slowing down) effect must be considered in studies of the autologous MLR in patients receiving glucocorticoid drugs."
+    },
+    "text_33_simp": {
+      "1": "As COVID-19, a viral breathing-related disease, continues to spread rapidly worldwide and variants continue to emerge, the development and distribution of safe and effective vaccines are urgently needed.",
+      "2": "Researchers developed an mRNA vaccine (a vaccine that introduces or copies a piece of messenger RNA - genetic material - that corresponds to a virus) that is based on trimeric receptor-binding domain (RBD) (part of the virus located on the spike protein which is involved in introducing a virus into host cells) and is fused to TF-RBD, tiny molecules that protect the copies called nanoparticles.",
+      "3": "The TF-RBD nanoparticles delivered humoral immunity (immunity in which molecules create antibodies against a specific antigen and involve substances found in the humors, or body fluids) as well as a cellular response (using white blood cells that are part of the body's natural immune system).",
+      "4": "Immunization with two shots of a low dose vaccine of TF-RBD provided adequate protection in mice.",
+      "5": "In addition, the mRNA template of TF-RBD vaccine was easily and quickly changed into a variant vaccine to address SARS-CoV-2 mutations.",
+      "6": "The TF-RBD vaccine produced neutralizing antibodies (antibodies that defends a cell from an infectious particle by neutralizing any effect it has) against Alpha (B.1.1.7) and Beta (B.1.351) variants.",
+      "7": "This mRNA vaccine based on self-assembled nanoparticles provides support for future designs of mRNA vaccines targeting SARS-CoV-2."
+    },
+    "text_34_simp": {
+      "1": "Patients with end-stage renal disease (ESRD) on regular, ongoing (maintenance) dialysis have a high risk of developing hyperkalemia.",
+      "2": "Hyperkalemia is defined as a potassium level in the blood that is higher than normal.",
+      "3": "Currently, the main treatments of hyperkalemia in patients with ESRD are dialysis, eating a diet low in potassium, and avoiding medicines that increase the risk of hyperkalemia.",
+      "4": "In this paper, we focus on the issues and problems associated with the treatment of hyperkalemia in patients on maintenance dialysis.",
+      "5": "We present a case to illustrate these issues.",
+      "6": "We also discuss potential treatments, other than dialysis, for these patients.",
+      "7": "Newer drugs , such as patiromer and sodium zirconium cyclosilicate bind to potassium.",
+      "8": "These potassium-binding drugs may reduce the need for the very strict dialysis diet.",
+      "9": "Because the dialysis diet is very strict, there may be problems getting enough nutrition for patients with ESRD.",
+      "10": "These potassium-binding drugs may also reduce the risk of potentially life-threatening hyperkalemia."
+    },
+    "text_35_simp": {
+      "1": "The first trimester screening program offers a noninvasive (nonsurgical) option for the early detection of aneuploidy pregnancies.",
+      "2": "Aneuploidy refers to the conditions of having an abnormal number of chromosomes.",
+      "3": "This screening is done by evaluating serum (blood) free β-human chorionic gonadotrophin (free β-hCG - a preganancy hormone), pregnancy associated plasma protein A (PAPP-A), maternal age, and fetal nuchal translucency (NT - area of tissue at the back of an unborn baby's neck) thickness at 11 to 13 weeks of gestation.",
+      "4": "A beneficial consequence of screening is the early diagnosis of chromosomal anomalies.",
+      "5": "At 11 to 13 weeks, the relative prevalence of chromosomal anomalies are found to be 1:3 and 1:7, respectively.",
+      "6": "Chromosomal anomalies are associated with increased maternal age, increased fetal NT, and decreased PAPP-A.",
+      "7": "However, in a specific chromosomal anomalies, known as trisomy 21, serum free β-hCG is increased.",
+      "8": "In trisomies 18 and 13, various types of chromosomal anomalies, free β-hCG is decreased."
+    },
+    "text_36_simp": {
+      "1": "Mitochondria are the parts of cells that produce energy for the body.",
+      "2": "Ketone bodies are particles made from breaking down fats and can serve as an alternative to generate energy.",
+      "3": "The ketogenic diet, which is high in fat and low in carbohydrates, forces the body to use fat as its main source of energy.",
+      "4": "The ketogenic diet is used to help drug resistant epilepsy (seizures that cannot be conrolled with medicine) and for rare diseases that impact metabolism and the process for changing sugar into energy.",
+      "5": "There is increasing evidence that the ketogenic diet may also be helpful as an additional therapy for cancer."
+    },
+    "text_37_simp": {
+      "1": "The total-body content of potassium (K+) and distribution of K+ across the cell membranes (the thick layer that surrounds cells) is very important for normal functioning of the body's cells.",
+      "2": "Total-body K+ content (a method for measuring body composition and mass of cells) is determined by changes in the release of K+ by the kidneys in response to how much K+ is taken in.",
+      "3": "Insulin (a hormone that allows the cells in the muscles, fat, and liver to absorb sugar from the blood) and β-adrenergic tone (a group of organs and nerves where hormones are able to signal to other cells) also help keep potassium (K+) distribution at normal levels.",
+      "4": "Despite these different systems, disorders of changing K+ levels are common.",
+      "5": "Understanding the pathophysiology (physical changes that come with a particular syndrome or disease) and regulating processes that determine how the body distributes and balances K+ is key to developing treatments to restore K+ homeostasis (processes used by the body to maintain a normal potassium concentration in the fluid).",
+      "6": "Researchers review the normal regulating process of total-body potassium (K+) before highlighting common disorders in K+ homeostasis and their treatment.",
+      "7": "This review of K+ homeostasis is a resource for health care providers and a tool for educators teaching students to understand key factors involved in K+ balance."
+    },
+    "text_38_simp": {
+      "1": "Mitochondria (the powerhouse of a cell) play several important roles in the body.",
+      "2": "These roles include providing energy and participating in pathways of inflammation (redness and swelling from fighting an infection).",
+      "3": "The event of mitochondria increasing inflammation is associated with the release of products from mitochondrial damage.",
+      "4": "One of these products is mitochondrial DNA which can increase inflammation within the body.",
+      "5": "This review aimed to show the importance of the mitochondria in energy production and in the intervention in the development of several diseases, mainly COVID-19 (a viral, respiratory disease).",
+      "6": "Additionally the paper aimed to show how the mitochondria organelle uses several different ways to allow the replication and maintenance of a virus.",
+      "7": "This can lead to the worsening and spread of inflammation.",
+      "8": "The reviewed scientific evidence suggested that mitochondria are involved in the replication of COVID-19.",
+      "9": "The virus forms double-walled vesicles, a small chamber outside or within a cell, that evades detection by the host's immune system.",
+      "10": "These vesicles can then damage mitochondria within cells, releasing mitochondrial DNA into the body.",
+      "11": "This can trigger the innate immune system, the defense system you were born with, which increase inflammation within the body.",
+      "12": "This review concluded that while the role of the mitochondria in COVID-19 is still being studied, the use of mitochondrial DNA as an indicator of illness is a potential area yet to be researched."
+    },
+    "text_39_simp": {
+      "1": "SARS-CoV-2 infection (a viral lung infection) can cause effects ranging from patients with no symptoms to life-threatening conditions.",
+      "2": "Severe COVID-19 patients often display a severe lung effect and develop altered levels of immune cells and strikingly increased levels of IL-6 (an immune signaling molecule called a cytokine).",
+      "3": "There is an increased cytokine release with hyperferritinemia (high levels of ferritin - an iron-containing protein).",
+      "4": "This leads to the idea that COVID-19 is part of the hyperferritinemic syndrome disease group.",
+      "5": "Indeed, very high levels of ferritin can occur in other diseases including hemophagocytic lymphohistiocytosis, macrophage activation syndrome, adult-onset Still's disease, catastrophic antiphospholipid syndrome and septic shock (immune- or infection-related diseases).",
+      "6": "Many studies have shown the immune-system-regulating effects of ferritin and its links with death risks and high inflammation.",
+      "7": "High levels of free iron are harmful in the body, especially through damage that can lead to scarring.",
+      "8": "Iron binding represents a pillar in the treatment of iron overload.",
+      "9": "Also, it was proven to have an anti-viral and anti-scarring activity.",
+      "10": "Herein, we analyse the disease-causing role of ferritin and iron during SARS-CoV-2 infection and propose iron depletion treatment as a new treatment in the COVID-19 pandemic."
+    }
+  };
+  
+  // Provenance: split index -> original adaptation sentence number
+  const simplifiedMap = {
+    "text_01_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "2",
+      "5": "2",
+      "6": "3",
+      "7": "3",
+      "8": "4",
+      "9": "4",
+      "10": "5",
+      "11": "6",
+      "12": "6",
+      "13": "7"
+    },
+    "text_02_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "2",
+      "4": "3",
+      "5": "4",
+      "6": "5",
+      "7": "6",
+      "8": "7",
+      "9": "8"
+    },
+    "text_03_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "2",
+      "5": "3",
+      "6": "4",
+      "7": "4",
+      "8": "5",
+      "9": "6",
+      "10": "7"
+    },
+    "text_04_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "2",
+      "4": "3",
+      "5": "3",
+      "6": "3",
+      "7": "4",
+      "8": "5",
+      "9": "6",
+      "10": "6",
+      "11": "7",
+      "12": "8",
+      "13": "9"
+    },
+    "text_05_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    },
+    "text_06_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "3",
+      "6": "4"
+    },
+    "text_07_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
+    },
+    "text_08_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "2",
+      "4": "3",
+      "5": "4",
+      "6": "5",
+      "7": "6",
+      "8": "6",
+      "9": "7"
+    },
+    "text_09_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "4",
+      "6": "5",
+      "7": "5",
+      "8": "6",
+      "9": "7"
+    },
+    "text_10_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "3",
+      "6": "4",
+      "7": "5",
+      "8": "6"
+    },
+    "text_11_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "6",
+      "8": "7"
+    },
+    "text_12_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "4",
+      "6": "5",
+      "7": "6",
+      "8": "7",
+      "9": "8"
+    },
+    "text_13_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "2",
+      "5": "3",
+      "6": "3",
+      "7": "4",
+      "8": "4",
+      "9": "5",
+      "10": "5",
+      "11": "6"
+    },
+    "text_14_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "6",
+      "8": "7",
+      "9": "8",
+      "10": "9",
+      "11": "10"
+    },
+    "text_15_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6"
+    },
+    "text_16_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "8",
+      "7": "12"
+    },
+    "text_17_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8"
+    },
+    "text_18_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
+    },
+    "text_19_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6"
+    },
+    "text_20_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "2",
+      "5": "3",
+      "6": "4",
+      "7": "5",
+      "8": "6",
+      "9": "6",
+      "10": "7",
+      "11": "8",
+      "12": "9"
+    },
+    "text_21_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7"
+    },
+    "text_22_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6"
+    },
+    "text_23_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "1",
+      "4": "1",
+      "5": "2",
+      "6": "2",
+      "7": "3",
+      "8": "3",
+      "9": "3",
+      "10": "3",
+      "11": "3",
+      "12": "4",
+      "13": "4",
+      "14": "5",
+      "15": "6",
+      "16": "7",
+      "17": "7",
+      "18": "8",
+      "19": "9",
+      "20": "9"
+    },
+    "text_24_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "3",
+      "6": "4",
+      "7": "4",
+      "8": "4",
+      "9": "5",
+      "10": "6",
+      "11": "7"
+    },
+    "text_25_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "2",
+      "5": "3",
+      "6": "3",
+      "7": "4",
+      "8": "5",
+      "9": "5",
+      "10": "5",
+      "11": "6"
+    },
+    "text_26_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "5",
+      "5": "6",
+      "6": "7",
+      "7": "8"
+    },
+    "text_27_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6"
+    },
+    "text_28_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "5",
+      "7": "6",
+      "8": "7",
+      "9": "8"
+    },
+    "text_29_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8"
+    },
+    "text_30_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "4",
+      "6": "5"
+    },
+    "text_31_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
+    },
+    "text_32_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7"
+    },
+    "text_33_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7"
+    },
+    "text_34_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "3",
+      "6": "4",
+      "7": "4",
+      "8": "4",
+      "9": "4",
+      "10": "4"
+    },
+    "text_35_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "4",
+      "6": "5",
+      "7": "5",
+      "8": "5"
+    },
+    "text_36_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
+    },
+    "text_37_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7"
+    },
+    "text_38_simp": {
+      "1": "1",
+      "2": "1",
+      "3": "1",
+      "4": "1",
+      "5": "2",
+      "6": "2",
+      "7": "2",
+      "8": "3",
+      "9": "3",
+      "10": "4",
+      "11": "4",
+      "12": "5"
+    },
+    "text_39_simp": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "3",
+      "5": "4",
+      "6": "5",
+      "7": "6",
+      "8": "7",
+      "9": "8",
+      "10": "9"
+    }
+};  
+
 // Quizzes derived from the first 10 texts.
 const studyQuizzes = {
+    "text_00": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "Despite some notable challenges in sampling and analysis, exhaled breath represents a desirable medium for metabolomics applications, foremost due to its non-invasive, convenient and practically limitless availability.",
+            "question": "Why is breath still appealing for metabolomics study?",
+            "options": {
+                "A": "It can be collected easily and repeatedly without discomfort.",
+                "B": "It usually offers more detailed chemical information than blood tests.",
+                "C": "It avoids differences that come from collecting samples from different people.",
+                "D": "It limits the need for special tools to gather enough material."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The sentence highlights convenience, non-invasiveness, and limitless availability.",
+                "B": "False: The text does not claim breath gives more detail than blood.",
+                "C": "False: The sentence notes challenges in sampling, not avoidance of them.",
+                "D": "False: The sentence does not say breath reduces equipment needs."
+            }
+        },
+    ],
     "text_01": [
         {
             "sentence_id": 3,
@@ -492,7 +1514,7 @@ const studyQuizzes = {
             "original_sentence": "Tardive dyskinesia (TD) is caused by exposure to medications with dopamine antagonism, mainly antipsychotics.",
             "question": "According to the passage, what is a key factor leading to tardive dyskinesia?",
             "options": {
-                "A": "Long-term use of medications that block dopamine activity.",
+                "A": "Use of medications that block dopamine activity.",
                 "B": "Chronic exposure to medications that increase dopamine release.",
                 "C": "Short-term use of antidepressants that have no effect on dopamine pathways.",
                 "D": "Irregular dosing of medications used for treating anxiety disorders."
@@ -528,7 +1550,7 @@ const studyQuizzes = {
             "original_sentence": "They have demonstrated efficacy in several class 1 studies.",
             "question": "What does the passage indicate about VMAT2 inhibitors?",
             "options": {
-                "A": "They have shown effectiveness in high-quality clinical studies.",
+                "A": "They have shown effectiveness in clinical studies.",
                 "B": "They are still considered experimental due to lack of strong evidence.",
                 "C": "They have only been tested in small pilot trials with unclear results.",
                 "D": "They have not shown benefits compared to older treatment approaches."
@@ -824,7 +1846,7 @@ const studyQuizzes = {
             "original_sentence": "The specific etiology is not well understood and possible causes depend on the physiological or pathological situation in which the cramps appear.",
             "question": "What does the passage suggest about why muscle cramps occur?",
             "options": {
-                "A": "Their exact cause may differ depending on whether the body is functioning normally or affected by disease.",
+                "A": "Their cause is not fully understood and may vary depending on the individual and the situation.",
                 "B": "Their cause is fully understood and is the same across all situations.",
                 "C": "They arise from a single biochemical pathway regardless of context.",
                 "D": "They are caused only by structural damage to the affected muscle."
@@ -862,7 +1884,7 @@ const studyQuizzes = {
             "original_sentence": "While open surgery is now rarely performed, the use of medical expulsive therapy (MET) has been controversial and perhaps only recommended for large distal ureteric stones.",
             "question": "What point does the passage make about medical expulsive therapy (MET)?",
             "options": {
-                "A": "Its usefulness is debated, and it may only be suitable for larger stones located near the bladder.",
+                "A": "Its usefulness is debated, and it may only be suitable for larger stones in the ureter.",
                 "B": "It is widely accepted as the first-line treatment for stones of all sizes and locations.",
                 "C": "It has replaced most surgical and endoscopic options because of its consistent effectiveness.",
                 "D": "It is avoided entirely due to strong evidence showing it worsens outcomes."

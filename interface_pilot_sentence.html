@@ -480,10 +480,16 @@
                         <button type="button" class="btn-start" id="btn-start-quiz" style="margin-top:20px;" disabled>Begin Quiz</button>
                     </div>
 
-                    <div id="quiz-container" style="margin-top:20px; display:none;"></div>
+            <div id="quiz-container" style="margin-top:20px; display:none;"></div>
 
-                    <div id="quiz-complete-message" style="display:none; margin-top:15px; font-weight:bold; color:#2e7d32;">
-                        Quiz complete. You can submit your responses now.
+            <div id="quiz-complete-message" style="display:none; margin-top:15px; font-weight:bold; color:#2e7d32;">
+                Quiz complete. You can submit your responses now.
+            </div>
+
+                    <div id="quiz-summary" style="display:none; margin-top:20px; padding:15px; border-radius:8px; background:#eef7ff; border:1px solid #cfe2ff;">
+                        <h3 style="margin-top:0;">Answer Key</h3>
+                        <p style="margin:8px 0 12px;">Below are the correct answers for each quiz question. Thank you for taking the time to participate!</p>
+                        <div id="quiz-summary-list" style="display:flex; flex-direction:column; gap:10px;"></div>
                     </div>
 
                     <button type="button" class="btn-start" id="btn-submit-final" style="margin-top:20px; display:none;">Submit All Data</button>
@@ -514,6 +520,8 @@
         const totalSentencesSpan = document.getElementById('total-sentences');
         const quizContainer = document.getElementById('quiz-container');
         const quizCompleteMessage = document.getElementById('quiz-complete-message');
+        const quizSummary = document.getElementById('quiz-summary');
+        const quizSummaryList = document.getElementById('quiz-summary-list');
         const overallSection = document.getElementById('overall-section');
         const startQuizBtn = document.getElementById('btn-start-quiz');
         const modalOverlay = document.getElementById('instruction-modal');
@@ -640,11 +648,19 @@
             // Init Text
             const urlParams = new URLSearchParams(window.location.search);
             const stimulusID = urlParams.get('stimulus') || "text_01";
-            const stimulusData = studyTexts[stimulusID] || studyTexts["text_01"] || {};
+            const isSimplified = stimulusID.endsWith('_simp');
+            // Expose flags for downstream saving/logging.
+            window.isSimplifiedStimulus = isSimplified;
+            const textSource = isSimplified ? (typeof studyTextsSimplified !== 'undefined' ? studyTextsSimplified : {}) : studyTexts;
+            const stimulusData = textSource[stimulusID] || textSource["text_01"] || {};
+            // Keep provenance handy for logging/analysis (split index -> original sentence index).
+            const provenanceMap = isSimplified && typeof simplifiedMap !== 'undefined' ? (simplifiedMap[stimulusID] || {}) : null;
             const topicText = (typeof studyTopics !== 'undefined' && studyTopics[stimulusID]) ? studyTopics[stimulusID] : (urlParams.get('topic') || "a medical topic");
             const topicSpan = document.getElementById('instruction-topic');
             if (topicSpan) topicSpan.textContent = topicText;
             quizHighlightDisabled = urlParams.get('quiz_highlight') !== 'on';
+            // Expose provenance for downstream logging/analysis if needed.
+            window.stimulusProvenance = provenanceMap;
 
             // Build ordered sentence list from the segmented data (object keyed by sentence index).
             let sentenceList = [];
@@ -816,8 +832,15 @@
             const confidenceVal = getSelectedConfidence();
             if (ratingVal === null || confidenceVal === null) return; // Need both
 
+            const splitIndex = currentIndex + 1; // 1-based for clarity in exports
+            const mappedIndex = window.isSimplifiedStimulus
+                ? (window.stimulusProvenance ? (window.stimulusProvenance[String(splitIndex)] || null) : null)
+                : splitIndex; // originals map to themselves
+
             annotations[currentIndex] = {
                 text: sentences[currentIndex],
+                sentence_index: splitIndex,
+                mapped_sentence_index: mappedIndex,
                 rating: ratingVal,
                 confidence: confidenceVal,
                 feedbackText: sentenceFeedback.value || ''
@@ -847,6 +870,7 @@
             quizContainer.style.display = 'none';
             quizContainer.innerHTML = '<p>Please complete the overall feedback, then click "Begin Quiz" to continue.</p>';
             quizCompleteMessage.style.display = 'none';
+            quizSummary.style.display = 'none';
             startQuizBtn.style.display = 'inline-block';
             overallSection.style.display = 'block';
             startQuizBtn.disabled = true;
@@ -873,16 +897,20 @@
         function setupQuizFlow() {
             const urlParams = new URLSearchParams(window.location.search);
             const stimulusID = urlParams.get('stimulus') || "text_01";
-            quizQuestions = studyQuizzes[stimulusID] || [];
+            // Simplified texts reuse the original quiz; strip suffix to look up questions.
+            const quizKey = stimulusID.endsWith('_simp') ? stimulusID.replace(/_simp$/, '') : stimulusID;
+            quizQuestions = studyQuizzes[quizKey] || [];
             quizIndex = 0;
             Object.keys(quizOptionOrder).forEach(k => delete quizOptionOrder[k]);
 
             if (quizQuestions.length === 0) {
                 quizContainer.innerHTML = '<p>No questions for this text.</p>';
+                quizSummary.style.display = 'none';
                 return;
             }
             quizCompleteMessage.style.display = 'none';
             document.getElementById('btn-submit-final').style.display = 'none';
+            quizSummary.style.display = 'none';
             renderCurrentQuizQuestion();
         }
 
@@ -1010,6 +1038,7 @@
                     document.getElementById('btn-submit-final').style.display = 'block';
                     quizNext.disabled = true;
                     quizNext.classList.remove('active');
+                    renderQuizSummary();
                 }
             });
         }
@@ -1073,6 +1102,41 @@
             return copy;
         }
 
+        function renderQuizSummary() {
+            if (!quizSummary || !quizSummaryList) return;
+            quizSummaryList.innerHTML = '';
+            if (!quizQuestions.length) {
+                quizSummary.style.display = 'none';
+                return;
+            }
+
+            quizQuestions.forEach((q, idx) => {
+                const correctKey = q.correct_answer || Object.keys(q.options || {})[0] || "";
+                const correctText = (q.options || {})[correctKey] || "Not provided";
+                const userResponse = quizResponses[idx];
+                const userKey = userResponse ? userResponse.selected_option : "";
+                const isCorrect = userKey === correctKey;
+                const userText = (q.options || {})[userKey] || (userKey ? userKey : "No answer");
+                const questionText = (q.question || "").replace(/^Answer the question based on the highlighted sentence\.?\s*/i, '').trim() || (q.question || "");
+
+                const entry = document.createElement('div');
+                entry.style.background = '#fff';
+                entry.style.border = '1px solid #d0d7de';
+                entry.style.borderRadius = '6px';
+                entry.style.padding = '10px 12px';
+
+                entry.innerHTML = `
+                    <div style="font-weight:bold; margin-bottom:6px;">Q${idx + 1}. ${questionText}</div>
+                    <div style="margin-bottom:4px;">Your answer: <span style="font-weight:${isCorrect ? 'bold' : 'normal'}; color:${isCorrect ? '#2e7d32' : '#b71c1c'};">${userText}</span></div>
+                    <div>Correct answer: <strong>${correctText}</strong></div>
+                `;
+                quizSummaryList.appendChild(entry);
+            });
+
+            quizSummary.style.display = 'block';
+            quizCompleteMessage.style.display = 'block';
+        }
+
         // --- SUBMIT ---
         document.getElementById('btn-submit-final').addEventListener('click', () => {
             const btn = document.getElementById('btn-submit-final');
@@ -1093,7 +1157,11 @@
             const quizResults = Object.keys(quizResponses).sort((a,b)=>Number(a)-Number(b)).map(idx => quizResponses[idx]);
 
             // Format Annotations for Google Sheets (Map to Array)
-            const annotationArray = Object.keys(annotations).sort().map(k => annotations[k]);
+            // Keep the original sentence order (numeric keys 1,2,3,... not 1,10,2)
+            const annotationArray = Object.keys(annotations)
+                .map(k => Number(k))
+                .sort((a, b) => a - b)
+                .map(k => annotations[k]);
 
             const topicFam = formData.get('overall_fam') || "N/A";
             const exposures = Array.from(document.querySelectorAll('#overall-exposure input[type=\"checkbox\"]:checked')).map(c => c.value);
@@ -1105,6 +1173,8 @@
                 study_id: urlParams.get('STUDY_ID') || "TEST_STUDY",       // NEW: Matches Col C in AppScript
                 session_id: urlParams.get('SESSION_ID') || "TEST_SESSION", // NEW: Matches Col D in AppScript
                 stimulus_id: stimulusID,
+                is_simplified: stimulusID.endsWith('_simp'),
+                provenance_map: (typeof window.stimulusProvenance !== 'undefined' ? window.stimulusProvenance : null),
                 // Pack familiarity + reading frequency together to fit existing App Script field
                 familiarity: JSON.stringify({
                     topic_familiarity: topicFam,
