@@ -2184,7 +2184,7 @@ const studyQuizzes = {
             "original_sentence": "He did not have any cardiovascular related symptoms.",
             "question": "Why is the absence of cardiovascular symptoms relevant in the case?",
             "options": {
-                "A": "It helps suggest that his edema was not due to heart-related causes.",
+                "A": "It helps rule out heart-related explanations mentioned elsewhere in the case.",
                 "B": "It confirms that edema is never associated with cardiac disease.",
                 "C": "It indicates that gabapentin is known to protect against heart problems.",
                 "D": "It shows that his swelling was most likely due to kidney failure."
@@ -2423,7 +2423,7 @@ const studyQuizzes = {
         {
             "sentence_id": 3,
             "original_sentence": "A recent series of pediatric studies appear to show that HbA1c has lower sensitivity than Fasting plasma glucose (FPG) or oral glucose tolerance test (OGTT).",
-            "question": "What do pediatric studies suggest about HbA1c compared with FPG or OGTT?",
+            "question": "What do pediatric studies suggest about HbA1c compared with other tests?",
             "options": {
                 "A": "It detects fewer cases, indicating lower sensitivity compared with the other tests.",
                 "B": "It consistently outperforms FPG and OGTT in identifying diabetes.",
@@ -2715,4 +2715,156 @@ const studyQuizzes = {
             }
         }
     ]            
+};
+
+// when a simplified text needs its own quiz; otherwise the app falls back to the base studyQuizzes entry.
+const studyQuizzesSimplified = {
+    "text_16_simp": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "An 18 year-old woman presented to an outside hospital with seizure activity after a massive ingestion of lamotrigine, bupropion, trazodone, buspirone, and possibly isoretinoin.",
+            "question": "What does the passage indicate about the circumstances leading to the patient’s presentation?",
+            "options": {
+                "A": "She had seizures because she took a very large amount of several medications.",
+                "B": "She suddenly developed a seizure disorder for no clear reason.",
+                "C": "She fainted after skipping her usual medicines.",
+                "D": "She presented with seizures triggered by a recent head injury."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The seizure activity followed a massive ingestion of several drugs.",
+                "B": "False",
+                "C": "False",
+                "D": "False: Trauma is not noted."
+            }
+        },
+        {
+            "sentence_id": 2,
+            "original_sentence": "Her initial vital signs were remarkable for tachycardia (120 bpm).",
+            "question": "What does the passage report about the patient’s heart rhythm and rate?",
+            "options": {
+                "A": "She had a fast heart rate but no irregular heartbeat.",
+                "B": "She developed repeated episodes of dangerous heart rhythm disturbances.",
+                "C": "Her heart rate was slow and required pacing.",
+                "D": "Her heart rhythm could not be assessed because of seizures."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The passage states she had a high heart rate and no irregular heartbeat.",
+                "B": "False: No dangerous rhythm disturbances are mentioned.",
+                "C": "False: Her heart rate was elevated, not slow.",
+                "D": "False: Heart rhythm information is explicitly provided."
+            }            
+        },
+        {
+            "sentence_id": 4,
+            "original_sentence": "To treat a seizure lasting longer than 5 minutes or seizures occurring close together without recovery in between, she was given lorazepam, propofol, and phenobarbital.",
+            "question": "How were the patient’s seizures treated?",
+            "options": {
+              "A": "She received multiple medications, including lorazepam, propofol, and phenobarbital.",
+              "B": "Her seizures resolved without any medical treatment.",
+              "C": "She was treated only with antibiotics and observation.",
+              "D": "She required brain surgery to control the seizures."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The passage lists lorazepam, propofol, and phenobarbital as treatments.",
+              "B": "False: Active medical treatment was required.",
+              "C": "False: Antibiotics are not mentioned.",
+              "D": "False: No surgical intervention is described."
+            }
+        },          
+        {
+            "sentence_id": 11,
+            "original_sentence": "She was extubated on hospital day 5 and discharged to a psychiatric facility on hospital day 13.",
+            "question": "What does the passage indicate about her recovery course?",
+            "options": {
+                "A": "She slowly got better over several days and still needed ongoing mental health care after the medical emergency.",
+                "B": "She stayed on a breathing machine for all 13 days of her hospitalization.",
+                "C": "She recovered fully within 24 hours and was discharged the next day.",
+                "D": "She was discharged home once her seizures stopped."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Extubated day 5, discharged day 13.",
+                "B": "False: Ventilator support ended early.",
+                "C": "False: Hospital stay was 13 days.",
+                "D": "False: She recovered sufficiently for transfer."
+            }
+        }
+    ],
+    "text_17_simp": [
+        {
+            "sentence_id": 3,
+            "original_sentence": "A recent series of pediatric studies appear to show that HbA1c has lower sensitivity than Fasting plasma glucose (FPG) or oral glucose tolerance test (OGTT).",
+            "question": "What do pediatric studies suggest about HbA1c compared with other tests?",
+            "options": {
+                "A": "It detects fewer cases, indicating lower sensitivity compared with the other tests.",
+                "B": "It consistently outperforms FPG and OGTT in identifying diabetes.",
+                "C": "It has identical sensitivity to the other tests across age groups.",
+                "D": "It is unsuitable for use in adults but more accurate in children."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Studies indicate HbA1c is less sensitive.",
+                "B": "False: The passage says the opposite.",
+                "C": "False: Sensitivity differs.",
+                "D": "False: Adult accuracy is not addressed here."
+            }
+        },
+        {
+            "sentence_id": 4,
+            "original_sentence": "However, other glucose measuring blood tests have not yet been verified to work in children.",
+            "question": "What limitation does the passage identify regarding glucose-based blood tests in children?",
+            "options": {
+              "A": "They have not yet been proven to work reliably in children.",
+              "B": "They are known to be more accurate than HbA1c in children.",
+              "C": "They are routinely recommended as the primary diagnostic tool for children.",
+              "D": "They have been extensively validated but are difficult to perform."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The passage states that other glucose-measuring blood tests have not been verified to work in children.",
+              "B": "False: The passage does not claim higher accuracy.",
+              "C": "False: No recommendation for primary use is made.",
+              "D": "False: The text explicitly says they have not been validated."
+            }
+        },
+        {
+            "sentence_id": 6,
+            "original_sentence": "Thus, accepting the major ADA diagnostic criteria appears to be the best course of action for the pediatric community.",
+            "question": "What recommendation does the passage make for pediatric practice?",
+            "options": {
+                "A": "Using ADA’s established diagnostic criteria is likely the most practical approach for children.",
+                "B": "Pediatric clinicians should avoid using adult-based ADA criteria entirely.",
+                "C": "Diagnosis should rely solely on OGTT until more data are obtained.",
+                "D": "Clinicians should wait for large validation trials before diagnosing diabetes in children."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: The passage recommends adopting ADA criteria in pediatrics.",
+                "B": "False: It recommends acceptance, not rejection.",
+                "C": "False: No such restriction is proposed.",
+                "D": "False: Waiting is not recommended given lack of expected studies."
+            }
+        },
+        {
+            "sentence_id": 7,
+            "original_sentence": "One area in which correlation studies between HbA1c and FPG or OGTT might shed light is in the definition of criteria for intervention in 'pre-diabetes,' as the Diabetes Prevention Program Trial did not use HbA1c.",
+            "question": "According to the passage, how might correlation studies between HbA1c and other tests be useful?",
+            "options": {
+                "A": "They could help clarify when to intervene in children who show early signs of pre-diabetes.",
+                "B": "They would replace the need for any glucose-based testing in the future.",
+                "C": "They are mainly intended to define new adult thresholds, not pediatric ones.",
+                "D": "They could validate HbA1c as the sole diagnostic tool for all forms of diabetes."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Correlation studies could inform intervention criteria for 'pre-diabetes.'",
+                "B": "False: Replacement of glucose tests is not claimed.",
+                "C": "False: The focus is pediatric intervention.",
+                "D": "False: The goal is not exclusive reliance on HbA1c."
+            }
+        }
+    ]
 };

@@ -899,9 +899,13 @@
         function setupQuizFlow() {
             const urlParams = new URLSearchParams(window.location.search);
             const stimulusID = urlParams.get('stimulus') || "text_01";
-            // Simplified texts reuse the original quiz; strip suffix to look up questions.
-            const quizKey = stimulusID.endsWith('_simp') ? stimulusID.replace(/_simp$/, '') : stimulusID;
-            quizQuestions = studyQuizzes[quizKey] || [];
+            const isSimplifiedStimulus = stimulusID.endsWith('_simp');
+            const baseQuizKey = isSimplifiedStimulus ? stimulusID.replace(/_simp$/, '') : stimulusID;
+            // Prefer simplified-specific quizzes when provided; otherwise fall back to base quizzes.
+            const simplifiedOverride = (isSimplifiedStimulus && typeof studyQuizzesSimplified !== 'undefined')
+                ? studyQuizzesSimplified[stimulusID]
+                : undefined;
+            quizQuestions = simplifiedOverride !== undefined ? simplifiedOverride : (studyQuizzes[baseQuizKey] || []);
             quizIndex = 0;
             Object.keys(quizOptionOrder).forEach(k => delete quizOptionOrder[k]);
             quizLocked = false;
