@@ -271,9 +271,8 @@
                         <li>
                             <strong>Rate each sentence</strong><br>
                             <ul style="margin-top:4px; margin-bottom:4px;">
-                                <li><strong>Reading Effort</strong> — how hard the sentence was to read.</li>
-                                <li><strong>Understanding</strong> — how well you understood what the sentence means.</li>
-                                (If anything feels difficult to understand, you can optionally leave a brief comment.)
+                                <li><strong>Ease of Reading</strong> — how easy the sentence was to read.</li>
+                                <li><strong>Confidence in Understanding</strong> — how confident you are about what this sentence means and how it fits with what you’ve read so far.</li>
                             </ul>
                         </li>
 
@@ -295,16 +294,16 @@
                 <h3>How to use the rating scales</h3>
 
                 <div style="background-color:#f7f9fc; padding:12px; border-left:4px solid #3498db; margin:18px 0; font-size:0.9em;">
-                    <p style="margin:0 0 6px 0;"><strong>Reading Effort (1–5)</strong></p>
+                    <p style="margin:0 0 6px 0;"><strong>Ease of Reading (1–5)</strong></p>
                     <ul style="margin:0 0 8px 18px; padding:0;">
-                        <li><strong>1 – No effort:</strong> Very easy to read; no pauses or rereading.</li>
-                        <li><strong>5 – Very high effort:</strong> Very hard to read; you needed to slow down constantly or reread multiple times.</li>
+                        <li><strong>1 – Very hard to read:</strong> You needed to slow down or reread a lot.</li>
+                        <li><strong>5 – Very easy to read:</strong> Smooth to read; no pauses or rereading.</li>
                     </ul>
 
-                    <p style="margin:8px 0 2px 0;"><strong>Understanding (1–5)</strong></p>
+                    <p style="margin:8px 0 2px 0;"><strong>Confidence in Understanding (1–5)</strong></p>
                     <ul style="margin:0 0 0 18px; padding:0;">
-                        <li><strong>1 – Not at all:</strong> You understood almost none of it and could not explain what it means.</li>
-                        <li><strong>5 – Understood it completely:</strong> You fully understood the meaning and could explain it in your own words.</li>
+                        <li><strong>1 – Not confident:</strong> You did not understand what it means in context and couldn’t explain it.</li>
+                        <li><strong>5 – Very confident:</strong> You’re certain what it means in context and could explain it in your own words.</li>
                     </ul>
                 </div>
             </div>
@@ -347,31 +346,79 @@
                     </span>
                 </h3>
 
-                <p class="question-label" style="margin-bottom:6px;">1. While reading, how much effort did this sentence take?</p>
+                <p class="question-label" style="margin-bottom:6px;">1. While reading, how easy was this sentence to read?</p>
                 
                 <div class="likert-scale" id="likert-effort">
-                    <div class="likert-btn" data-val="1">1<span class="likert-label">No effort</span></div>
+                    <div class="likert-btn" data-val="1">1<span class="likert-label">Very hard</span></div>
                     <div class="likert-btn" data-val="2">2<span class="likert-label"></span></div>
                     <div class="likert-btn" data-val="3">3<span class="likert-label"></span></div>
                     <div class="likert-btn" data-val="4">4<span class="likert-label"></span></div>
-                    <div class="likert-btn" data-val="5">5<span class="likert-label">Very high effort</span></div>
+                    <div class="likert-btn" data-val="5">5<span class="likert-label">Very easy</span></div>
                 </div>
 
-                <p class="question-label" style="margin:12px 0 6px;">2. How well do you feel you understood the meaning of this sentence?</p>
+                <p class="question-label" style="margin:12px 0 6px;">How confident are you that you understood what this sentence means in this context?</p>
                 <div class="likert-scale" id="likert-confidence">
-                    <div class="likert-btn" data-val="1">1<span class="likert-label">Not at all</span></div>
+                    <div class="likert-btn" data-val="1">1<span class="likert-label">Not Confident</span></div>
                     <div class="likert-btn" data-val="2">2<span class="likert-label"></span></div>
                     <div class="likert-btn" data-val="3">3<span class="likert-label"></span></div>
                     <div class="likert-btn" data-val="4">4<span class="likert-label"></span></div>
-                    <div class="likert-btn" data-val="5">5<span class="likert-label">Completely</span></div>
+                    <div class="likert-btn" data-val="5">5<span class="likert-label">Very confident</span></div>
                 </div>
 
-                <!-- Feedback box -->
                 <div id="diagnosis-section" class="feedback-box" style="margin-top:12px; padding:10px; border:1px solid #eee; border-radius:6px; background:#f9fafb;">
-                    <p class="question-label" style="margin:0 0 8px 0;">Did anything make this sentence harder to read, follow, or understand?</p>
-                    <!-- <p style="margin:0 0 8px 0; font-size:0.9rem; color:#555;">(You can copy/paste the part, describe what felt confusing, or ask any questions.)</p> -->
-                    <textarea id="sentence-feedback" rows="3" style="width:95%; border:1px solid #ccc; border-radius:4px; padding:8px; resize: vertical;" placeholder="Copy/paste the part, describe what felt confusing, or ask any questions."></textarea>
-                </div>
+                    <p class="question-label" style="margin:0 0 8px 0;">
+                      Did anything make this sentence harder to read, follow, or understand?
+                    </p>
+                                    
+                    <!-- PASTE NEW BLOCK STARTS HERE -->
+                    <div id="issue-section" style="margin-top:12px; padding-top:12px; border-top:1px dashed #ddd;">
+                      <p class="question-label" style="margin:0 0 8px 0;">
+                        Issues (required): choose “No issue” OR select one or more issues.
+                      </p>
+                  
+                      <label class="checkbox-option">
+                        <input type="checkbox" id="issue-none" />
+                        <span><strong>No issue</strong></span>
+                      </label>
+                  
+                      <div id="issue-list" style="margin-top: 8px;">
+                        <label class="checkbox-option">
+                          <input type="checkbox" class="issue-checkbox" value="unclear_term" />
+                          <span>Unclear term / jargon / abbreviation</span>
+                        </label>
+                  
+                        <label class="checkbox-option">
+                          <input type="checkbox" class="issue-checkbox" value="too_dense" />
+                          <span>Too dense / hard to read</span>
+                        </label>
+                  
+                        <label class="checkbox-option">
+                          <input type="checkbox" class="issue-checkbox" value="awkward_wordy_vague" />
+                          <span>Awkward / wordy / vague phrasing</span>
+                        </label>
+                  
+                        <label class="checkbox-option">
+                          <input type="checkbox" class="issue-checkbox" value="unclear_takeaway" />
+                          <span>Unclear implication / takeaway</span>
+                        </label>
+                  
+                        <label class="checkbox-option">
+                          <input type="checkbox" class="issue-checkbox" value="unclear_reference" />
+                          <span>Unclear reference / link to previous sentences</span>
+                        </label>
+                  
+                        <label class="checkbox-option">
+                          <input type="checkbox" class="issue-checkbox" value="other" id="issue-other" />
+                          <span>Other (optional comment)</span>
+                        </label>
+                  
+                        <div id="other-input-container">
+                          <input id="other-input" type="text" placeholder="Describe what felt confusing, or ask any questions." />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- PASTE NEW BLOCK ENDS HERE -->
+                </div>                  
 
                 <div class="nav-bar">
                     <button class="btn-nav btn-prev" id="btn-prev">Previous</button>
@@ -537,8 +584,13 @@
         const stepDotsContainer = document.getElementById('step-indicators');
         let currentStep = 0;
         
-        // Inputs
-        const sentenceFeedback = document.getElementById('sentence-feedback');
+        // Inputs (Issue UI)
+        const issueNone = document.getElementById('issue-none');
+        const issueCheckboxes = document.querySelectorAll('.issue-checkbox');
+        const issueOther = document.getElementById('issue-other');
+        const otherInputContainer = document.getElementById('other-input-container');
+        const otherInput = document.getElementById('other-input');
+
 
         document.addEventListener('DOMContentLoaded', () => {
             // Build dots
@@ -727,6 +779,38 @@
                     enterQuizMode();
                 }
             });
+
+            // --- Issue UI behavior---
+            function setOtherVisible(show) {
+                if (!otherInputContainer) return;
+                otherInputContainer.style.display = show ? 'block' : 'none';
+                if (!show && otherInput) otherInput.value = '';
+            }
+
+            // Start hidden by default (we'll remove your temporary display:block behavior)
+            setOtherVisible(issueOther && issueOther.checked);
+
+            // If "No issue" checked, clear all issues
+            if (issueNone) {
+                issueNone.addEventListener('change', () => {
+                    if (issueNone.checked) {
+                        issueCheckboxes.forEach(cb => cb.checked = false);
+                        setOtherVisible(false);
+                    }
+                    updateNavState(); // <-- ADD THIS LINE
+                });
+            }
+
+            // If any issue checked, uncheck "No issue". Also toggle Other textbox.
+            issueCheckboxes.forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const anyIssueChecked = Array.from(issueCheckboxes).some(x => x.checked);
+                    if (issueNone && anyIssueChecked) issueNone.checked = false;
+                    setOtherVisible(issueOther && issueOther.checked);
+
+                    updateNavState(); // <-- ADD THIS LINE
+                });
+            });
         });
 
         // --- CORE FUNCTIONS ---
@@ -764,7 +848,21 @@
                 const data = annotations[currentIndex];
                 setRating(data.rating, false); // Load rating without clearing diagnosis
                 setConfidence(data.confidence, false);
-                sentenceFeedback.value = data.feedbackText || '';
+                // Restore issue selections
+                if (issueNone) issueNone.checked = !!data.no_issue;
+
+                if (issueCheckboxes) {
+                    issueCheckboxes.forEach(cb => {
+                        cb.checked = Array.isArray(data.issues) ? data.issues.includes(cb.value) : false;
+                    });
+                }
+
+                if (otherInput) otherInput.value = data.other_text || "";
+
+                // Show/hide Other box
+                if (otherInputContainer && issueOther) {
+                    otherInputContainer.style.display = issueOther.checked ? 'block' : 'none';
+                }
             }
             updateNavState();
         }
@@ -795,29 +893,49 @@
             return sel ? parseInt(sel.dataset.val) : null;
         }
 
-        function allSentencesCompleted(currentRating, currentConfidence) {
+        function allSentencesCompleted(currentRating, currentConfidence, currentIssueOk) {
             if (!sentences || !sentences.length) return false;
+
             for (let i = 0; i < sentences.length; i++) {
                 if (i === currentIndex) {
-                    if (currentRating === null || currentRating === undefined || currentConfidence === null || currentConfidence === undefined) {
-                        return false;
-                    }
+                    if (currentRating === null || currentRating === undefined) return false;
+                    if (currentConfidence === null || currentConfidence === undefined) return false;
+                    if (!currentIssueOk) return false;
                     continue;
                 }
+
                 const data = annotations[i];
-                if (!data || data.rating === null || data.rating === undefined || data.confidence === null || data.confidence === undefined) {
-                    return false;
-                }
+                const hasRating = data && data.rating !== null && data.rating !== undefined;
+                const hasConf = data && data.confidence !== null && data.confidence !== undefined;
+
+                const hasIssues =
+                    data &&
+                    (data.no_issue === true ||
+                    (Array.isArray(data.issues) && data.issues.length > 0));
+
+                if (!hasRating || !hasConf || !hasIssues) return false;
             }
             return true;
+        }
+
+
+        function issueSelectionComplete() {
+            const noIssue = issueNone && issueNone.checked;
+            const anyIssue = issueCheckboxes && Array.from(issueCheckboxes).some(cb => cb.checked);
+            return !!(noIssue || anyIssue);
         }
 
         function updateNavState() {
             const ratingVal = getSelectedRating();
             const confidenceVal = getSelectedConfidence();
-            const currentComplete = ratingVal !== null && confidenceVal !== null;
-            const allComplete = allSentencesCompleted(ratingVal, confidenceVal);
+
+            const issueOk = issueSelectionComplete();
+            const currentComplete = ratingVal !== null && confidenceVal !== null && issueOk;
+
+            const allComplete = allSentencesCompleted(ratingVal, confidenceVal, issueOk);
+
             const allowNext = currentComplete && (currentIndex !== sentences.length - 1 ? true : allComplete);
+
             if (allowNext) {
                 btnNext.classList.add('active');
                 btnNext.disabled = false;
@@ -826,6 +944,7 @@
                 btnNext.disabled = true;
             }
         }
+
 
         function saveCurrentData() {
             const ratingVal = getSelectedRating();
@@ -843,14 +962,22 @@
                 mapped_sentence_index: mappedIndex,
                 rating: ratingVal,
                 confidence: confidenceVal,
-                feedbackText: sentenceFeedback.value || ''
+                no_issue: issueNone ? issueNone.checked : false,
+                issues: issueCheckboxes ? Array.from(issueCheckboxes).filter(cb => cb.checked).map(cb => cb.value) : [],
+                other_text: otherInput ? (otherInput.value || "") : "",
+                // Optional: keep legacy field name so downstream doesn't break
+                feedbackText: otherInput ? (otherInput.value || "") : ""
+
             };
         }
 
         function resetForm() {
             effortButtons.forEach(b => b.classList.remove('selected'));
             confidenceButtons.forEach(b => b.classList.remove('selected'));
-            sentenceFeedback.value = '';
+            if (issueNone) issueNone.checked = false;
+            if (issueCheckboxes) issueCheckboxes.forEach(cb => cb.checked = false);
+            if (otherInput) otherInput.value = '';
+            if (otherInputContainer) otherInputContainer.style.display = 'none';
             btnNext.classList.remove('active');
             btnNext.disabled = true;
         }
