@@ -2714,7 +2714,1448 @@ const studyQuizzes = {
               "D": "False: Differential expression means they are affected."
             }
         }
-    ]            
+    ],
+    "text_21": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "Basal insulin secretion was compared in nine islet-cell antibody positive, non-diabetic first-degree relatives of children with Type 1 (insulin-dependent) diabetes mellitus and nine normal control subjects matched for age, sex and weight.",
+            "question": "Which description best matches the people who tested positive for the islet-cell antibody in this study?",
+            "options": {
+              "A": "They already had Type 1 diabetes.",
+              "B": "They were adults from the general population with no close family link to Type 1 diabetes.",
+              "C": "They did not have diabetes, but they were close relatives of children with Type 1 diabetes.",
+              "D": "They were the children with Type 1 diabetes who were being treated."
+            },
+            "correct_answer": "C",
+            "Rationale": {
+              "A": "False: The antibody-positive group is explicitly described as non-diabetic.",
+              "B": "False: They were first-degree relatives of children with Type 1 diabetes, so they did have a close family link.",
+              "C": "Correct: They were non-diabetic relatives (parents/siblings) of children with Type 1 diabetes.",
+              "D": "False: The children with Type 1 diabetes are the relatives of the participants, not the participants themselves."
+            }
+          },
+          {
+            "sentence_id": 3,
+            "original_sentence": "Fasting plasma insulin was assayed in venous samples taken at one min intervals for 2 h.",
+            "question": "Under what condition were the insulin measurements taken during the two-hour observation?",
+            "options": {
+              "A": "After participants had not eaten for a period of time.",
+              "B": "Immediately after participants were given glucose to test their response.",
+              "C": "While participants were eating a controlled meal to stimulate insulin.",
+              "D": "Only after exercise, to see how activity changes insulin."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The sentence specifies fasting insulin measurements, meaning participants had not eaten for a period of time.",
+              "B": "False: Glucose testing is described elsewhere; this sentence describes fasting measurements during a separate two-hour observation.",
+              "C": "False: Eating a meal would contradict fasting conditions.",
+              "D": "False: Exercise is not mentioned and is not implied by a fasting sampling protocol."
+            }
+          },
+          {
+            "sentence_id": [5, 6],
+            "original_sentence": "Autocorrelation showed that regular oscillatory activity was generally absent in the islet-cell antibody-positive group, whereas a regular 13 min cycle was shown in control subjects (p less than 0.0001). Fourier transformation did, however, show a 13 min spectral peak in the islet-cell antibody positive group, consistent with intermittent pulsatility.",
+            "question": "What did the researchers conclude about the insulin-release pattern in the antibody-positive group?",
+            "options": {
+              "A": "They showed a steady, regular 13-minute rhythm throughout the observation period.",
+              "B": "They showed changes in insulin, but there was little evidence of a consistently regular rhythm.",
+              "C": "They showed no meaningful insulin peaks or pulses at any point during the observation.",
+              "D": "Their insulin pattern was more regular and predictable than the control group's pattern."
+            },
+            "correct_answer": "B",
+            "Rationale": {
+              "A": "False: A steady regular 13-minute cycle is described for controls, not consistently for the antibody-positive group.",
+              "B": "Correct: The pattern is described as lacking regular oscillations overall, yet still showing a 13-minute peak consistent with intermittent (on-and-off) pulsatility.",
+              "C": "False: The presence of a 13-minute spectral peak argues against 'no peaks or pulses at any point.'",
+              "D": "False: The control group is explicitly described as having the regular 13-minute cycle."
+            }
+          },
+          {
+            "sentence_id": 7,
+            "original_sentence": "We conclude that overall oscillatory patterns of basal insulin secretion are altered in islet-cell antibody positive subjects even when the acute insulin response is within the normal range.",
+            "question": "What is the study’s main takeaway about people who have these antibodies?",
+            "options": {
+              "A": "If their short-term response to glucose looks normal, their insulin system must be completely normal.",
+              "B": "Their background insulin rhythm can be altered even if their short-term response to glucose looks normal.",
+              "C": "Their insulin problems only appear when they are eating meals.",
+              "D": "They should avoid glucose because their bodies cannot produce insulin in response to it."
+            },
+            "correct_answer": "B",
+            "Rationale": {
+              "A": "False: The conclusion explicitly says changes can exist even when the acute response is normal.",
+              "B": "Correct: The key point is 'altered basal oscillations' even with a normal acute response.",
+              "C": "False: The findings concern basal (fasting/background) secretion patterns, not only eating-related changes.",
+              "D": "False: The study reports the acute response can be within the normal range, not absent."
+            }
+        }
+    ],
+    "text_22": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "Circadian variation in atrial fibrillation (AF) frequency is explored in this paper by employing recent advances in signal processing.",
+            "question": "What is the main goal of this research paper?",
+            "options": {
+              "A": "To determine whether atrial fibrillation frequency changes in a predictable way over the 24-hour day.",
+              "B": "To map how atrial fibrillation frequency differs across patients with mild versus severe symptoms.",
+              "C": "To evaluate whether signal-processing tools can detect atrial fibrillation earlier than standard clinical review.",
+              "D": "To test whether disrupted sleep–wake rhythms increase the long-term risk of developing atrial fibrillation."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The sentence says the paper explores circadian (24-hour) variation in AF frequency.",
+              "B": "False: Severity comparisons across patient groups are not mentioned in the sentence.",
+              "C": "False: Earlier detection is not stated; the method is mentioned, but the goal is circadian variation.",
+              "D": "False: The sentence is about daily variation in frequency, not causes or risk factors like sleep disruption."
+            }
+        },
+        {
+            "sentence_id": 2,
+            "original_sentence": "Once the AF frequency has been estimated and tracked by a hidden Markov model approach, the resulting trend is analyzed for the purpose of detecting and characterizing the presence of circadian variation.",
+            "question": "In the study’s workflow, what happens after AF frequency is estimated and tracked?",
+            "options": {
+              "A": "The trend is examined to detect and describe whether a daily (circadian) pattern is present.",
+              "B": "The AF episodes are removed from the recordings so the normal rhythm can be measured.",
+              "C": "Patients are grouped by symptom severity to compare how AF frequency differs between groups.",
+              "D": "Medication timing is adjusted to test whether treatment changes AF frequency across the day."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions say the tracked frequency trend is then analyzed to detect/characterize circadian variation.",
+              "B": "False: Removing AF episodes to measure normal rhythm is not described.",
+              "C": "False: Grouping by symptom severity is not mentioned.",
+              "D": "False: Adjusting medication timing is not part of the described workflow."
+            }
+        },
+        {
+            "sentence_id": 3,
+            "original_sentence": "With cosinor analysis, the results show that the short-term variations in the AF frequency exceed the variation that may be attributed to circadian.",
+            "question": "When comparing different types of changes in heartbeat frequency, what did the study find?",
+            "options": {
+              "A": "A stable 24-hour rhythm explains most of the changes in AF frequency.",
+              "B": "Brief, irregular fluctuations contribute more to AF frequency changes than the day–night rhythm does.",
+              "C": "AF frequency remains essentially constant once a circadian pattern is accounted for.",
+              "D": "The study could not separate short-term variation from circadian variation."
+            },
+            "correct_answer": "B",
+            "Rationale": {
+              "A": "False: The sentence states that short-term variations are larger than the circadian-attributed variation.",
+              "B": "Correct: It directly reflects the finding that short-term variability exceeds the circadian component.",
+              "C": "False: The sentence implies substantial variability, not near-constancy.",
+              "D": "False: The analysis produced a comparison showing short-term variation exceeds the circadian-attributed variation."
+            }
+          },
+          {
+            "sentence_id": 6,
+            "original_sentence": "It is concluded that circadian variation is present in most patients with long-standing persistent AF though the short-term variation in the AF frequency is considerable and should be taken into account.",
+            "question": "What is the paper’s main conclusion about day–night patterns in AF frequency?",
+            "options": {
+              "A": "Most patients show a day–night pattern, but short-term swings are also big.",
+              "B": "Most patients do not show a day–night pattern, so only short-term swings matter.",
+              "C": "AF frequency mostly follows a day–night pattern with little other change.",
+              "D": "The day–night pattern is probably just a recording mistake."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The sentence says most patients have circadian variation, but short-term variation is considerable and must be considered.",
+              "B": "False: The sentence says circadian variation is present in most patients.",
+              "C": "False: The sentence says short-term variation is considerable, not small.",
+              "D": "False: The sentence treats circadian variation as a real finding, not an error."
+            }
+          }          
+    ],
+    "text_23": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "Purpose of review: Hyperkalemia is a potentially fatal electrolyte disorder, more commonly present when the potassium excretion capacity is imparied.",
+          "question": "According to the text, when is hyperkalemia more likely to occur?",
+          "options": {
+            "A": "When the body has trouble getting rid of potassium.",
+            "B": "When the body absorbs too little potassium from food.",
+            "C": "When potassium is stored too efficiently in muscles instead of the blood.",
+            "D": "When the blood pressure is low and the body retains extra water."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Matches the text's description of impaired excretion/inability to get rid of potassium.",
+            "B": "Directional Reversal: Swaps the concept of exiting the body (excretion) with entering the body (absorption).",
+            "C": "Lexical Lure: Uses high-value keywords like 'potassium' and 'blood' to create a scientific-sounding but invented claim.",
+            "D": "External Interference: Uses generally true medical concepts (blood pressure/water) not mentioned or relevant to this specific text."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "It can also impair the cardiovascular effects of renin-angiotensin-aldosterone system inhibitors (RAASis) and potassium rich diets, as hyperkalemia frequently leads to their discontinuation.",
+          "question": "Why can hyperkalemia reduce the benefits patients might otherwise get from RAAS blockers or potassium-rich diets?",
+          "options": {
+            "A": "Because hyperkalemia often leads doctors to stop those treatments or make diets more restrictive.",
+            "B": "Because hyperkalemia makes RAAS blockers chemically inactive in the bloodstream.",
+            "C": "Because potassium-rich diets directly cancel the blood-pressure effects of RAAS blockers in most patients.",
+            "D": "Because hyperkalemia is only seen in patients who are already unable to take RAAS blockers."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Identifies the 'discontinuation' of treatment as the cause of reduced benefits.",
+            "B": "Lexical Lure: Uses technical phrasing ('chemically inactive') to mimic the 'feel' of the original abstract's jargon.",
+            "C": "External Interference: Relies on a common-sense assumption that two dietary/medical factors might 'cancel out' without text support.",
+            "D": "Logical Extremism: Uses the word 'only' to make an absolute, unsupported claim about the patient population."
+          }
+        },
+        {
+          "sentence_id": 6,
+          "original_sentence": "Randomized trials have shown that the new anti-hyperkalemic agents (patiromer and zirconium cyclosilicate) are effective hyperkalemia treatment options.",
+          "question": "What kind of evidence does the text give that the newer hyperkalemia drugs work?",
+          "options": {
+            "A": "Controlled studies showed they are effective treatment options.",
+            "B": "A single case report suggested they might help in rare situations.",
+            "C": "Experiments on animals supported their use, but human results were unclear.",
+            "D": "They are described as experimental with no evidence of benefit yet."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Correctly summarizes 'randomized trials' as 'controlled studies.'",
+            "B": "Logical Extremism (Tone Trap): Arbitrarily reduces the scope of evidence from 'trials' down to a 'single case.'",
+            "C": "Lexical Lure: Uses the word 'experiments' (related to trials) but adds unsupported 'animal-only' context.",
+            "D": "Directional Reversal: Claims there is 'no evidence' when the text specifically highlights successful trials."
+          }
+        },
+        {
+            "sentence_id": 9,
+            "original_sentence": "New therapies have demonstrated effective control, offering hope for potential use in patients that would benefit from diet or medications associated with an increase in serum potassium, indicating that the use of hyperkalemic agents can be associated with better outcomes.",
+            "question": "What potential advantage of the new therapies does the text emphasize?",
+            "options": {
+                "A": "They may help control potassium so patients can still use helpful diets or medicines that tend to raise potassium.",
+                "B": "They permanently cure the underlying cause of hyperkalemia in most patients.",
+                "C": "They work mainly by increasing serum potassium to improve cardiovascular function.",
+                "D": "They replace the need for potassium monitoring in patients at risk."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Accurately reflects the 'enabling' nature of the drugs mentioned in the text.",
+                "B": "Inferential Over-Extrapolation: Takes the positive 'hope' and 'better outcomes' and inflates them into a 'permanent cure' not supported by the text.",
+                "C": "Directional Reversal: Claims the therapies 'increase' potassium when the text describes them as 'hyperkalemic agents' used for 'control' (lowering/managing).",
+                "D": "Logical Extremism: Uses the word 'replace' to suggest that monitoring is no longer necessary, which contradicts the text's earlier emphasis on close monitoring."
+            }
+        }
+    ], 
+    "text_24": [
+        {
+          "sentence_id": 2,
+          "original_sentence": "Hypovolemic shock is characterized by a reduction of intravascular volume and a subsequent reduction in preload.",
+          "question": "In hypovolemic shock, what is the relationship between blood volume and the heart's status?",
+          "options": {
+            "A": "A drop in the amount of blood in the vessels results in less blood filling the heart.",
+            "B": "An increase in blood vessel volume forces the heart to extract more oxygen.",
+            "C": "The amount of blood filling the heart increases as a way to make up for losing blood volume.",
+            "D": "Less blood in the heart is what causes the initial loss of volume in the vessels."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Neutral bridge for 'reduction of intravascular volume' leading to 'reduction in preload.'",
+            "B": "Directional Reversal: Claims volume increases, and uses 'oxygen extraction' as a Lexical Lure.",
+            "C": "Directional Reversal: Claims the filling (preload) 'increases' when the text says it is 'reduced.'",
+            "D": "Directional Reversal (Causal): Flips the cause and effect (claims heart filling loss causes vessel volume loss)."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "The body compensates the loss of volume by increasing the stroke volume, heart frequency, oxygen extraction rate, and later by an increased concentration of 2,3-diphosphoglycerate with a rightward shift of the oxygen dissociation curve.",
+          "question": "How does the body's reaction change over time when trying to deal with volume loss?",
+          "options": {
+            "A": "It first speeds up the heart and takes more oxygen from blood, then later uses a chemical to release more oxygen.",
+            "B": "It first shifts how oxygen moves in the blood, then later increases the frequency of the heart.",
+            "C": "It focuses on increasing the concentration of cells while immediately slowing down the heart.",
+            "D": "It uses a specific chemical to stop the heart's pumping volume from increasing too quickly."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Accurately reflects the 'early' vs 'later' sequence found in both versions.",
+            "B": "Directional Reversal: Swaps the late-stage chemical reaction with the early-stage heart rate change.",
+            "C": "Directional Reversal: Claims the heart 'slows down' when the text says it 'increases frequency.'",
+            "D": "Lexical Lure: Uses 'pumping volume' and 'chemical' but invents a 'stopping' relationship between them."
+          }
+        },
+        {
+          "sentence_id": 4,
+          "original_sentence": "Hypovolemic hemorrhagic shock impairs the macrocirculation and microcirculation and therefore affects many organ systems (e.g. kidneys, endocrine system and endothelium).",
+          "question": "Why does this type of shock eventually involve multiple parts of the body?",
+          "options": {
+            "A": "The failure affects both large and small pathways of blood flow, reaching various systems.",
+            "B": "The shock triggers an internal system imbalance that only harms the blood vessel linings.",
+            "C": "The large-scale circulation stays normal, but toxins are released into other systems.",
+            "D": "The body increases blood flow to the other systems so much that it causes organ failure."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Neutral bridge for 'macro/microcirculation' and 'affects many organ systems.'",
+            "B": "Lexical Lure/Extremism: Strings together 'internal system' (endocrine) and 'linings' (endothelium) with 'only.'",
+            "C": "External Interference: Introduces 'toxins' (not in text) while incorrectly claiming circulation is 'normal.'",
+            "D": "Directional Reversal: Claims blood flow is 'increased' rather than 'impaired.'"
+          }
+        },
+        {
+          "sentence_id": 7,
+          "original_sentence": "The differentiated systemic treatment of bleeding consists of maintenance of an adequate homeostasis and the administration of blood products and coagulation factors.",
+          "question": "What is the primary approach for treating a patient who is actively bleeding?",
+          "options": {
+            "A": "Keeping the body in balance while providing blood-related supplies and help for clotting.",
+            "B": "Ensuring the small-scale circulation is corrected by providing extra cellular oxygen.",
+            "C": "Increasing the filling of the heart until the bodily equilibrium is completely replaced.",
+            "D": "Using clotting medications to stop the use of blood products."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Neutral bridge for 'homeostasis/equilibrium,' 'blood products,' and 'coagulation factors/clotting.'",
+            "B": "Lexical Lure: Takes 'small-scale circulation' and 'cellular oxygen' to create medical-sounding nonsense.",
+            "C": "Lexical Lure/Extremism: Uses 'filling' (preload) and 'equilibrium' but says one 'replaces' the other.",
+            "D": "Directional Reversal: Suggests one part of the treatment is used to *stop* the other part."
+          }
+        }
+    ],
+    "text_25": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "Recent studies have shown that nitric oxide (NO) is a central mediator in diseases occurring with thoracic aortic aneurysm (TAA), such as Marfan syndrome (MFS).",
+          "question": "Based on the research mentioned, what is the connection between nitric oxide (NO) and Marfan syndrome?",
+          "options": {
+            "A": "NO acts as a fundamental biological link that helps drive the disease process.",
+            "B": "NO is a substance that doctors provide to patients to fix a damaged vessel.",
+            "C": "NO is an unimportant chemical that is found only in healthy heart tissue.",
+            "D": "NO is a tool used during surgeries to identify the location of an aneurysm."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'central mediator' (Original) and 'key regulator' (Simplified).",
+            "B": "Inferential Over-Extrapolation: Replaces 'mediator' (involvement) with 'treatment/fix'.",
+            "C": "Directional Reversal: Claims NO is 'unimportant' or associated only with health.",
+            "D": "External Interference: Introduces a surgical use case not mentioned in the text."
+          }
+        },
+        {
+          "sentence_id": 2,
+          "original_sentence": "The progressive dilation of the aorta in TAA ultimately leads to aortic dissection.",
+          "question": "What does the text identify as the eventual result of the main artery progressively widening?",
+          "options": {
+            "A": "The vessel wall eventually splits or ruptures due to continuous stretching.",
+            "B": "The tissue becomes increasingly dense and resistant to further damage.",
+            "C": "The artery begins to narrow, which blocks the flow of blood to the heart.",
+            "D": "The vessel returns to its original shape once the pressure is released."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'aortic dissection' and 'tear in the inner layer'.",
+            "B": "Directional Reversal: Suggests the artery becomes 'resistant' when it is actually failing.",
+            "C": "Directional Reversal: Swaps 'widening' (dilation) for 'narrowing'.",
+            "D": "Logical Extremism: Assumes a spontaneous recovery that contradicts the 'progressive' nature of the disease."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "Unfortunately, current medical treatments neither halt aortic enlargement nor prevent rupture, leaving surgical repair as the only effective treatment.",
+          "question": "According to the text, what is the main limitation of current medications for managing thoracic aortic aneurysm?",
+          "options": {
+            "A": "Available medications are unable to stop the artery's growth or protect it from failing.",
+            "B": "Medications are successful at stabilizing the artery, so operations are rarely needed.",
+            "C": "Drugs can effectively prevent a sudden break, but only if they are used for many years.",
+            "D": "The medications are helpful, but they only work if the patient also receives a biomarker test."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'neither halt... nor prevent'.",
+            "B": "Directional Reversal: Claims medications are 'successful' when the text says they are not.",
+            "C": "Logical Extremism: Adds an arbitrary temporal condition ('many years') not in the text.",
+            "D": "Lexical Lure: Uses 'biomarker' from S5 to create a false requirement."
+          }
+        },
+        {
+          "sentence_id": 5,
+          "original_sentence": "Here, we summarize the mechanisms through which NO signalling dysregulation causes TAA, particularly in MFS and discuss recent advances based on the identification of new MFS mediators related to pathway overactivation that represent potential disease biomarkers.",
+          "question": "Besides describing the causes of the disease, what other recent advance regarding Marfan syndrome does the paper discuss?",
+          "options": {
+            "A": "The finding of biological indicators that may help doctors track or detect the condition.",
+            "B": "The development of a non-surgical way to physically shrink an enlarged artery.",
+            "C": "A study showing that overactive biological pathways are actually harmless.",
+            "D": "A new method for using nitric oxide to replace traditional surgical repairs."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'biomarkers' (indicators used to track/detect).",
+            "B": "Inferential Over-Extrapolation: Assumes 'advances' means a 'non-surgical way to shrink' the artery.",
+            "C": "Directional Reversal: Claims a disease-causing process (overactivation) is 'harmless'.",
+            "D": "Lexical Lure: Combines 'nitric oxide' and 'surgical repair' from other sentences into a false claim."
+          }
+        },
+        {
+            "sentence_id": 6,
+            "original_sentence": "Likewise, we propose iNOS, sGC, and PRKG1, whose pharmacological inhibition reverses aortopathy in MFS mice, as targets for therapeutic intervention in TAA and candidates for clinical trials.",
+            "question": "Regarding the biological substances discussed at the end of the text, what is the authors' primary goal for their future use?",
+            "options": {
+              "A": "To nominate them as specific points of focus for developing new medical treatments and human studies.",
+              "B": "To use them as a way to prove that surgical repair is an unnecessary risk for heart patients.",
+              "C": "To demonstrate that these substances have successfully cured the condition in a majority of human cases.",
+              "D": "To show that these chemicals are responsible for strengthening the aorta wall naturally."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Neutral bridge for 'targets for therapeutic intervention' and 'candidates for clinical trials'.",
+              "B": "Logical Extremism: Falsely suggests the research intends to eliminate the need for surgery entirely.",
+              "C": "Inferential Over-Extrapolation: Jumps to a 'human cure' conclusion that the text (in both versions) does not claim.",
+              "D": "Directional Reversal: Suggests the chemicals are 'strengthening' the wall, when they are actually the 'targets' for intervention because of their role in the disease."
+            }
+        }
+    ],
+    "text_26": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "Phenylketonuria (PKU) is an inborn error of metabolism (IEM) most often caused by missense mutations in the gene encoding phenylalanine hydroxylase (PAH) which catalyzes the hydroxylation of phenylalanine (Phe) generating tyrosine (Tyr).",
+          "question": "What is the primary biological problem occurring in a person with PKU based on the text?",
+          "options": {
+            "A": "The body is unable to successfully transform one specific molecule into a different one.",
+            "B": "The body produces too much of a protein that destroys healthy energy cells.",
+            "C": "The body fails to absorb nutrients from food, leading to weight loss.",
+            "D": "The body's genes are unable to create any proteins associated with the liver."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'catalyzes the hydroxylation of Phe generating Tyr' and 'changes one molecule into another'.",
+            "B": "Directional Reversal: Claims a protein is 'produced too much' and 'destroys' cells, rather than a lack of protein function.",
+            "C": "External Interference: Introduces 'nutrient absorption' and 'weight loss' which are not in the text.",
+            "D": "Logical Extremism: Claims 'any proteins' are missing, whereas the text specifies a single protein (PAH)."
+          }
+        },
+        {
+          "sentence_id": 2,
+          "original_sentence": "PKU belongs to a class of amino acid aminoacidopathies termed \u201ctoxic accumulation-IEMs\u201d where the circulating toxin is an amino acid or its metabolites.",
+          "question": "How does the text categorize PKU as a medical condition?",
+          "options": {
+            "A": "As a disorder where certain substances build up to dangerous levels in the body.",
+            "B": "As a condition where the body lacks the toxins necessary to fight off infections.",
+            "C": "As a disease caused by external bacteria entering the bloodstream through food.",
+            "D": "As a temporary imbalance of vitamins that clears up once the diet is adjusted."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'toxic accumulation' and 'buildup of the molecule is toxic'.",
+            "B": "Directional Reversal: Claims the body 'lacks' toxins, rather than suffering from an accumulation of them.",
+            "C": "External Interference: Introduces 'external bacteria' which is not the cause described.",
+            "D": "Logical Extremism: Downplays an 'inborn error' as a 'temporary imbalance' and adds an unsupported 'diet' solution."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "Mutations in an enzyme, such as PAH, are recessive since one functioning enzyme with the wild-type allele is sufficient.",
+          "question": "According to the text, why does a person need two altered copies of a gene to show signs of this protein disorder?",
+          "options": {
+            "A": "Because having just one healthy version of the gene provides enough of the protein to work correctly.",
+            "B": "Because the protein only becomes active when both copies of the gene are altered.",
+            "C": "Because the body can only recognize the protein if it is produced by the liver.",
+            "D": "Because the functioning version of the gene is known to produce toxic substances."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'recessive... one functioning enzyme... is sufficient'.",
+            "B": "Directional Reversal: Claims the protein 'becomes active' when damaged, which is the opposite of the text's logic.",
+            "C": "Lexical Lure: Uses 'liver' from S5 to create a false requirement for gene recognition.",
+            "D": "Directional Reversal: Claims the 'functioning' version is toxic, while the text says the 'accumulation' from a lack of function is toxic."
+          }
+        },
+        {
+            "sentence_id": 7,
+            "original_sentence": "Newborns with PKU can appear normal at birth with the first signs appearing after several months.",
+            "question": "What does the text say about the appearance of babies born with PKU?",
+            "options": {
+              "A": "Problems might only become visible months after born.",
+              "B": "The signs of the disorder are always obvious to doctors immediately upon birth.",
+              "C": "Symptoms only appear if the baby is exposed to specific toxins in the hospital.",
+              "D": "The signs of the condition usually disappear after the first few months."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Bridges 'appear normal at birth... appearing after several months'.",
+              "B": "Directional Reversal: Claims signs are 'always obvious' when the text says they 'appear normal'.",
+              "C": "Lexical Lure: Uses 'toxins' from S2 to create a false external cause.",
+              "D": "Directional Reversal: Suggests signs 'disappear' when the text says they 'appear'."
+            }
+        }
+    ],
+    "text_27": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "Detection of individuals with phenylketonuria (PKU), an autosomal recessively inherited disorder in phenylalanine degradation, is straightforward and efficient due to newborn screening programs.",
+          "question": "Why it is currently easy to find people who have PKU?",
+          "options": {
+            "A": "There are established testing systems in place to check babies shortly after they are born.",
+            "B": "The symptoms are so physically obvious that no medical tests are required for a diagnosis.",
+            "C": "PKU is a very rare condition that only affects adults, making it easy to track.",
+            "D": "Most people with the condition voluntarily report their symptoms to genetic databases."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'newborn screening programs' and 'checks for conditions that affect newborns'.",
+            "B": "Directional Reversal: Claims no tests are needed, while the text emphasizes screening and molecular testing.",
+            "C": "Logical Extremism: Falsely claims it only affects adults, contradicting the mention of 'newborns'.",
+            "D": "External Interference: Introduces 'voluntary reporting,' which is not mentioned as the reason for efficient detection."
+          }
+        },
+        {
+          "sentence_id": 4,
+          "original_sentence": "A spectrum of over 850 variants, gives rise to a continuum of hyperphenylalaninemia from very mild, requiring no intervention, to severe classical PKU, requiring urgent intervention.",
+          "question": "What does the existence of over 850 different genetic variations mean for patients with this condition?",
+          "options": {
+            "A": "Patients can experience a wide range of severity, with some needing no medical help and others needing it immediately.",
+            "B": "Because there are so many variations, it is impossible for doctors to provide any treatment.",
+            "C": "All 850 variations result in the exact same symptoms and require the same medicine.",
+            "D": "Only the most severe cases are considered a real disease, while the others are ignored."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'spectrum/continuum' and 'range... from very mild... to severe'.",
+            "B": "Logical Extremism: Claims treatment is 'impossible,' which contradicts the mention of 'intervention' and 'management'.",
+            "C": "Directional Reversal: Claims all variations are the same, contradicting the 'spectrum' described.",
+            "D": "External Interference/Extremism: Suggests milder cases are 'ignored,' whereas the text classifies them all within a resource for management."
+          }
+        },
+        {
+          "sentence_id": 5,
+          "original_sentence": "Locus-specific and genotypes database are today an invaluable resource of information for more efficient classification and management of patients.",
+          "question": "What is the primary benefit of using modern genetic databases for this disorder?",
+          "options": {
+            "A": "They help medical professionals better organize and care for people based on their specific genetic makeup.",
+            "B": "They are used to prevent people with the disorder from having children in the future.",
+            "C": "They replace the need for blood tests.",
+            "D": "They are mainly used to calculate the cost of the pharmacological treatment options."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'efficient classification and management' and 'effective classification and treatment'.",
+            "B": "External Interference: Introduces 'preventing children,' which is not in the text.",
+            "C": "Logical Extremism: Claims it 'replaces the need for blood tests,' which is unsupported.",
+            "D": "Lexical Lure: Uses 'pharmacological treatment' from S2 to create a false financial purpose for the database."
+          }
+        },
+        {
+          "sentence_id": 6,
+          "original_sentence": "The high-tech molecular methods allow patients' genotype to be obtained in a few days, especially if each laboratory develops a panel for the most frequent variants in the corresponding population.",
+          "question": "How can laboratories speed up the process of identifying a patient's specific genetic alterations?",
+          "options": {
+            "A": "By focusing their testing on the most common genetic changes found in that population.",
+            "B": "By waiting for the first signs of the disease to appear naturally.",
+            "C": "By only testing patients who have already recovered from the severe form of the condition.",
+            "D": "By using older methods that do not require high-tech molecular equipment."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Conceptual bridge for 'panel for the most frequent variants in the corresponding population'.",
+            "B": "Lexical Lure: Uses 'several months' from the previous abstract to suggest a delay in testing.",
+            "C": "Directional Reversal: Suggests testing 'recovered' patients, which is illogical for a genetic diagnostic context.",
+            "D": "Directional Reversal: Suggests 'older methods' are faster, while the text credits 'high-tech molecular methods' for the speed."
+          }
+        }
+    ],
+    "text_28": [
+        {
+          "sentence_id": 2,
+          "original_sentence": "About 30% of patients are refractory to treatment.",
+          "question": "What is the primary challenge regarding the treatment of patients with lupus nephritis?",
+          "options": {
+            "A": "Many patients do not get better using standard medical options.",
+            "B": "The disease is hard to detect in the first place.",
+            "C": "Most patients are unable to afford the high cost of standard medications.",
+            "D": "Standard treatments usually cause the disease to spread to other organs."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges '30% of patients are refractory' and '30% of patients do not respond to standard treatment'.",
+            "B": "False: The text does not say detection is the main problem; it focuses on treatment response.",
+            "C": "External Interference: Introduces 'cost' as the primary challenge, which is not mentioned.",
+            "D": "External Interference: Claims treatment causes the disease to 'spread,' which is unsupported."
+          }
+        },
+        {
+            "sentence_id": 3,
+            "original_sentence": "The authors report a case of treatment of LN with interleukin-17-targeted therapy, demonstrating its possible benefit, after reports of T helper 17 cell involvement in SLE pathogenesis.",
+            "question": "What is the main purpose of this report, according to the text?",
+            "options": {
+              "A": "To describe a case where a treatment aimed at interleukin-17 may have helped lupus nephritis.",
+              "B": "To report a clinical trial that proves  a treatment for lupus-related kidney disease.",
+              "C": "To show that a follow-up infection was the direct cause of lupus nephritis in this patient.",
+              "D": "To summarize how standard treatments typically cure lupus nephritis in most patients."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions say this is a case report of treating lupus nephritis by targeting interleukin-17 and suggesting possible benefit.",
+              "B": "False: The text describes a case report, not a trial, and does not claim a cure for all patients.",
+              "C": "False: The text calls the infection a possible trigger detected during follow-up, not the proven direct cause of lupus nephritis.",
+              "D": "False: The text emphasizes that many cases can be hard to treat and presents a refractory case, not a typical cure by standard therapy."
+            }
+        },
+        {
+          "sentence_id": 5,
+          "original_sentence": "During follow up, infection with human papillomavirus was detected, a possible trigger, and the following management was based on this discovery.",
+          "question": "In the specific patient case described, what discovery led doctors to change how they managed her care?",
+          "options": {
+            "A": "Finding a viral infection that may have acted as a starting point for her symptoms.",
+            "B": "Realizing the patient had been taking too much of her subscribed medication.",
+            "C": "Discovering that the patient was allergic to interleukin proteins.",
+            "D": "Finding that the patient's kidney function had returned to normal on its own."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'infection with human papillomavirus... a possible trigger'.",
+            "B": "External Interference: Introduces 'medication overdose,' which is not in the text.",
+            "C": "Lexical Lure: Uses 'interleukin' from S3 and S6 to create a false allergy-based discovery.",
+            "D": "Directional Reversal: Claims the patient 'returned to normal on its own,' contradicting the need for a new drug."
+          }
+        },
+        {
+          "sentence_id": 6,
+          "original_sentence": "We currently know that cytokines play a major role in tissue damage and interleukin-17 (IL-17) seems to be a fundamental key in SLE and LN, having shown its expression in renal glomeruli and urinary sediment.",
+          "question": "What role does interleukin-17 (IL-17) play in these lupus-related conditions according to the text?",
+          "options": {
+            "A": "It is an important element that contributes to kidney damage.",
+            "B": "It is a protective substance that the body produces to heal damaged tissue.",
+            "C": "It is a chemical that only appears in the body after a patient has been cured.",
+            "D": "It is a substance used by doctors to prevent viral infections like HPV."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'fundamental key... shown its expression in renal glomeruli' and 'basic key'.",
+            "B": "Directional Reversal: Claims IL-17 is 'protective,' when the text links it to 'tissue damage'.",
+            "C": "Directional Reversal: Claims it appears 'after a cure,' contradicting its role in 'pathogenesis' (disease development).",
+            "D": "Lexical Lure: Combines 'IL-17' and 'HPV' to create a false preventative relationship."
+          }
+        },
+        {
+          "sentence_id": 8,
+          "original_sentence": "After starting secukinumab, clinical and biological features improved and complete renal response was achieved.",
+          "question": "What was the final outcome for the patient after receiving secukinumab?",
+          "options": {
+            "A": "Her kidneys showed a full positive response.",
+            "B": "Her condition stayed the same, showing the treatment had no effect.",
+            "C": "The treatment successfully cured her viral infection but did not help her lupus.",
+            "D": "The patient experienced severe side effects that required stopping all medical care."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'clinical and biological features improved and complete renal response was achieved'.",
+            "B": "Directional Reversal: Claims 'no effect' when the text reports improvement and a 'complete response'.",
+            "C": "Logical Extremism: Claims it 'only' helped the infection, which is not supported by the 'renal response' fact.",
+            "D": "External Interference: Introduces 'severe side effects,' which are not mentioned."
+          }
+        }
+    ],
+    "text_29": [
+        {
+            "sentence_id": 2,
+            "original_sentence": "It is inherited in an autosomal dominant manner but results in the majority of cases of de novo mutations.",
+            "question": "What does the text say about how achondroplasia is passed on or appears in families?",
+            "options": {
+              "A": "It is inherited when both parents carry the gene change.",
+              "B": "It can run in families, but most cases happen due to a new genetic change.",
+              "C": "It is caused mainly by environmental factors and does not involve genetics.",
+              "D": "It spreads from person to person like an infection."
+            },
+            "correct_answer": "B",
+            "Rationale": {
+              "A": "False: The text describes a pattern where it can affect many family members, not a requirement that both parents carry it.",
+              "B": "Correct: Both versions state it can be inherited in families, but most cases are due to a new mutation.",
+              "C": "False: The text attributes the condition to genetic changes, not environment.",
+              "D": "False: The text describes a genetic condition, not an infectious disease."
+            }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "The disease is related to a mutation in the fibroblast growth factor receptor-3 (FGFR3) gene encoding one member of the FGFR subfamily of tyrosine kinase receptors, which results in constitutive activation of the receptor.",
+          "question": "What is the specific biological result of the genetic mutation (FGFR3) discussed in the text?",
+          "options": {
+            "A": "It causes a specific part of a cell's signaling system to stay active all the time.",
+            "B": "It results in the disappearance of receptors found on the surface of bone cells.",
+            "C": "It causes the body to stop producing any form of fibroblast growth factor.",
+            "D": "It creates a protein that actively destroys healthy cartilage in the joints."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'constitutive activation of the receptor' and 'continuously active receptor'.",
+            "B": "Logical Extremism: Claims 'complete disappearance,' which is not supported by the text.",
+            "C": "Directional Reversal: Claims 'stop producing' when the issue is 'over-activation'.",
+            "D": "External Interference: Introduces 'destroying healthy cartilage,' which is a different disease process (like arthritis)."
+          }
+        },
+        {
+          "sentence_id": 4,
+          "original_sentence": "Biochemical studies of FGFR3 combined with experiments in knock-out mice have demonstrated that FGFR3 is a negative regulator of chondrocytes proliferation and differentiation in growth plate.",
+          "question": "Based on the experiments mentioned, what is the normal function of the FGFR3 gene in the growth plate?",
+          "options": {
+            "A": "It stops cartilage cells from growing and maturing.",
+            "B": "It helps bone growth by speeding up the multiplication and maturation of cells.",
+            "C": "It serves as the main source of energy for the development of long bones.",
+            "D": "It has no measurable effect on growth until the mutation occurs."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'negative regulator of chondrocytes proliferation and differentiation' and 'prevents bone growth by preventing cartilage cells... from growing'.",
+            "B": "Directional Reversal: Claims it 'speeds up' growth, whereas the text defines it as a 'negative regulator' (brake).",
+            "C": "External Interference: Introduces 'source of energy,' which is not the described role.",
+            "D": "Directional Reversal: Claims it has 'no effect,' whereas the text details its regulatory function."
+          }
+        },
+        {
+          "sentence_id": 7,
+          "original_sentence": "The most common rheumatological complications of achondroplasia are medullar and radicular compressions due to spinal stenosis and deformities of the lower limbs.",
+          "question": "According to the text, what is a frequent complication caused by the bone structure in patients with this condition?",
+          "options": {
+            "A": "Problems caused by the narrowing or shortening of the space around the spinal cord.",
+            "B": "The development of brittle bones that break easily from minor impacts.",
+            "C": "A complete loss of bone density that leads to the inability to walk.",
+            "D": "A build-up of excess fluid in the joints of the elbows and knees."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'medullar and radicular compressions due to spinal stenosis' and 'shortening of the spine'.",
+            "B": "External Interference: Introduces 'brittle bones' (Osteogenesis Imperfecta), which is not this condition.",
+            "C": "Logical Extremism: Claims 'complete loss of bone density,' which is not in the text.",
+            "D": "External Interference: Introduces 'fluid in the joints,' which is not mentioned as a common complication."
+          }
+        }
+    ],
+    "text_30": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "Autosomal dominant mutations in fibroblast growth factor receptor 3 (FGFR3) cause achondroplasia (Ach), the most common form of dwarfism in humans, and related chondrodysplasia syndromes that include hypochondroplasia (Hch), severe achondroplasia with developmental delay and acanthosis nigricans (SADDAN), and thanatophoric dysplasia (TD).",
+            "question": "According to the text, what does the inheritance pattern of the FGFR3 mutations imply about how achondroplasia can run in families?",
+            "options": {
+              "A": "A child can be affected if they inherit the mutation from an affected parent.",
+              "B": "A child can only be affected if both parents carry the mutation.",
+              "C": "Only mothers can pass on the mutation to their children.",
+              "D": "The condition is not genetic and cannot run in families."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions describe a dominant inherited mutation, meaning inheriting it from an affected parent can lead to being affected.",
+              "B": "False: Requiring both parents would describe a different inheritance pattern than the one stated in the text.",
+              "C": "False: The adapted text says the mutation is on non-sex chromosomes, and neither version describes parent-sex-specific inheritance.",
+              "D": "False: Both versions explicitly state mutations in FGFR3 cause the condition."
+            }
+        },
+        {
+            "sentence_id": 3,
+            "original_sentence": "Analysis of the mutations in FGFR3 revealed increased signaling through a combination of mechanisms that include stabilization of the receptor, enhanced dimerization, and enhanced tyrosine kinase activity.",
+            "question": "Which option best matches the way the text explains what the FGFR3 mutations change about the receptor?",
+            "options": {
+              "A": "The receptor becomes more stable, pairs up more easily, and has higher enzyme activity.",
+              "B": "The receptor becomes more stable and pairs up more easily, but its enzyme activity is lower.",
+              "C": "The receptor becomes less stable but pairs up more easily and has higher enzyme activity.",
+              "D": "The receptor becomes more stable and has higher enzyme activity, but it pairs up less easily."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The text describes increased receptor stability, enhanced pairing (two receptors binding together), and enhanced enzyme activity.",
+              "B": "False: The text says enzyme activity is enhanced, not lowered.",
+              "C": "False: The text includes receptor stabilization (more stable), not reduced stability.",
+              "D": "False: The text says pairing is enhanced, not reduced."
+            }
+        },                   
+        {
+          "sentence_id": 4,
+          "original_sentence": "Paradoxically, increased FGFR3 signaling profoundly suppresses proliferation and maturation of growth plate chondrocytes resulting in decreased growth plate size, reduced trabecular bone volume, and resulting decreased bone elongation.",
+          "question": "The text describes a surprising outcome of stronger FGFR3 signaling. What is that outcome?",
+          "options": {
+            "A": "Stronger signaling slows down the growth of growth-region cartilage cells.",
+            "B": "Stronger signaling makes growth-region cartilage cells multiply faster, leading to longer bones.",
+            "C": "Stronger signaling makes the bones much wider.",
+            "D": "Stronger signaling mainly increases bone length by enlarging the growth region."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Both versions say increased signaling suppresses cell multiplication and maturation in the growth region and decreases bone elongation.",
+            "B": "False: This reverses the direction; the text says growth is suppressed, not increased.",
+            "C": "False: Introduces 'bone width' as a distractor.",
+            "D": "False: The text says the growth region size decreases, not enlarges."
+          }
+        },
+        {
+            "sentence_id": 5,
+            "question": "What is the goal of the scientific review and the therapies being evaluated?",
+            "options": {
+              "A": "To find ways to improve the growth of bone in people with these conditions.",
+              "B": "To show that these conditions cannot be treated with existing medicine.",
+              "C": "To identify which specific parents are likely to have a new mutation.",
+              "D": "To replace the need for genetic testing."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Bridges 'therapeutic approaches... to improve... bone growth'.",
+              "B": "Directional Reversal: Claims it 'cannot be treated,' contradicting 'therapeutic approaches'.",
+              "C": "External Interference: Focuses on 'parental screening' which is not the stated goal of the therapies.",
+              "D": "Lexical Lure: Uses 'genetic testing' from previous abstracts as a distractor."
+            }
+        }
+    ],
+    "text_31": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "We present here a potential new treatment adjunct for glioblastoma.",
+          "question": "What is the authors' primary goal in this text?",
+          "options": {
+            "A": "To propose a new treatment for glioblastoma that could be used alongside the current standard medical care.",
+            "B": "To argue that surgery is no longer a necessary part of treating glioblastoma.",
+            "C": "To prove that glioblastoma is caused primarily by the use of certain mental health drugs.",
+            "D": "To show that glioblastoma is a harmless condition that does not require any radiation."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'potential new treatment adjunct' and 'possible new treatment to add to standard treatment'.",
+            "B": "Directional Reversal: The text suggests *adding* to surgery, not replacing it.",
+            "C": "Directional Reversal: Claims mental health drugs *cause* cancer, whereas the text suggests they might *treat* it.",
+            "D": "Logical Extremism: Downplays a severe cancer as 'harmless'."
+          }
+        },
+        {
+          "sentence_id": 2,
+          "original_sentence": "Building on murine studies, a series of papers appeared recently showing that therapeutic irradiation of the ipsilateral subventricular zone (SVZ) retards growth of more peripherally growing cortical glioblastomas in humans, suggesting a tumor trophic function for the SVZ.",
+          "question": "What did recent research suggest about the specific part of the brain where new brain cells are produced?",
+          "options": {
+            "A": "It may act as a source of fuel or support that helps brain tumors grow.",
+            "B": "It is immune to the effects of radiation.",
+            "C": "It prevents tumors from growing by releasing protective chemicals throughout the brain.",
+            "D": "It is suppressed by glioblastoma after the cancer first appears."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'tumor trophic function' (Original) and 'play a role in fueling brain tumors' (Simplified).",
+            "B": "External Interference: Introduces 'immunity to radiation,' which contradicts the fact that this area is specifically irradiated.",
+            "C": "Directional Reversal: Suggests the area is 'protective' when the text says it 'retards growth' only when it is irradiated (meaning it usually helps the tumor).",
+            "D": "External Interference: Claims the area is 'destroyed' immediately, which is unsupported."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "Further studies showed that SVZ cells migrate out towards a peripheral glioblastoma.",
+          "question": "According to the text, what happens to the cells located in the brain's cell-producing region?",
+          "options": {
+            "A": "They move toward the site of the tumor.",
+            "B": "They stay stationary to avoid being affected by the cancer cells.",
+            "C": "They are transformed into tumor cells when they touch the glioblastoma.",
+            "D": "They move toward the outer parts of the brain."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'migrate out towards a peripheral glioblastoma' and 'move outward toward a glioblastoma'.",
+            "B": "Directional Reversal: Claims they are 'stationary' when the text says they 'migrate' or 'move'.",
+            "C": "Inferential Over-Extrapolation: Assumes migration leads to 'transformation' into cancer, which is not stated.",
+            "D": "External Interference: Introduces 'hiding' from radiation, which is not in the text."
+          }
+        },
+        {
+          "sentence_id": 5,
+          "original_sentence": "Since psychiatry has several drugs with good D3 blocking attributes, such as fluphenazine, or perphenazine, we suggest that adding one of these D3 blocking drugs to current standard treatment of resection followed by temozolomide and irradiation might prolong survival by depriving glioblastoma of the trophic functions previously subserved by dopaminergic signaling on SVZ cells.",
+          "question": "How do the authors suggest that certain drugs used for mental health might help glioblastoma patients?",
+          "options": {
+            "A": "By cutting off the chemical signals that may help the tumor grow.",
+            "B": "By improving mood and sleep, which could slow tumor growth indirectly.",
+            "C": "By increasing the speed at which new brain cells are produced to replace the tumor.",
+            "D": "By repairing the DNA damage caused by previous rounds of chemotherapy."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'depriving glioblastoma of the trophic functions' and 'cutting off fuel to the glioblastoma'.",
+            "B": "External Interference: Introduces 'sleep,' a plausible but unsupported role for mental health drugs.",
+            "C": "Directional Reversal: Suggests 'increasing' cell production, which might actually help the tumor based on S2.",
+            "D": "External Interference: Introduces 'DNA repair,' which is not the mechanism described."
+          }
+        }
+    ],
+    "text_32": [
+        {
+            "sentence_id": 1,
+            "original_sentence": "The effects of single oral doses of 10, 15, or 30 mg of prednisone on circulating mononuclear cells, autologous MLR, mitogen responses, and allogeneic MLR were studied in healthy volunteers.",
+            "question": "According to the text, what was the primary focus of the study involving healthy volunteers?",
+            "options": {
+              "A": "How single doses of a drug affect several immune-related measures.",
+              "B": "How different drugs increase the body's natural production of steroid hormones.",
+              "C": "Whether exercise can replace the need for medicines that affect the immune system.",
+              "D": "Whether taking prednisone every day for months is safe."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The text describes single oral doses of prednisone and measuring multiple immune-related outcomes.",
+              "B": "False: The study examines a specific drug’s effects, not how multiple drugs raise natural steroid production.",
+              "C": "False: Exercise is not mentioned anywhere in the text.",
+              "D": "False: The text describes single doses, not long-term daily use for months."
+            }
+        },          
+        {
+            "sentence_id": 2,
+            "original_sentence": "Doses as low as 10 mg were immunosuppressive, causing diminution of circulating T cells and monocytes, and significant reduction in autologous but not allogeneic MLR responses.",
+            "question": "What effect did a low dose of the drug have on the immune cells of the participants?",
+            "options": {
+              "A": "It lowered the number of certain protective immune cells circulating in the body.",
+              "B": "It raised the number of these immune cells circulating in the body.",
+              "C": "It left the number of these immune cells unchanged, but only reduced their movement around the body.",
+              "D": "It lowered only red blood cells, without affecting immune cells."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The text reports a reduction in circulating T cells and monocytes at low doses.",
+              "B": "False: The direction is reversed; the text reports a decrease, not an increase.",
+              "C": "False: The text reports fewer circulating cells, not unchanged numbers with only movement effects.",
+              "D": "False: The text mentions reductions in immune cells (T cells and monocytes), not red blood cells."
+            }
+        },
+        {
+            "sentence_id": 6,
+            "original_sentence": "Since the autologous MLR may be important in in vivo regulation of immune responses, its reduction by low-dose glucocorticoids may be of clinical relevance.",
+            "question": "Why do the authors say it could matter clinically that low-dose prednisone suppresses one of the immune reactions they measured?",
+            "options": {
+              "A": "Because that reaction may help regulate immune responses in the body.",
+              "B": "Because that reaction is known to cause infections.",
+              "C": "Because low-dose steroids eliminate this reaction, which guarantees long-term immune tolerance.",
+              "D": "Because this reaction happens only in lab tests and has no role inside the body."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions state it may be important in regulating immune responses in the body, making its reduction clinically relevant.",
+              "B": "False: The text does not claim it causes infections or that reduction is always beneficial.",
+              "C": "False: The text describes temporary effects and does not claim permanent elimination or guaranteed outcomes.",
+              "D": "False: The text explicitly points to importance in the body (in vivo)."
+            }
+        },
+        {
+          "sentence_id": 7,
+          "original_sentence": "This suppressive effect must be considered in studies of the autologous MLR in patients receiving glucocorticoid therapy.",
+          "question": "What is the authors' final recommendation for researchers studying immune responses in patients?",
+          "options": {
+            "A": "They must account for the slowing effect of this drug when evaluating a patient's immune tests.",
+            "B": "They should stop using this drug because it is too powerful for healthy people.",
+            "C": "They should perform immune tests twenty-four hours after a patient eats a meal.",
+            "D": "They should ignore the effects of the drug if the patient is taking a very low dose."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'suppressive effect must be considered in studies' and 'suppressive (slowing down) effect must be considered'.",
+            "B": "Logical Extremism: Suggests 'stopping the drug,' which is not the recommendation.",
+            "C": "Lexical Lure: Uses '24 hours' from S3 and 'meal' to create a false temporal/dietary requirement.",
+            "D": "Directional Reversal: Suggests 'ignoring' the low dose, while the text says it 'must be considered'."
+          }
+        }
+    ],
+    "text_33": [
+        {
+          "sentence_id": 2,
+          "original_sentence": "Here, we developed an mRNA vaccine based on the trimeric receptor-binding domain (RBD) of the SARS-CoV-2 spike (S) protein fused to ferritin-formed nanoparticles (TF-RBD).",
+          "question": "What unique structure did the researchers use to build the mRNA vaccine?",
+          "options": {
+            "A": "A combination of a specific part of the virus attached to tiny protective molecules.",
+            "B": "A weakened version of the live virus that has been treated with high heat.",
+            "C": "A protein found exclusively in the blood of patients who have already recovered.",
+            "D": "A chemical that completely prevents the virus from ever mutating in the future."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'trimeric receptor-binding domain... fused to ferritin-formed nanoparticles' and 'part of the virus... fused to tiny molecules... called nanoparticles'.",
+            "B": "External Interference: Introduces the 'live-attenuated' vaccine type, which is not an mRNA vaccine.",
+            "C": "External Interference: Introduces 'convalescent plasma' concepts not mentioned in the text.",
+            "D": "Logical Extremism: Claims to 'prevent mutation,' whereas the text says it 'addresses' mutations."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "Compared to the trimeric form of the RBD mRNA vaccine (T-RBD), TF-RBD delivered intramuscularly elicited robust and durable humoral immunity as well as a Th1-biased cellular response.",
+          "question": "Based on the text, what was the result of using the nanoparticle version of the vaccine compared to other versions?",
+          "options": {
+            "A": "It triggered immune responses involving both antibodies and cells that are strong and lasting.",
+            "B": "It was less effective because the particles were destroyed by the body.",
+            "C": "It caused the immune system to attack healthy cells instead of the virus.",
+            "D": "It reduced symptoms after infection without triggering immune responses."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'elicited robust and durable humoral immunity as well as a Th1-biased cellular response'.",
+            "B": "Directional Reversal: Claims it was 'less effective,' while the text compares it favorably to the T-RBD version.",
+            "C": "External Interference: Introduces 'autoimmunity,' which is not described.",
+            "D": "Directional Reversal: The text describes immune responses induced by vaccination, not symptom relief alone."
+          }
+        },
+        {
+          "sentence_id": 5,
+          "original_sentence": "In addition, the mRNA template of TF-RBD was easily and quickly engineered into a variant vaccine to address SARS-CoV-2 mutations.",
+          "question": "What advantage does the design of this specific mRNA vaccine offer regarding new versions of the virus?",
+          "options": {
+            "A": "The basic blueprint can be modified rapidly to target new forms of the virus.",
+            "B": "The vaccine makes it less likely for the virus to develop new mutations.",
+            "C": "The vaccine works better if the virus changes into a different type of disease.",
+            "D": "The design requires years of new research for every small change in the virus."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'easily and quickly engineered into a variant vaccine' and 'easily and quickly changed into a variant vaccine'.",
+            "B": "Logical Extremism: Claims to stop mutations, which is not supported.",
+            "C": "External Interference: Suggests it works on 'different types of disease,' which is not mentioned.",
+            "D": "Directional Reversal: Claims the process is 'slow' (years), whereas the text says 'quickly'."
+          }
+        },
+        {
+          "sentence_id": 6,
+          "original_sentence": "The TF-RBD multivalent vaccine produced broad-spectrum neutralizing antibodies against Alpha (B.1.1.7) and Beta (B.1.351) variants.",
+          "question": "How did the vaccine perform when tested against different variants of COVID-19?",
+          "options": {
+            "A": "It created a wide range of antibodies that could stop multiple versions of the virus.",
+            "B": "It only worked against the original version and failed against any variants.",
+            "C": "It caused the variants to become more dangerous and spread faster in the mice.",
+            "D": "It produced antibodies that could only be detected if the patient was already sick."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'broad-spectrum neutralizing antibodies' and 'neutralizing antibodies against Alpha... and Beta'.",
+            "B": "Directional Reversal: Claims it 'failed' against variants, contradicting the text.",
+            "C": "External Interference: Introduces 'enhanced disease' concepts not in the text.",
+            "D": "Logical Extremism: Claims antibodies only appear if 'already sick,' contradicting the purpose of a vaccine."
+          }
+        }
+    ],
+    "text_34": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "Patients with end-stage renal disease (ESRD) on maintenance dialysis have a high risk of developing hyperkalemia, generally defined as serum potassium (K+) concentrations of >5.0 mmol/l, particularly those undergoing maintenance hemodialysis.",
+          "question": "What specific medical risk is highlighted regarding patients with end-stage renal disease (ESRD)?",
+          "options": {
+            "A": "They have a high chance of developing dangerously high levels of potassium in their blood.",
+            "B": "They are likely to lose too much potassium.",
+            "C": "They are prone to developing infections caused by the dialysis equipment.",
+            "D": "Their bodies stop producing potassium, requiring daily injections."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'high risk of developing hyperkalemia' and 'potassium level... higher than normal'.",
+            "B": "Directional Reversal: Claims 'loss' of potassium instead of 'accumulation' (high levels).",
+            "C": "External Interference: Introduces 'equipment infections,' a plausible but unsupported dialysis risk.",
+            "D": "Logical Extremism: Claims the body 'stops producing' potassium, which is not the issue described."
+          }
+        },
+        {
+          "sentence_id": 2,
+          "original_sentence": "Currently, the key approaches to the management of hyperkalemia in patients with ESRD are dialysis, dietary K+ restriction, and avoidance of medications that increase hyperkalemia risk.",
+          "question": "Which of the following best describes the 'main treatments' currently used for hyperkalemia in patients with kidney disease?",
+          "options": {
+            "A": "They involve a combination of mechanical filtering, behavioral changes in eating, and careful selection of other medicines.",
+            "B": "They focus entirely on increasing the body's natural ability to process potassium through the kidneys.",
+            "C": "They are designed to replace the need for regular dialysis by using stricter dietary rules and specialized vitamins.",
+            "D": "They prioritize using high-potassium foods to help the dialysis equipment work more efficiently."
+        },
+        "correct_answer": "A",
+        "Rationale": {
+            "A": "Correct: Bridges 'dialysis' (mechanical), 'dietary restriction' (behavioral), and 'avoidance of medications' (selection).",
+            "B": "Directional Reversal: Patients with ESRD (End-Stage Renal Disease) have lost their 'natural ability' to process potassium; the treatments are external/artificial.",
+            "C": "Inferential Over-Extrapolation: Diet and medications are 'adjuncts' or 'main treatments' *alongside* dialysis, not a replacement for it.",
+            "D": "Directional Reversal: High-potassium foods are the *problem* to be avoided, not a tool for efficiency."
+          }
+        },
+        {
+          "sentence_id": 4,
+          "original_sentence": "In addition, we examine the potential nondialysis options for the management of these patients, including use of the newer K+ binder agents patiromer and sodium zirconium cyclosilicate, which may reduce the need for the highly restrictive dialysis diet, with its own implication on nutritional status in patients with ESRD, as well as reducing the risk of potentially life-threatening hyperkalemia.",
+          "question": "How do the newer medications help the patients, according to the text?",
+          "options": {
+            "A": "They bind to potassium, potentially allowing for a less strict diet.",
+            "B": "They are more effective than dialysis at removing potassium from the blood.",
+            "C": "They replace the need for dialysis or medical monitoring.",
+            "D": "They act as a vitamin supplement to fix the damage caused by hyperkalemia."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'K+ binder agents... reduce the need for the highly restrictive dialysis diet'.",
+            "B": "The text does not claim they are 'more effective than dialysis'",
+            "C": "Logical Extremism: Claims to 'replace' dialysis, whereas the text calls them 'nondialysis options' for management, not a total replacement.",
+            "D": "External Interference: Introduces 'vitamins' not mentioned in the text."
+          }
+        },
+        {
+          "sentence_id": 4,
+          "original_sentence": "In addition, we examine the potential nondialysis options for the management of these patients, including use of the newer K+ binder agents patiromer and sodium zirconium cyclosilicate, which may reduce the need for the highly restrictive dialysis diet, with its own implication on nutritional status in patients with ESRD, as well as reducing the risk of potentially life-threatening hyperkalemia.",
+          "question": "What concern does the text raise about the very strict dialysis diet?",
+          "options": {
+            "A": "It may make it difficult for patients to get the proper nutrition their bodies need.",
+            "B": "It is usually too expensive to maintain.",
+            "C": "It causes the newer potassium-binding drugs to stop working.",
+            "D": "It is only necessary for patients who have already recovered from the disease."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'implication on nutritional status' and 'problems getting enough nutrition'.",
+            "B": "External Interference: Introduces 'expense' as distractor.",
+            "C": "Lexical Lure: Combines 'strict diet' and 'binding drugs' into a false causal relationship.",
+            "D": "Logical Extremism: Suggests it is only for 'recovered' patients, which is illogical in a renal failure context."
+          }
+        }
+    ],
+    "text_35": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "The first trimester screening programme offers a noninvasive option for the early detection of aneuploidy pregnancies.",
+          "question": "According to the text, what is the primary purpose of the first trimester screening program?",
+          "options": {
+            "A": "To detect pregnancies with an abnormal number of chromosomes early, without surgery.",
+            "B": "To determine the sex of the baby before the second trimester begins.",
+            "C": "To provide a nonsurgical treatment for all women over a certain maternal age.",
+            "D": "To prevent pregnancy hormones from rising too quickly."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'noninvasive option for early detection of aneuploidy' and 'noninvasive (nonsurgical)... abnormal number of chromosomes'.",
+            "B": "External Interference: Introduces 'sex of the baby,' which are not mentioned.",
+            "C": "detection, not treatment.",
+            "D": "Hormone control is not mentioned as the purpose."
+          }
+        },
+        {
+            "sentence_id": 2,
+            "original_sentence": "This screening is done by a combination of two biochemical markers i.e. serum free β-human chorionic gonadotrophin (free β-hCG) and pregnancy associated plasma protein A (PAPP-A), maternal age and fetal nuchal translucency (NT) thickness at 11 + 0-13 + 6 weeks of gestation.",
+            "question": "Which set of information is used together for the first-trimester screening?",
+            "options": {
+                "A": "Information about the mother's history, her blood chemistry, and an physical observation of the fetus.",
+                "B": "A combination of 'free β-hCG' and 'PAPP-A' only, as these are the two definitive markers.",
+                "C": "The mother's age and the 'nuchal translucency' thickness, excluding any blood-based proteins.",
+                "D": "A series of biochemical markers that are only effective if the fetus has a normal number of chromosomes."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+                "A": "Correct: Bridges 'maternal age' (history), 'biochemical markers' (blood chemistry), and 'NT thickness' (physical observation).",
+                "B": "Logical Extremism: Uses 'only' to exclude the age and physical measurement components.",
+                "C": "Directional Reversal: Explicitly excludes blood proteins, which the text says are required.",
+                "D": "Directional Reversal: The test is *for* detecting abnormal numbers; saying it only works if the number is 'normal' is a logical reversal."
+            }
+        },
+        {
+            "sentence_id": 3,
+            "original_sentence": "A beneficial consequence of screening is the early diagnosis or trisomies 21, 18 and 13.",
+            "question": "What benefit of this screening does the text emphasize?",
+            "options": {
+              "A": "It can identify certain chromosome-number conditions early in pregnancy.",
+              "B": "It guarantees that chromosome-number conditions will be prevented from occurring.",
+              "C": "It is used mainly to decide which pain medications are safe during pregnancy.",
+              "D": "It replaces the need for any follow-up testing later in pregnancy."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions describe early diagnosis of chromosome anomalies/conditions as a benefit of screening.",
+              "B": "False: Screening detects; it does not prevent the condition from occurring.",
+              "C": "False: Medication safety is not mentioned.",
+              "D": "False: The text does not claim screening eliminates the need for any follow-up testing."
+            }
+        },
+        {
+          "sentence_id": 5,
+          "original_sentence": "All three trisomies are associated with increased maternal age, increased fetal NT and decreased PAPP-A, but in trisomy 21 serum free β-hCG is increased whereas in trisomies 18 and 13 free β-hCG is decreased.",
+          "question": "What is the main difference in the blood test results between trisomy 21 and the other chromosomal conditions mentioned?",
+          "options": {
+            "A": "In trisomy 21, a specific pregnancy hormone is higher, whereas in the others it is lower.",
+            "B": "In trisomy 21, the mother's age is lower, whereas in the others it is much higher.",
+            "C": "In trisomy 21, the tissue at the back of the neck is thinner than in the other conditions.",
+            "D": "In trisomy 21, all protein levels are completely absent from the blood sample."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges the 'free \u03b2-hCG is increased [in T21] whereas in trisomies 18 and 13... it is decreased' logic.",
+            "B": "Directional Reversal: The text states all three are associated with *increased* maternal age.",
+            "C": "Directional Reversal: The text states all three are associated with *increased* neck thickness (NT).",
+            "D": "Logical Extremism: Claims proteins are 'completely absent,' which contradicts the 'increased/decreased' data."
+          }
+        }
+    ],
+    "text_36": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "Mitochondria are the energy-producing organelles of the cell, generating ATP via oxidative phosphorylation mainly by using pyruvate derived from glycolytic processing of glucose.",
+          "question": "According to the text, what is the primary role of the mitochondria within a cell?",
+          "options": {
+            "A": "They produce the energy needed by the body.",
+            "B": "They are responsible for storing excess sugar to prevent it from being used.",
+            "C": "They function as a protective barrier that keeps fat out of the cell.",
+            "D": "They serve as the part of the cell that produces new genetic material."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'energy-producing organelles' and 'parts of cells that produce energy'.",
+            "B": "Directional Reversal: Suggests mitochondria 'prevent' energy use, while they actually 'generate' it.",
+            "C": "External Interference: Introduces 'protective barrier,' which is a cell membrane function, not mitochondrial.",
+            "D": "External Interference: Introduces 'genetic material,' which is primarily a function of the nucleus."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "The ketogenic diet, which is high in fat and low in carbohydrates, mimics the metabolic state of starvation, forcing the body to utilize fat as its primary source of energy.",
+          "question": "How does a ketogenic diet change the way the body produces energy?",
+          "options": {
+            "A": "It forces the body to switch from using sugar to using fat as its main energy source.",
+            "B": "It causes the body to stop producing energy entirely until carbohydrates are eaten.",
+            "C": "It encourages the body to use protein as the only way to power the mitochondria.",
+            "D": "It prevents the breakdown of fats, making the body rely solely on oxygen."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'utilize fat as its primary source of energy' and 'use fat as its main source of energy'.",
+            "B": "Logical Extremism: Claims energy production 'stops,' which would be fatal and is not supported.",
+            "C": "External Interference: Introduces 'protein' as the only source, while the text specifies 'fat'.",
+            "D": "Directional Reversal: Claims it 'prevents the breakdown of fats' when the diet actually 'forces' the use of fat."
+          }
+        },
+        {
+            "sentence_id": 4,
+            "original_sentence": "The ketogenic diet is used therapeutically for pharmacoresistant epilepsy and for \"rare diseases\" of glucose metabolism (glucose transporter type 1 and pyruvate dehydrogenase deficiency).",
+            "question": "Based on the text, which statements about when the ketogenic diet is used as a treatment are supported?",
+            "options": {
+              "A": "It is used for seizures that are hard to control with medicine.",
+              "B": "It is used for certain rare disorders involving how the body uses fat for energy.",
+              "C": "Both A and B.",
+              "D": "Neither A nor B."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The text supports use in hard-to-control seizures, but it mentions rare disorders of sugar (glucose) metabolism, not fat metabolism.",
+              "B": "False: The text does not describe rare fat-metabolism disorders as the therapeutic use here.",
+              "C": "False: Statement 2 is not supported by the text.",
+              "D": "False: Statement 1 is supported by the text."
+            }
+          },          
+          {
+            "sentence_id": 5,
+            "original_sentence": "As metabolic reprogramming from oxidative phosphorylation toward increased glycolysis is a hallmark of cancer cells; there is increasing evidence that the ketogenic diet may also be beneficial as an adjuvant cancer therapy by potentiating the antitumor effect of chemotherapy and radiation treatment.",
+            "question": "According to the text, what role might the ketogenic diet play in cancer care?",
+            "options": {
+              "A": "It may help as an additional therapy used alongside cancer treatment.",
+              "B": "It may help mainly by preventing cancer from developing in the first place.",
+              "C": "It may help by increasing the body's use of sugar as fuel.",
+              "D": "It may help by treating infections that can occur during cancer therapy."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions say there is evidence it may be helpful as an additional (adjuvant) therapy for cancer.",
+              "B": "False: The text discusses cancer therapy support, not prevention of cancer onset.",
+              "C": "False: The ketogenic diet is described as shifting the body toward fat use, not increasing sugar use.",
+              "D": "False: Treating infections is not discussed as the reason it may help in cancer care."
+            }
+        }
+    ],
+    "text_37": [
+        {
+          "sentence_id": 2,
+          "original_sentence": "Total-body K+ content is determined by changes in excretion of K+ by the kidneys in response to intake levels.",
+          "question": "According to the passage, what is the main way the body adjusts its total potassium level when a person takes in more or less potassium?",
+          "options": {
+            "A": "The kidneys change how much potassium they remove from the body depending on how much potassium is taken in.",
+            "B": "The kidneys remove the same amount of potassium each day, so intake determines the total level.",
+            "C": "The body mainly adjusts total potassium by changing how much potassium the lungs release during breathing.",
+            "D": "The body mainly adjusts total potassium by shifting potassium into cells."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Both versions state that total-body potassium is determined by kidney potassium removal changing in response to intake.",
+            "B": "False: The passage explicitly says kidney removal changes in response to intake, not that it stays fixed.",
+            "C": "False: The lungs are not described as controlling total potassium in the passage.",
+            "D": "False: The passage links total-body potassium to kidney removal, while shifting into cells relates to distribution, not overall amount."
+          }
+        },
+        {
+          "sentence_id": 3,
+          "original_sentence": "Under normal conditions, insulin and β-adrenergic tone also make important contributions in maintaining internal distribution of K+.",
+          "question": "In the passage, insulin and other body signals are mentioned as helping with which part of potassium control under normal conditions?",
+          "options": {
+            "A": "Keeping potassium properly distributed within the body, such as across cell membranes.",
+            "B": "Setting how much potassium a person eats from day to day.",
+            "C": "Replacing the kidneys as the main way potassium leaves the body.",
+            "D": "Keeping the body’s total potassium level fixed so it does not change with intake."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Both versions say insulin and β-adrenergic tone help maintain potassium distribution.",
+            "B": "False: The passage does not describe these signals as controlling dietary intake.",
+            "C": "False: Kidney potassium removal is discussed separately as the control of total-body potassium.",
+            "D": "False: The passage says total potassium responds to intake through kidney removal."
+          }
+        },
+        {
+            "sentence_id": 5,
+            "original_sentence": "Appreciating the pathophysiology and regulatory influences that determine the internal distribution and external balance of K+ is critical in designing effective treatments to restore K+ homeostasis.",
+            "question": "Which statement best matches what the text says about how potassium regulation relates to designing treatment?",
+            "options": {
+              "A": "Treatment design depends on understanding both how potassium is distributed inside the body and how overall balance is maintained.",
+              "B": "Potassium problems can be treated effectively as long as intake is reduced.",
+              "C": "The key to treatment is understanding total potassium amount; distribution inside the body is not relevant.",
+              "D": "Regulation is mainly an academic topic and has little impact on real treatment decisions."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The sentence says appreciating regulatory influences on internal distribution and external balance is critical for designing effective treatments.",
+              "B": "False: The sentence argues the opposite—understanding is critical for treatment design.",
+              "C": "False: The sentence explicitly includes internal distribution as part of what must be understood.",
+              "D": "False: The sentence explicitly ties understanding regulation to effective treatment design."
+            }
+        },
+        {
+          "sentence_id": 6,
+          "original_sentence": "We provide an up-to-date review of the regulatory aspects of normal K+ physiology as a preface to highlighting common disorders in K+ homeostasis and their treatment.",
+          "question": "What does the passage say the review will do?",
+          "options": {
+            "A": "Describe common potassium-balance problems and how they are treated.",
+            "B": "Describe rare potassium disorders.",
+            "C": "Present a new clinical experiment.",
+            "D": "Focus on diet tips as parts of potential treatment."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Both versions describe reviewing normal regulation first, then covering common disorders and their treatment.",
+            "B": "False: The passage explicitly mentions common disorders and normal regulation.",
+            "C": "False: The passage calls itself a review, not a new experiment report.",
+            "D": "False: The passage states it will highlight disorders and their treatment."
+          }
+        }
+    ],
+    "text_38": [
+        {
+          "sentence_id": 1,
+          "original_sentence": "Background and Objectives. The importance of mitochondria in inflammatory pathologies, besides providing energy, is associated with the release of mitochondrial damage products, such as mitochondrial DNA (mt-DNA), which may perpetuate inflammation.",
+          "question": "Besides producing energy, what other role do mitochondria play in the body according to the text?",
+          "options": {
+            "A": "They can release damaged substances that contribute to ongoing inflammation.",
+            "B": "They act as the primary defense system that prevents viruses from replicating during inflammation.",
+            "C": "They are responsible for repairing the genetic material of the immune system after an infection.",
+            "D": "They mainly store extra energy for later use."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'perpetuate inflammation' and 'increase inflammation (redness and swelling)'.",
+            "B": "Directional Reversal: The text says they are 'implicated in replication' (helping the virus), not preventing it.",
+            "C": "External Interference: Introduces 'genetic repair,' which is not mentioned.",
+            "D": "External Interference: Introduces 'storage during sleep,' which is unsupported."
+          }
+        },
+        {
+            "sentence_id": 3,
+            "original_sentence": "The evidence suggests that mitochondria are implicated in the replication of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), which forms double-membrane vesicles and evades detection by the cell defense system.",
+            "question": "What does the passage suggest about how SARS-CoV-2 may interact with cell structures during replication?",
+            "options": {
+              "A": "It may involve mitochondria and use specialized membrane structures to avoid being noticed by cellular defenses.",
+              "B": "It replicates only outside cells, so it does not need to avoid cellular defenses.",
+              "C": "It is detected immediately by the cell defense system because it cannot form protective structures.",
+              "D": "It mainly relies on the cell’s outer membrane to hide."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: The sentence links mitochondria to replication and mentions double-membrane vesicles and immune evasion.",
+              "B": "False: The sentence describes evasion inside cells, not replication outside cells.",
+              "C": "False: It explicitly says the virus evades detection.",
+              "D": "False: The text mentions double-membrane vesicles, not the nucleus membrane specifically."
+            }
+        },
+        {
+            "sentence_id": 4,
+            "original_sentence": "These mitochondrion-hijacking vesicles damage the integrity of the mitochondrion's membrane, releasing mt-DNA into circulation and triggering the activation of innate immunity, which may contribute to an exacerbation of the pro-inflammatory state.",
+            "question": "What happens after the virus-made small chambers damage mitochondria?",
+            "options": {
+              "A": "Mitochondrial DNA leaks out into the body, triggering a built-in early defense response.",
+              "B": "The mitochondria become stronger and produce more energy to fight the virus.",
+              "C": "The virus is trapped inside the mitochondria and eventually dies off.",
+              "D": "The body stops inflammation to protect the remaining healthy cells."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions describe virus-made chambers damaging mitochondria, releasing mitochondrial DNA into the body/circulation and triggering an early (innate) immune response that can increase inflammation.",
+              "B": "False: The passage describes damage to mitochondria and immune activation, not mitochondria becoming stronger or producing extra energy to fight the virus.",
+              "C": "False: The passage does not say the virus gets trapped and dies; it focuses on mitochondrial damage, DNA release, and immune activation.",
+              "D": "False: The passage says inflammation may worsen due to immune activation, not that the body stops inflammation."
+            }
+        },          
+        {
+          "sentence_id": 5,
+          "original_sentence": "Conclusions. While mitochondrial dysfunction in COVID-19 continues to be studied, the use of mt-DNA as an indicator of prognosis and severity is a potential area yet to be explored.",
+          "question": "What does the text conclude about the potential future use of mitochondrial DNA in medical care?",
+          "options": {
+            "A": "It could potentially be used as a way to predict how severe a patient's illness will be.",
+            "B": "It has already been proven to be the only cure for severe COVID-19 infections.",
+            "C": "It is no longer considered a useful area for research because the role of mitochondria is fully understood.",
+            "D": "It is primarily used to identify whether a patient has a digestive disorder rather than a respiratory one."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'indicator of prognosis and severity' and 'indicator of illness'.",
+            "B": "Logical Extremism: Claims it is a 'proven cure,' whereas the text says it is an 'indicator' and 'potential area'.",
+            "C": "Directional Reversal: Claims it is 'no longer useful,' while the text says it is a 'potential area yet to be explored/researched'.",
+            "D": "External Interference: Introduces 'digestive disorder' as a distractor."
+          }
+        }
+    ],
+    "text_39": [
+        {
+            "sentence_id": 3,
+            "original_sentence": "There is an over-exuberant cytokine release with hyperferritinemia leading to the idea that COVID-19 is part of the hyperferritinemic syndrome spectrum.",
+            "question": "What idea does the passage present based on the combination of strong immune-signal release and very high ferritin levels in COVID-19?",
+            "options": {
+              "A": "That COVID-19 may belong to a group of illnesses linked to unusually high ferritin levels.",
+              "B": "That high ferritin levels prove COVID-19 is caused by too much dietary iron.",
+              "C": "That ferritin levels in COVID-19 are always low because the immune system stops producing iron-related proteins.",
+              "D": "That strong immune-signal release prevents ferritin from increasing in COVID-19."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions say increased cytokine release with high ferritin leads to the idea COVID-19 fits a high-ferritin syndrome group.",
+              "B": "False: The passage links ferritin to inflammation/immune response, not to diet as the cause of COVID-19.",
+              "C": "False: The passage describes high ferritin, not low ferritin.",
+              "D": "False: The passage links strong immune signaling with high ferritin occurring together."
+            }
+        },
+        {
+            "sentence_id": 4,
+            "original_sentence": "Indeed, very high levels of ferritin can occur in other diseases including hemophagocytic lymphohistiocytosis, macrophage activation syndrome, adult-onset Still's disease, catastrophic antiphospholipid syndrome and septic shock.",
+            "question": "Why does the passage list several other diseases when discussing very high ferritin levels?",
+            "options": {
+              "A": "To show that extremely high ferritin is not unique to COVID-19 and can appear in other serious illnesses.",
+              "B": "To claim that those listed diseases are  caused by the SARS-CoV-2 virus.",
+              "C": "To argue that ferritin is unrelated to inflammation because it rises in many different diseases.",
+              "D": "To suggest that ferritin is only high in COVID-19 and not in any other condition."
+            },
+            "correct_answer": "A",
+            "Rationale": {
+              "A": "Correct: Both versions state very high ferritin can occur in other diseases, and the list serves as examples.",
+              "B": "False: The passage does not state the listed diseases are caused by SARS-CoV-2.",
+              "C": "False: The passage later links ferritin with immune effects and inflammation rather than dismissing that link.",
+              "D": "False: The sentence explicitly says very high ferritin can occur in other diseases."
+            }
+        },
+        {
+          "sentence_id": 6,
+          "original_sentence": "High levels of free iron are harmful in tissues, especially through the redox damage that can lead to fibrosis.",
+          "question": "According to the text, what is the primary danger of having too much 'free iron' in the body's tissues?",
+          "options": {
+            "A": "It can cause harmful damage that ultimately leads to the development of scarring.",
+            "B": "It prevents the lungs from becoming inflamed even during a severe viral infection.",
+            "C": "It is a helpful substance that the body uses to repair damaged tissues and prevent death.",
+            "D": "It acts as a protective shield that stops the COVID-19 virus from entering the cells."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'harmful in tissues... can lead to fibrosis' and 'harmful in the body... can lead to scarring'.",
+            "B": "Directional Reversal: Free iron is 'harmful' and associated with 'sustained inflammatory processes'.",
+            "C": "Directional Reversal: Claims it is 'helpful' and 'prevents death,' contradicting the 'harmful' and 'mortality' links.",
+            "D": "External Interference: Introduces a 'protective shield' concept not supported by the text."
+          }
+        },
+        {
+          "sentence_id": 9,
+          "original_sentence": "Herein, we analyse the pathogenic role of ferritin and iron during SARS-CoV-2 infection and propose iron depletion therapy as a novel therapeutic approach in the COVID-19 pandemic.",
+          "question": "What new treatment approach do the authors propose for managing the COVID-19 pandemic?",
+          "options": {
+            "A": "Using therapy designed to lower the amount of iron in the patient's body.",
+            "B": "Giving patients extra iron supplements to strengthen their immune signaling molecules.",
+            "C": "Focusing only on asymptomatic patients to prevent them from ever developing iron.",
+            "D": "Using surgery to remove the ferritin proteins from the patient's bloodstream."
+          },
+          "correct_answer": "A",
+          "Rationale": {
+            "A": "Correct: Bridges 'propose iron depletion therapy as a novel therapeutic approach' and 'propose iron depletion treatment'.",
+            "B": "Directional Reversal: Suggests 'extra iron,' while the text proposes 'depletion' (reduction).",
+            "C": "Logical Extremism: Suggests 'preventing them from ever developing iron,' which is biological impossible and not stated.",
+            "D": "External Interference: Introduces 'surgery,' while the text discusses 'depletion therapy' and 'chelation/binding' (medical/chemical approaches)."
+          }
+        }
+    ] 
 };
 
 // when a simplified text needs its own quiz; otherwise the app falls back to the base studyQuizzes entry.
@@ -2867,4 +4308,28 @@ const studyQuizzesSimplified = {
             }
         }
     ]
+};
+
+// ===============================
+// Calibration / Training Set
+// ===============================
+const calibrationSet = {
+  id: "cal_v1",
+  snippets: [
+    {
+      snippet_id: "cal_01",
+      sentences: [
+        "An 18 year-old woman presented to an outside hospital with seizure activity after a massive ingestion of lamotrigine, bupropion, trazodone, buspirone, and possibly isoretinoin.",
+        "Her initial vital signs were remarkable for tachycardia (120 bpm).",
+        "She was intubated for airway protection."
+      ]
+    },
+    {
+      snippet_id: "cal_02",
+      sentences: [
+        "Cystic Echinococcosis, also called Hydatid disease, is caused by the infection of a long tapeworm called Echinococcus granulosus, after it has hatched into the larval stage.",
+        "A person can often have this condition without symptoms for years before the cyst (growth) grows large enough to cause symptoms in affected organs."
+      ]
+    }
+  ]
 };

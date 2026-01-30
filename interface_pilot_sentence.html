@@ -253,6 +253,36 @@
             display: flex; flex-direction: column; gap: 12px; margin-top: 10px;
         }
 
+        /* --- PRACTICE TWO-COLUMN LAYOUT (inside modal) --- */
+        .practice-layout {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        margin-top: 10px;
+        }
+
+        /* Left: snippet */
+        .practice-text-panel {
+        flex: 1;
+        background: #f8f9fa;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 14px;
+        max-height: 42vh;   /* keeps it from overflowing the modal */
+        overflow-y: auto;
+        }
+
+        /* Right: scoring UI */
+        .practice-sidebar {
+        flex: 1.5;
+        min-width: 280px;
+        max-width: 360px;
+        }
+
+        .practice-sidebar .instruction-block {
+        margin-top: 0; /* so the box lines up nicely */
+        }
+
     </style>
 </head>
 <body>
@@ -306,7 +336,147 @@
                         <li><strong>5 – Very confident:</strong> You’re certain what it means in context and could explain it in your own words.</li>
                     </ul>
                 </div>
+                
+                <!-- <h3 style="margin-top: 18px;">Practice (2 minutes)</h3> -->
+                <!-- <div class="instruction-block"> -->
+                <p>
+                Before the main task, you’ll complete a <strong>short practice</strong> to help you get familiar with the scales.
+                </p>              
+                <p style="margin-top:12px;">
+                Click <strong>Next</strong> to start the practice.
+                </p>
             </div>
+
+            <div class="instr-step" id="practice-step-1">
+                <h3>Practice 1 / 2</h3>
+              
+                <!-- <div class="instruction-block" style="margin-top:10px;">
+                  <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div><strong>Sentence:</strong> <span id="practice1-progress">1</span> / <span id="practice1-total">0</span></div>
+                    <div style="font-size:0.9em; color:#666;">Rate the highlighted sentence</div>
+                  </div>
+                </div> -->
+                
+                <!-- ✅ Rubric reminder (copied from Page 2)
+                <div style="background-color:#f7f9fc; padding:12px; border-left:4px solid #3498db; margin:12px 0; font-size:0.9em;">
+                <p style="margin:0 0 6px 0;"><strong>Ease of Reading (1–5)</strong></p>
+                <ul style="margin:0 0 8px 18px; padding:0;">
+                    <li><strong>1 – Very hard to read:</strong> You needed to slow down or reread a lot.</li>
+                    <li><strong>5 – Very easy to read:</strong> Smooth to read; no pauses or rereading.</li>
+                </ul>
+
+                <p style="margin:8px 0 2px 0;"><strong>Confidence in Understanding (1–5)</strong></p>
+                <ul style="margin:0 0 0 18px; padding:0;">
+                    <li><strong>1 – Not confident:</strong> You did not understand what it means in context and couldn’t explain it.</li>
+                    <li><strong>5 – Very confident:</strong> You’re certain what it means in context and could explain it in your own words.</li>
+                </ul>
+                </div> -->
+
+                <!-- ✅ Two-column practice layout -->
+                <div class="practice-layout">
+
+                <!-- LEFT column: snippet -->
+                <div class="practice-text-panel">
+                    <div id="practice1-text" style="font-size:1.15rem; line-height:1.8;">
+                    <!-- sentences injected by JS -->
+                    </div>
+                </div>
+
+                <!-- RIGHT column: ratings -->
+                <div class="practice-sidebar">
+                    <div class="instruction-block">
+                    <p class="question-label" style="margin-bottom:6px;">1. While reading, how easy was this sentence to read?</p>
+                    <div class="likert-scale" id="practice1-effort">
+                        <div class="likert-btn" data-val="1">1<span class="likert-label">Very hard</span></div>
+                        <div class="likert-btn" data-val="2">2</div>
+                        <div class="likert-btn" data-val="3">3</div>
+                        <div class="likert-btn" data-val="4">4</div>
+                        <div class="likert-btn" data-val="5">5<span class="likert-label">Very easy</span></div>
+                    </div>
+
+                    <p class="question-label" style="margin:12px 0 6px;">2. How confident are you that you understood what this sentence means in this context?
+                    </p>
+                    <div class="likert-scale" id="practice1-confidence">
+                        <div class="likert-btn" data-val="1">1<span class="likert-label">Not confident</span></div>
+                        <div class="likert-btn" data-val="2">2</div>
+                        <div class="likert-btn" data-val="3">3</div>
+                        <div class="likert-btn" data-val="4">4</div>
+                        <div class="likert-btn" data-val="5">5<span class="likert-label">Very confident</span></div>
+                    </div>
+
+                    <button type="button" class="btn-start" id="practice1-next-sentence" disabled>
+                        Next sentence
+                    </button>
+                    </div>
+                </div>
+
+                </div>
+            </div>  
+
+            <div class="instr-step" id="practice-step-2">
+                <h3>Practice 2 / 2</h3>
+              
+                <!-- <div class="instruction-block" style="margin-top:10px;">
+                  <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div><strong>Sentence:</strong> <span id="practice2-progress">1</span> / <span id="practice2-total">0</span></div>
+                    <div style="font-size:0.9em; color:#666;">Rate the highlighted sentence</div>
+                  </div>
+                </div> -->
+                
+                <!-- ✅ Rubric reminder (copied from Page 2) -->
+                <!-- <div style="background-color:#f7f9fc; padding:12px; border-left:4px solid #3498db; margin:12px 0; font-size:0.9em;">
+                <p style="margin:0 0 6px 0;"><strong>Ease of Reading (1–5)</strong></p>
+                <ul style="margin:0 0 8px 18px; padding:0;">
+                    <li><strong>1 – Very hard to read:</strong> You needed to slow down or reread a lot.</li>
+                    <li><strong>5 – Very easy to read:</strong> Smooth to read; no pauses or rereading.</li>
+                </ul>
+
+                <p style="margin:8px 0 2px 0;"><strong>Confidence in Understanding (1–5)</strong></p>
+                <ul style="margin:0 0 0 18px; padding:0;">
+                    <li><strong>1 – Not confident:</strong> You did not understand what it means in context and couldn’t explain it.</li>
+                    <li><strong>5 – Very confident:</strong> You’re certain what it means in context and could explain it in your own words.</li>
+                </ul>
+                </div> -->
+
+                <!-- ✅ Two-column practice layout -->
+                <div class="practice-layout">
+
+                <!-- LEFT column: snippet -->
+                <div class="practice-text-panel">
+                    <div id="practice2-text" style="font-size:1.15rem; line-height:1.8;">
+                    <!-- sentences injected by JS -->
+                    </div>
+                </div>
+
+                <!-- RIGHT column: ratings -->
+                <div class="practice-sidebar">
+                    <div class="instruction-block">
+                    <p class="question-label" style="margin-bottom:6px;">1. While reading, how easy was this sentence to read?</p>
+                    <div class="likert-scale" id="practice2-effort">
+                        <div class="likert-btn" data-val="1">1<span class="likert-label">Very hard</span></div>
+                        <div class="likert-btn" data-val="2">2</div>
+                        <div class="likert-btn" data-val="3">3</div>
+                        <div class="likert-btn" data-val="4">4</div>
+                        <div class="likert-btn" data-val="5">5<span class="likert-label">Very easy</span></div>
+                    </div>
+
+                    <p class="question-label" style="margin:12px 0 6px;">2. How confident are you that you understood what this sentence means in this context?</p>
+                    <div class="likert-scale" id="practice2-confidence">
+                        <div class="likert-btn" data-val="1">1<span class="likert-label">Not confident</span></div>
+                        <div class="likert-btn" data-val="2">2</div>
+                        <div class="likert-btn" data-val="3">3</div>
+                        <div class="likert-btn" data-val="4">4</div>
+                        <div class="likert-btn" data-val="5">5<span class="likert-label">Very confident</span></div>
+                    </div>
+
+                    <button type="button" class="btn-start" id="practice2-next-sentence" disabled>
+                        Next sentence
+                    </button>
+                    </div>
+                </div>
+
+                </div>
+            </div>              
 
             <div class="step-indicators" id="step-indicators"></div>
 
@@ -356,7 +526,7 @@
                     <div class="likert-btn" data-val="5">5<span class="likert-label">Very easy</span></div>
                 </div>
 
-                <p class="question-label" style="margin:12px 0 6px;">How confident are you that you understood what this sentence means in this context?</p>
+                <p class="question-label" style="margin:12px 0 6px;">2. How confident are you that you understood what this sentence means in this context?</p>
                 <div class="likert-scale" id="likert-confidence">
                     <div class="likert-btn" data-val="1">1<span class="likert-label">Not Confident</span></div>
                     <div class="likert-btn" data-val="2">2<span class="likert-label"></span></div>
@@ -367,14 +537,11 @@
 
                 <div id="diagnosis-section" class="feedback-box" style="margin-top:12px; padding:10px; border:1px solid #eee; border-radius:6px; background:#f9fafb;">
                     <p class="question-label" style="margin:0 0 8px 0;">
-                      Did anything make this sentence harder to read, follow, or understand?
+                      Did anything make this sentence harder to read, follow, or understand? Select <strong>No issues</strong> or choose <strong>one or more issues</strong>.
                     </p>
                                     
                     <!-- PASTE NEW BLOCK STARTS HERE -->
                     <div id="issue-section" style="margin-top:12px; padding-top:12px; border-top:1px dashed #ddd;">
-                      <p class="question-label" style="margin:0 0 8px 0;">
-                        Issues (required): choose “No issue” OR select one or more issues.
-                      </p>
                   
                       <label class="checkbox-option">
                         <input type="checkbox" id="issue-none" />
@@ -432,25 +599,25 @@
                     <div id="overall-section">
                         <h3>Step 2. Overall Feedback</h3>
             
-                        <label class="question-label">Q1. How much effort did it take to read this text?</label>
+                        <label class="question-label">1. Overall, how easy was this text to read?</label>
                         <div class="likert-scale" id="overall-eff">
-                            <div class="likert-btn" data-group="overall_effort" data-val="1">1<span class="likert-label">No effort</span></div>
+                            <div class="likert-btn" data-group="overall_effort" data-val="1">1<span class="likert-label">Very hard</span></div>
                             <div class="likert-btn" data-group="overall_effort" data-val="2">2<span class="likert-label"></span></div>
                             <div class="likert-btn" data-group="overall_effort" data-val="3">3<span class="likert-label"></span></div>
                             <div class="likert-btn" data-group="overall_effort" data-val="4">4<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_effort" data-val="5">5<span class="likert-label">Very high effort</span></div>
+                            <div class="likert-btn" data-group="overall_effort" data-val="5">5<span class="likert-label">Very easy</span></div>
                         </div>
 
-                        <label class="question-label" style="margin-top: 20px;">Q2. How well do you think you understood the main points of the text?</label>
+                        <label class="question-label" style="margin-top: 20px;">2. How confident are you that you understood the main points of the text?</label>
                         <div class="likert-scale" id="overall-conf">
-                            <div class="likert-btn" data-group="overall_confidence" data-val="1">1<span class="likert-label">Not at all</span></div>
+                            <div class="likert-btn" data-group="overall_confidence" data-val="1">1<span class="likert-label">Not confident</span></div>
                             <div class="likert-btn" data-group="overall_confidence" data-val="2">2<span class="likert-label"></span></div>
                             <div class="likert-btn" data-group="overall_confidence" data-val="3">3<span class="likert-label"></span></div>
                             <div class="likert-btn" data-group="overall_confidence" data-val="4">4<span class="likert-label"></span></div>
-                            <div class="likert-btn" data-group="overall_confidence" data-val="5">5<span class="likert-label">Completely</span></div>
+                            <div class="likert-btn" data-group="overall_confidence" data-val="5">5<span class="likert-label">Very confident</span></div>
                         </div>
 
-                        <div class="final-comments">
+                        <!-- <div class="final-comments">
                             <label class="question-label" style="margin-top: 20px;">
                                 Q3. If you could improve this text, what are the changes that would help the most (select at most 3)?
                             </label>
@@ -486,11 +653,11 @@
                                     <span><strong>Explain the impact</strong> (Tell me if this is good/bad news)</span>
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div style="margin-top: 20px;">
-                            <h4 style="margin:0 0 8px 0; font-size:1.5rem;">Tell us a bit about yourself!</h4>
-                            <label class="question-label">Q4. How much of the information in this abstract was new to you?</label>
+                            <h3>Step 3. Tell us a bit about yourself!</h3>
+                            <label class="question-label">1. How much of the information in this abstract was new to you?</label>
                             <div class="likert-scale" id="overall-fam">
                                 <div class="likert-btn" data-group="overall_fam" data-val="1">1<span class="likert-label">None</span></div>
                                 <div class="likert-btn" data-group="overall_fam" data-val="2">2<span class="likert-label">A little</span></div>
@@ -499,7 +666,7 @@
                                 <div class="likert-btn" data-group="overall_fam" data-val="5">5<span class="likert-label">Almost all</span></div>
                             </div>
 
-                            <label class="question-label" style="margin-top: 16px;">Q5. Which of the following types of texts do you read or encounter in your daily life? (Check all that apply)</label>
+                            <label class="question-label" style="margin-top: 16px;">2. Which of the following types of texts do you read or encounter in your daily life? (Check all that apply)</label>
                             <div class="checkbox-group" id="overall-exposure">
                                 <label class="checkbox-option">
                                     <input type="checkbox" name="exposure" value="General news or magazine articles">
@@ -558,6 +725,9 @@
         let currentIndex = 0;
         // Map: index -> { rating, confidence, feedbackText, entireHard }
         let annotations = {};
+        // --- CALIBRATION STATE ---
+        let calibrationSentences = [];        // flattened list of training sentences
+        let calibrationAnnotations = {};      // index -> saved ratings for training
 
         // --- DOM ---
         const textPanel = document.getElementById('text-panel');
@@ -583,6 +753,7 @@
         const modalBack = document.getElementById('modal-btn-back');
         const stepDotsContainer = document.getElementById('step-indicators');
         let currentStep = 0;
+        let helpMode = false; // <-- ADD THIS
         
         // Inputs (Issue UI)
         const issueNone = document.getElementById('issue-none');
@@ -590,6 +761,10 @@
         const issueOther = document.getElementById('issue-other');
         const otherInputContainer = document.getElementById('other-input-container');
         const otherInput = document.getElementById('other-input');
+
+        // Practice sentences must be declared early (avoid TDZ crash)
+        let p1Sentences = [];
+        let p2Sentences = [];
 
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -602,28 +777,77 @@
             const stepDots = stepDotsContainer.querySelectorAll('.step-dot');
 
             function updateModalUI() {
-                steps.forEach((step, idx) => {
-                    step.classList.toggle('active', idx === currentStep);
-                });
-                stepDots.forEach((dot, idx) => {
-                    dot.classList.toggle('active', idx === currentStep);
-                });
+                // show active step
+                steps.forEach((step, idx) => step.classList.toggle('active', idx === currentStep));
+                stepDots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentStep));
+
+                // back button visibility
                 modalBack.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
-                if (currentStep === steps.length - 1) {
-                    modalNext.textContent = 'Start Task';
-                    modalNext.style.backgroundColor = '#28a745';
+
+                // figure out if we are on a practice page
+                const activeStepEl = steps[currentStep];
+                const activeId = activeStepEl ? activeStepEl.id : "";
+                const onPracticePage = (activeId === "practice-step-1" || activeId === "practice-step-2");
+
+                // compute practice completion
+                const p1Needed = (typeof p1Sentences !== "undefined") ? p1Sentences.length : 0;
+                const p2Needed = (typeof p2Sentences !== "undefined") ? p2Sentences.length : 0;
+                const p1Saved = Object.keys(calibrationAnnotations).filter(k => k.startsWith("p1_")).length;
+                const p2Saved = Object.keys(calibrationAnnotations).filter(k => k.startsWith("p2_")).length;
+                const practiceComplete = (p1Needed > 0 && p2Needed > 0 && p1Saved >= p1Needed && p2Saved >= p2Needed);
+
+                if (onPracticePage) {
+                    // Same button becomes Start task during practice
+                    modalNext.textContent = "Start task";
+                    modalNext.style.backgroundColor = "#28a745";
+
+                    // disabled until both snippets finished
+                    modalNext.disabled = !practiceComplete;
+                    modalNext.style.opacity = practiceComplete ? "1" : "0.5";
+                    modalNext.style.cursor = practiceComplete ? "pointer" : "not-allowed";
                 } else {
-                    modalNext.textContent = 'Next';
-                    modalNext.style.backgroundColor = '#007bff';
+                    // normal instruction pages
+                    modalNext.textContent = "Next";
+                    modalNext.style.backgroundColor = "#007bff";
+                    modalNext.disabled = false;
+                    modalNext.style.opacity = "1";
+                    modalNext.style.cursor = "pointer";
                 }
             }
 
+            updateModalUI();
+
             modalNext.addEventListener('click', () => {
+                const activeStepEl = steps[currentStep];
+                const activeId = activeStepEl ? activeStepEl.id : "";
+                const onPracticePage = (activeId === "practice-step-1" || activeId === "practice-step-2");
+                // If reopened via ❓Instructions, don't allow entering interactive practice pages
+                if (helpMode) {
+                const nextStepEl = steps[currentStep + 1];
+                const nextId = nextStepEl ? nextStepEl.id : "";
+                if (nextId === "practice-step-1" || nextId === "practice-step-2") {
+                    modalOverlay.style.display = 'none';
+                    helpMode = false;
+                    return;
+                }
+                }
+
+                if (onPracticePage) {
+                    // Start task: close modal (button will be disabled until practice complete)
+                    if (!modalNext.disabled) {
+                    modalOverlay.style.display = 'none';
+                    helpMode = false;
+                    }
+                    return;
+                }
+
+                // Normal instruction navigation
                 if (currentStep < steps.length - 1) {
                     currentStep++;
                     updateModalUI();
                 } else {
                     modalOverlay.style.display = 'none';
+                    helpMode = false;
                 }
             });
 
@@ -636,6 +860,7 @@
 
             // --- RE-OPEN INSTRUCTIONS BUTTON ---
             document.getElementById('btn-show-help').addEventListener('click', () => {
+                helpMode = true;      // <-- ADD
                 currentStep = 0;
                 updateModalUI();
                 modalOverlay.style.display = 'flex';
@@ -692,8 +917,15 @@
                 const hasFam = !!document.querySelector('input[name="overall_fam"]');
                 const hasEff = !!document.querySelector('input[name="overall_effort"]');
                 const hasConf = !!document.querySelector('input[name="overall_confidence"]');
-                const hasImprovement = document.querySelectorAll('input[name="improvement"]:checked').length > 0;
+
+                const improvementBoxes = document.querySelectorAll('input[name="improvement"]');
+                const hasImprovement =
+                    improvementBoxes.length === 0
+                    ? true
+                    : document.querySelectorAll('input[name="improvement"]:checked').length > 0;
+
                 const exposureSelected = document.querySelectorAll('#overall-exposure input[type="checkbox"]:checked').length > 0;
+
                 startQuizBtn.disabled = !(hasFam && hasEff && hasConf && hasImprovement && exposureSelected);
             }
 
@@ -811,6 +1043,323 @@
                     updateNavState(); // <-- ADD THIS LINE
                 });
             });
+
+            // ===============================
+            // PRACTICE SNIPPET 1 (interactive)
+            // ===============================
+            const p1TextEl = document.getElementById('practice1-text');
+            const p1ProgEl = document.getElementById('practice1-progress');
+            const p1TotalEl = document.getElementById('practice1-total');
+            const p1EffBtns = document.querySelectorAll('#practice1-effort .likert-btn');
+            const p1ConfBtns = document.querySelectorAll('#practice1-confidence .likert-btn');
+            const p1NextBtn = document.getElementById('practice1-next-sentence');
+
+            let p1Idx = 0;
+            let p1Eff = null;
+            let p1Conf = null;
+
+            // Get snippet 1 sentences from calibrationSet
+            p1Sentences =
+                (typeof calibrationSet !== 'undefined' &&
+                calibrationSet &&
+                calibrationSet.snippets &&
+                calibrationSet.snippets[0] &&
+                Array.isArray(calibrationSet.snippets[0].sentences))
+                    ? calibrationSet.snippets[0].sentences.map(s => (s || '').trim()).filter(Boolean)
+                    : [];
+
+            // Render snippet 1 sentences inside the modal
+            function renderPractice1Text() {
+                if (!p1TextEl) return;
+                if (p1Sentences.length === 0) {
+                    p1TextEl.innerHTML = "<em>No practice snippet 1 found.</em>";
+                    if (p1TotalEl) p1TotalEl.textContent = "0";
+                    return;
+                }
+
+                if (p1TotalEl) p1TotalEl.textContent = String(p1Sentences.length);
+
+                p1TextEl.innerHTML = p1Sentences.map((s, i) => {
+                    const cls = (i === p1Idx) ? "sentence active" : "sentence dimmed";
+                    return `<span class="${cls}" id="p1-sent-${i}" data-i="${i}">${s} </span>`;
+                }).join('');
+
+                if (p1ProgEl) p1ProgEl.textContent = String(p1Idx + 1);
+                updatePractice1ButtonLabel();
+            }
+
+            // Highlight currently active sentence
+            function updatePractice1Highlight() {
+            p1Sentences.forEach((_, i) => {
+                const el = document.getElementById(`p1-sent-${i}`);
+                if (!el) return;
+                el.className = (i === p1Idx) ? "sentence active" : "sentence dimmed";
+            });
+            if (p1ProgEl) p1ProgEl.textContent = String(p1Idx + 1);
+            updatePractice1ButtonLabel();
+            }
+
+            function updatePractice1ButtonLabel() {
+                if (!p1NextBtn) return;
+                const isLast = (p1Idx === p1Sentences.length - 1);
+                p1NextBtn.textContent = isLast ? "Next practice" : "Next sentence";
+                }
+
+
+            // Clear selected styles for practice likerts
+            function resetPractice1Likerts() {
+            p1EffBtns.forEach(b => b.classList.remove('selected'));
+            p1ConfBtns.forEach(b => b.classList.remove('selected'));
+            p1Eff = null;
+            p1Conf = null;
+            if (p1NextBtn) p1NextBtn.disabled = true;
+            }
+
+            function savePractice1CurrentIfRated() {
+                if (p1Sentences.length === 0) return;
+                if (p1Eff === null || p1Conf === null) return; // don't save incomplete
+
+                calibrationAnnotations[`p1_${p1Idx}`] = {
+                    snippet_id: (calibrationSet.snippets[0] && calibrationSet.snippets[0].snippet_id)
+                    ? calibrationSet.snippets[0].snippet_id
+                    : "cal_01",
+                    sentence_index: p1Idx + 1,
+                    text: p1Sentences[p1Idx],
+                    ease_reading: p1Eff,
+                    confidence_understanding: p1Conf
+                };
+                }
+
+                function applySelected(btns, val) {
+                btns.forEach(b => {
+                    b.classList.remove('selected');
+                    if (parseInt(b.dataset.val, 10) === val) b.classList.add('selected');
+                });
+                }
+
+                function loadPractice1IfSaved() {
+                const saved = calibrationAnnotations[`p1_${p1Idx}`];
+                if (!saved) return;
+
+                p1Eff = saved.ease_reading;
+                p1Conf = saved.confidence_understanding;
+
+                applySelected(p1EffBtns, p1Eff);
+                applySelected(p1ConfBtns, p1Conf);
+
+                updatePractice1NextState();
+            }
+
+            function updatePractice1NextState() {
+            if (!p1NextBtn) return;
+            p1NextBtn.disabled = !(p1Eff !== null && p1Conf !== null);
+            }
+
+            // Click handlers (Effort)
+            p1EffBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                p1EffBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                p1Eff = parseInt(btn.dataset.val, 10);
+                updatePractice1NextState();
+            });
+            });
+
+            // Click handlers (Confidence)
+            p1ConfBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                p1ConfBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                p1Conf = parseInt(btn.dataset.val, 10);
+                updatePractice1NextState();
+            });
+            });
+
+            // Next sentence / Next practice button handler (SINGLE-CLICK)
+            if (p1NextBtn) {
+            p1NextBtn.addEventListener('click', () => {
+                if (p1Sentences.length === 0) return;
+                if (p1Eff === null || p1Conf === null) return;
+
+                // Save current sentence
+                calibrationAnnotations[`p1_${p1Idx}`] = {
+                snippet_id: (calibrationSet.snippets[0] && calibrationSet.snippets[0].snippet_id)
+                    ? calibrationSet.snippets[0].snippet_id
+                    : "cal_01",
+                sentence_index: p1Idx + 1,
+                text: p1Sentences[p1Idx],
+                ease_reading: p1Eff,
+                confidence_understanding: p1Conf
+                };
+
+                const isLast = (p1Idx >= p1Sentences.length - 1);
+
+                if (!isLast) {
+                // Advance within snippet 1
+                p1Idx++;
+                resetPractice1Likerts();
+                updatePractice1Highlight();
+                return;
+                }
+
+                // Last sentence -> immediately go to practice snippet 2 (NO second click)
+                currentStep++;
+                updateModalUI();
+            });
+            }
+
+            // Initialize snippet 1 UI right away (safe even if not on that modal page yet)
+            renderPractice1Text();
+            p1TextEl.addEventListener('click', (e) => {
+                const target = e.target.closest('span[id^="p1-sent-"]');
+                if (!target) return;
+
+                const newIdx = Number(target.dataset.i);
+                if (Number.isNaN(newIdx)) return;
+
+                // Save current sentence only if it's fully rated
+                savePractice1CurrentIfRated();
+
+                // Jump
+                p1Idx = newIdx;
+
+                // Reset UI, then restore if this sentence was already rated
+                resetPractice1Likerts();
+                loadPractice1IfSaved();
+                updatePractice1Highlight();
+            });
+            resetPractice1Likerts();
+
+            
+            // ===============================
+            // PRACTICE SNIPPET 2 (interactive)
+            // ===============================
+            const p2TextEl = document.getElementById('practice2-text');
+            const p2ProgEl = document.getElementById('practice2-progress');
+            const p2TotalEl = document.getElementById('practice2-total');
+            const p2EffBtns = document.querySelectorAll('#practice2-effort .likert-btn');
+            const p2ConfBtns = document.querySelectorAll('#practice2-confidence .likert-btn');
+            const p2NextBtn = document.getElementById('practice2-next-sentence');
+
+            let p2Idx = 0;
+            let p2Eff = null;
+            let p2Conf = null;
+
+            // Get snippet 2 sentences from calibrationSet
+            p2Sentences =
+                (typeof calibrationSet !== 'undefined' &&
+                calibrationSet &&
+                calibrationSet.snippets &&
+                calibrationSet.snippets[1] &&
+                Array.isArray(calibrationSet.snippets[1].sentences))
+                    ? calibrationSet.snippets[1].sentences.map(s => (s || '').trim()).filter(Boolean)
+                    : [];
+
+            // Render snippet 2 sentences inside the modal
+            function renderPractice2Text() {
+            if (!p2TextEl) return;
+            if (p2Sentences.length === 0) {
+                p2TextEl.innerHTML = "<em>No practice snippet 2 found.</em>";
+                if (p2TotalEl) p2TotalEl.textContent = "0";
+                return;
+            }
+
+            if (p2TotalEl) p2TotalEl.textContent = String(p2Sentences.length);
+
+            p2TextEl.innerHTML = p2Sentences.map((s, i) => {
+                const cls = (i === p2Idx) ? "sentence active" : "sentence dimmed";
+                return `<span class="${cls}" id="p2-sent-${i}" data-i="${i}">${s} </span>`;
+            }).join('');
+
+            if (p2ProgEl) p2ProgEl.textContent = String(p2Idx + 1);
+            updatePractice2ButtonLabel();
+            }
+
+            // Highlight currently active sentence
+            function updatePractice2Highlight() {
+            p2Sentences.forEach((_, i) => {
+                const el = document.getElementById(`p2-sent-${i}`);
+                if (!el) return;
+                el.className = (i === p2Idx) ? "sentence active" : "sentence dimmed";
+            });
+            if (p2ProgEl) p2ProgEl.textContent = String(p2Idx + 1);
+            updatePractice2ButtonLabel();
+            }
+
+            function updatePractice2ButtonLabel() {
+                if (!p2NextBtn) return;
+                const isLast = (p2Idx === p2Sentences.length - 1);
+                p2NextBtn.textContent = isLast ? "Finish practice" : "Next sentence";
+            }
+
+            // Clear selected styles for practice likerts
+            function resetPractice2Likerts() {
+            p2EffBtns.forEach(b => b.classList.remove('selected'));
+            p2ConfBtns.forEach(b => b.classList.remove('selected'));
+            p2Eff = null;
+            p2Conf = null;
+            if (p2NextBtn) p2NextBtn.disabled = true;
+            }
+
+            function updatePractice2NextState() {
+            if (!p2NextBtn) return;
+            p2NextBtn.disabled = !(p2Eff !== null && p2Conf !== null);
+            }
+
+            // Click handlers (Effort)
+            p2EffBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                p2EffBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                p2Eff = parseInt(btn.dataset.val, 10);
+                updatePractice2NextState();
+            });
+            });
+
+            // Click handlers (Confidence)
+            p2ConfBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                p2ConfBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                p2Conf = parseInt(btn.dataset.val, 10);
+                updatePractice2NextState();
+            });
+            });
+
+            // Finish practice button handler (advances through sentences)
+            if (p2NextBtn) {
+            p2NextBtn.addEventListener('click', () => {
+                if (p2Sentences.length === 0) return;
+                if (p2Eff === null || p2Conf === null) return;
+
+                // Save only the 2 scores (training only)
+                calibrationAnnotations[`p2_${p2Idx}`] = {
+                snippet_id: calibrationSet.snippets[1].snippet_id || "cal_02",
+                sentence_index: p2Idx + 1,
+                text: p2Sentences[p2Idx],
+                ease_reading: p2Eff,
+                confidence_understanding: p2Conf
+                };
+
+                // Advance
+                if (p2Idx < p2Sentences.length - 1) {
+                p2Idx++;
+                resetPractice2Likerts();
+                updatePractice2Highlight();
+                } else {
+                    // Finished snippet 2
+                    p2NextBtn.textContent = "Practice complete ✔";
+                    p2NextBtn.disabled = true;
+
+                    // IMPORTANT: refresh modal button state so Start task enables
+                    updateModalUI();
+                }
+            });
+           }
+
+            // Initialize snippet 2 UI right away
+            renderPractice2Text();
+            resetPractice2Likerts();
         });
 
         // --- CORE FUNCTIONS ---
@@ -1077,10 +1626,10 @@
 
             html += `
             <div class="quiz-meta-q">
-                <label style="font-weight:bold; font-size:0.9em;">How much effort did answering this question take?</label>
+                <label style="font-weight:bold; font-size:0.9em;">How easy was it to answer this question?</label>
                 <div style="display:flex; justify-content:space-between; font-size: 0.8em; margin-top:5px;">
-                    <span>Low</span>
-                    <span>High</span>
+                    <span>Hard</span>
+                    <span>Easy</span>
                 </div>
                 <div style="display:flex; justify-content:space-between; gap:6px;">
                     <input type="radio" name="quiz_${quizIndex}_effort" value="1">
@@ -1090,7 +1639,7 @@
                     <input type="radio" name="quiz_${quizIndex}_effort" value="5">
                 </div>
 
-                <label style="font-weight:bold; font-size:0.9em; margin-top:10px; display:block;">How confident are you that you answered it correctly?</label>
+                <label style="font-weight:bold; font-size:0.9em; margin-top:10px; display:block;">How confident are you in your answer?</label>
                 <div style="display:flex; justify-content:space-between; font-size: 0.8em; margin-top:5px;">
                     <span>Not confident</span>
                     <span>Very confident</span>
@@ -1328,6 +1877,17 @@
             const overallEffortVal = formData.get('overall_effort') || "N/A";
             const overallConfVal = formData.get('overall_confidence') || "N/A";
 
+            // --- Practice results (training) ---
+            const practiceResults = Object.keys(calibrationAnnotations)
+            .sort((a, b) => {
+                // Sort p1_0, p1_1, ... then p2_0, ...
+                const [ap, ai] = a.split('_');
+                const [bp, bi] = b.split('_');
+                if (ap !== bp) return ap.localeCompare(bp);
+                return Number(ai) - Number(bi);
+            })
+            .map(k => calibrationAnnotations[k]);
+
             const payload = {
                 worker_id: urlParams.get('PROLIFIC_PID') || "TEST_USER",
                 study_id: urlParams.get('STUDY_ID') || "TEST_STUDY",       // NEW: Matches Col C in AppScript
@@ -1335,6 +1895,8 @@
                 stimulus_id: stimulusID,
                 is_simplified: stimulusID.endsWith('_simp'),
                 provenance_map: (typeof window.stimulusProvenance !== 'undefined' ? window.stimulusProvenance : null),
+                practice_set_id: (typeof calibrationSet !== 'undefined' && calibrationSet && calibrationSet.id) ? calibrationSet.id : null,
+                practice_results: practiceResults,
                 // Pack familiarity + reading frequency together to fit existing App Script field
                 familiarity: JSON.stringify({
                     topic_familiarity: topicFam,
